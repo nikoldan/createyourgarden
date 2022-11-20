@@ -25,5 +25,5 @@ public class Bestellung {
     private BestellungState bestellungState = BestellungState.NEU;
     private String kundenId;
     private List<Artikel> artikels;
-
+    private String kommentare;
 }

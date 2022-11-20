@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ch.zhaw.createyourgarden.createyourgarden.model.Bestellung;
+import ch.zhaw.createyourgarden.createyourgarden.model.BestellungCreateDTO;
 import ch.zhaw.createyourgarden.createyourgarden.repository.BestellungRepository;
 
 @RestController
@@ -21,7 +22,7 @@ public class BestellungController {
     @PostMapping("")
     public ResponseEntity<Bestellung> createBestellung(
         @RequestBody BestellungCreateDTO jDTO) {
-            Bestellung jDAO = new Bestellung(jDTO.getDatum(), jDTO.getArtikels(), jDTO.getBestellungState());
+            Bestellung jDAO = new Bestellung(jDTO.getDatum(), jDTO.getArtikels(), jDTO.getKundenId());
             Bestellung j = bestellungRepository.save(jDAO);
             return new ResponseEntity<>(j, HttpStatus.CREATED);
         }
