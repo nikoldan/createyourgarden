@@ -8,6 +8,5 @@ import lombok.NoArgsConstructor;
 public class KundeCreateDTO {
     private String vorname;
     private String name;
-    private int plz;
-    private String ort;
+    private String plzOrt;
 }

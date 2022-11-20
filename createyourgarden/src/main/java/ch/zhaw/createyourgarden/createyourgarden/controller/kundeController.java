@@ -20,7 +20,7 @@ public class kundeController {
 
     @PostMapping("/kunde")
     public ResponseEntity<Kunde> createKunde(@RequestBody KundeCreateDTO xDTO) {
-        Kunde xDAO = new Kunde(xDTO.getVorname(), xDTO.getName(), xDTO.getPlz(), xDTO.getOrt());
+        Kunde xDAO = new Kunde(xDTO.getVorname(), xDTO.getName(), xDTO.getPlzOrt());
         Kunde x = kundeRepository.save(xDAO);
         return new ResponseEntity<>(x, HttpStatus.CREATED);
     }

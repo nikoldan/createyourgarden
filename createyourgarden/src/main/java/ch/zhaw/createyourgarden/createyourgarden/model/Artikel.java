@@ -12,17 +12,24 @@ import lombok.NoArgsConstructor;
 @RequiredArgsConstructor
 @Getter
 @Setter
-@Document("kunde")
-public class Kunde {
+@Document("artikel")
+public class Artikel {
     @Id
     private String id;
     @NonNull
-    private String vorname;
-    @NonNull
     private String name;
     @NonNull
-    private String plzOrt;  
+    private String deutscherName;
+    @NonNull
+    private String beschreibung;
     
-     
+    private double preis;
+    @NonNull
 
+    private String standort;
+    private int bluetemonat;
+    private int hoehe;
+    
+    
+    
 }
