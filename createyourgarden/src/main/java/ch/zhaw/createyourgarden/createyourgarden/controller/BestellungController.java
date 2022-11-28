@@ -19,13 +19,13 @@ public class BestellungController {
     @Autowired
     BestellungRepository bestellungRepository;
 
-    @PostMapping("")
+ /*   @PostMapping("")
     public ResponseEntity<Bestellung> createBestellung(
         @RequestBody BestellungCreateDTO jDTO) {
             Bestellung jDAO = new Bestellung(jDTO.getDatum(), jDTO.getArtikels(), jDTO.getKundenId());
             Bestellung j = bestellungRepository.save(jDAO);
             return new ResponseEntity<>(j, HttpStatus.CREATED);
         }
-
+*/ 
 
 }
