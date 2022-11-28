@@ -24,7 +24,7 @@ public class Artikel {
     private String beschreibung;
     
     private double preis;
-    @NonNull
+    
 
     private String standort;
     private int bluetemonat;
