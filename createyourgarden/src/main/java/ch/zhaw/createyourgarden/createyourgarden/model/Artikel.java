@@ -19,12 +19,12 @@ public class Artikel {
     @NonNull
     private String name;
     @NonNull
-    private String deutscherName;
+    private String dName;
     @NonNull
     private String beschreibung;
     
     private double preis;
-    @NonNull
+    
 
     private String standort;
     private int bluetemonat;

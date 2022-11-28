@@ -1,7 +1,7 @@
 <script>
     import axios from "axios";
 
-    const api_root = "https://89a0dc43-3ebf-4fd7-b1de-449fce854790.mock.pstmn.io";
+    const api_root = "http://localhost:8080";
 
     
   let artikels = [];
@@ -49,9 +49,10 @@
   <tbody>
         {#each artikels as artikel}
             <tr>
-                <td>{artikel.id}</td>
+              <td>
+                <a href={"#/artikel/" + artikel.id}> {artikel.id}</a></td>
                 <td>{artikel.name}</td>
-                <td>{artikel.dName}</td>
+                <td>{artikel.dname}</td>
                 <td>{artikel.standort}</td>
                 <td>{artikel.bluetemonat}</td>
                 <td>{artikel.hoehe}</td>
