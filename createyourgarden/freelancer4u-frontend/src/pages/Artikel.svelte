@@ -3,7 +3,6 @@
 
     const api_root = "https://89a0dc43-3ebf-4fd7-b1de-449fce854790.mock.pstmn.io";
 
-    
   let artikels = [];
   let artikel = {
     

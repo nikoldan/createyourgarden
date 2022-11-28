@@ -4788,7 +4788,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (50:8) {#each artikels as artikel}
+    // (49:8) {#each artikels as artikel}
     function create_each_block(ctx) {
     	let tr;
     	let td0;
@@ -4837,13 +4837,13 @@ var app = (function () {
     			td5 = element("td");
     			t10 = text(t10_value);
     			t11 = space();
-    			add_location(td0, file$2, 51, 16, 1184);
-    			add_location(td1, file$2, 52, 16, 1223);
-    			add_location(td2, file$2, 53, 16, 1264);
-    			add_location(td3, file$2, 54, 16, 1306);
-    			add_location(td4, file$2, 55, 16, 1351);
-    			add_location(td5, file$2, 56, 16, 1399);
-    			add_location(tr, file$2, 50, 12, 1162);
+    			add_location(td0, file$2, 50, 16, 1178);
+    			add_location(td1, file$2, 51, 16, 1217);
+    			add_location(td2, file$2, 52, 16, 1258);
+    			add_location(td3, file$2, 53, 16, 1300);
+    			add_location(td4, file$2, 54, 16, 1345);
+    			add_location(td5, file$2, 55, 16, 1393);
+    			add_location(tr, file$2, 49, 12, 1156);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -4883,7 +4883,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(50:8) {#each artikels as artikel}",
+    		source: "(49:8) {#each artikels as artikel}",
     		ctx
     	});
 
@@ -4954,25 +4954,25 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h1, file$2, 32, 0, 663);
-    			add_location(h3, file$2, 33, 0, 725);
+    			add_location(h1, file$2, 31, 0, 657);
+    			add_location(h3, file$2, 32, 0, 719);
     			attr_dev(th0, "scope", "col");
-    			add_location(th0, file$2, 40, 6, 869);
+    			add_location(th0, file$2, 39, 6, 863);
     			attr_dev(th1, "scope", "col");
-    			add_location(th1, file$2, 41, 6, 900);
+    			add_location(th1, file$2, 40, 6, 894);
     			attr_dev(th2, "scope", "col");
-    			add_location(th2, file$2, 42, 6, 933);
+    			add_location(th2, file$2, 41, 6, 927);
     			attr_dev(th3, "scope", "col");
-    			add_location(th3, file$2, 43, 6, 976);
+    			add_location(th3, file$2, 42, 6, 970);
     			attr_dev(th4, "scope", "col");
-    			add_location(th4, file$2, 44, 6, 1013);
+    			add_location(th4, file$2, 43, 6, 1007);
     			attr_dev(th5, "scope", "col");
-    			add_location(th5, file$2, 45, 6, 1052);
-    			add_location(tr, file$2, 39, 4, 857);
-    			add_location(thead, file$2, 38, 2, 844);
-    			add_location(tbody, file$2, 48, 2, 1104);
+    			add_location(th5, file$2, 44, 6, 1046);
+    			add_location(tr, file$2, 38, 4, 851);
+    			add_location(thead, file$2, 37, 2, 838);
+    			add_location(tbody, file$2, 47, 2, 1098);
     			attr_dev(table, "class", "table table-striped");
-    			add_location(table, file$2, 37, 0, 805);
+    			add_location(table, file$2, 36, 0, 799);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
