@@ -21,9 +21,12 @@ public class Bestellung {
     private String id;
     @NonNull
     private String datum;
-    
-    private BestellungState bestellungState = BestellungState.NEU;
-    private String kundenId;
+    @NonNull
     private List<Artikel> artikels;
+    @NonNull
+    private String kundenId;
+    
     private String kommentare;
+    private BestellungState bestellungState = BestellungState.NEU;
+
 }
