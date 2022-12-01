@@ -11,9 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ch.zhaw.createyourgarden.createyourgarden.model.Artikel;
+
 import ch.zhaw.createyourgarden.createyourgarden.repository.ArtikelRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @RestController
@@ -39,7 +42,9 @@ public class ArtikelController {
         }
     }
 
-
-
+    @GetMapping("/standortwahl")
+    public ResponseEntity<List<Artikel>> getArtikelByStandort(@RequestParam String wo) {
+        return new ResponseEntity<>(artikelRepository.findByStandort(wo), HttpStatus.OK);
+    }
 
 }

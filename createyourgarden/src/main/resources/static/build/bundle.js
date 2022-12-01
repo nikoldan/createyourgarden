@@ -69,6 +69,10 @@ var app = (function () {
     function empty() {
         return text('');
     }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
+    }
     function attr(node, attribute, value) {
         if (value == null)
             node.removeAttribute(attribute);
@@ -77,6 +81,20 @@ var app = (function () {
     }
     function children(element) {
         return Array.from(element.childNodes);
+    }
+    function select_option(select, value) {
+        for (let i = 0; i < select.options.length; i += 1) {
+            const option = select.options[i];
+            if (option.__value === value) {
+                option.selected = true;
+                return;
+            }
+        }
+        select.selectedIndex = -1; // no option should be selected
+    }
+    function select_value(select) {
+        const selected_option = select.querySelector(':checked') || select.options[0];
+        return selected_option && selected_option.__value;
     }
     function custom_event(type, detail, { bubbles = false, cancelable = false } = {}) {
         const e = document.createEvent('CustomEvent');
@@ -468,6 +486,19 @@ var app = (function () {
     function detach_dev(node) {
         dispatch_dev('SvelteDOMRemove', { node });
         detach(node);
+    }
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+        const modifiers = options === true ? ['capture'] : options ? Array.from(Object.keys(options)) : [];
+        if (has_prevent_default)
+            modifiers.push('preventDefault');
+        if (has_stop_propagation)
+            modifiers.push('stopPropagation');
+        dispatch_dev('SvelteDOMAddEventListener', { node, event, handler, modifiers });
+        const dispose = listen(node, event, handler, options);
+        return () => {
+            dispatch_dev('SvelteDOMRemoveEventListener', { node, event, handler, modifiers });
+            dispose();
+        };
     }
     function attr_dev(node, attribute, value) {
         attr(node, attribute, value);
@@ -4864,7 +4895,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (50:8) {#each artikels as artikel}
+    // (68:4) {#each artikels as artikel}
     function create_each_block(ctx) {
     	let tr;
     	let td0;
@@ -4917,14 +4948,14 @@ var app = (function () {
     			t10 = text(t10_value);
     			t11 = space();
     			attr_dev(a, "href", a_href_value = "#/artikel/" + /*artikel*/ ctx[1].id);
-    			add_location(a, file$2, 52, 16, 1167);
-    			add_location(td0, file$2, 51, 14, 1145);
-    			add_location(td1, file$2, 53, 16, 1243);
-    			add_location(td2, file$2, 54, 16, 1284);
-    			add_location(td3, file$2, 55, 16, 1326);
-    			add_location(td4, file$2, 56, 16, 1371);
-    			add_location(td5, file$2, 57, 16, 1419);
-    			add_location(tr, file$2, 50, 12, 1125);
+    			add_location(a, file$2, 69, 13, 1616);
+    			add_location(td0, file$2, 69, 8, 1611);
+    			add_location(td1, file$2, 70, 8, 1684);
+    			add_location(td2, file$2, 71, 8, 1717);
+    			add_location(td3, file$2, 72, 8, 1751);
+    			add_location(td4, file$2, 73, 8, 1788);
+    			add_location(td5, file$2, 74, 8, 1828);
+    			add_location(tr, file$2, 68, 6, 1597);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -4970,7 +5001,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(50:8) {#each artikels as artikel}",
+    		source: "(68:4) {#each artikels as artikel}",
     		ctx
     	});
 
@@ -4982,22 +5013,36 @@ var app = (function () {
     	let t1;
     	let h3;
     	let t3;
+    	let div2;
+    	let div0;
+    	let label;
+    	let t5;
+    	let select;
+    	let option0;
+    	let option1;
+    	let option2;
+    	let t9;
+    	let div1;
+    	let button;
+    	let t11;
     	let table;
     	let thead;
     	let tr;
     	let th0;
-    	let t5;
-    	let th1;
-    	let t7;
-    	let th2;
-    	let t9;
-    	let th3;
-    	let t11;
-    	let th4;
     	let t13;
-    	let th5;
+    	let th1;
     	let t15;
+    	let th2;
+    	let t17;
+    	let th3;
+    	let t19;
+    	let th4;
+    	let t21;
+    	let th5;
+    	let t23;
     	let tbody;
+    	let mounted;
+    	let dispose;
     	let each_value = /*artikels*/ ctx[0];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -5014,52 +5059,94 @@ var app = (function () {
     			h3 = element("h3");
     			h3.textContent = "Hier gibt es eine Übersicht aus unserer vielfälltigen Datenbank";
     			t3 = space();
+    			div2 = element("div");
+    			div0 = element("div");
+    			label = element("label");
+    			label.textContent = "Standort";
+    			t5 = space();
+    			select = element("select");
+    			option0 = element("option");
+    			option0.textContent = "Sonning";
+    			option1 = element("option");
+    			option1.textContent = "Halbschatten";
+    			option2 = element("option");
+    			option2.textContent = "Schatten";
+    			t9 = space();
+    			div1 = element("div");
+    			button = element("button");
+    			button.textContent = "Suchen";
+    			t11 = space();
     			table = element("table");
     			thead = element("thead");
     			tr = element("tr");
     			th0 = element("th");
     			th0.textContent = "ID";
-    			t5 = space();
+    			t13 = space();
     			th1 = element("th");
     			th1.textContent = "Name";
-    			t7 = space();
+    			t15 = space();
     			th2 = element("th");
     			th2.textContent = "Deutscher Name";
-    			t9 = space();
+    			t17 = space();
     			th3 = element("th");
     			th3.textContent = "Standort";
-    			t11 = space();
+    			t19 = space();
     			th4 = element("th");
     			th4.textContent = "Blütemonat";
-    			t13 = space();
+    			t21 = space();
     			th5 = element("th");
     			th5.textContent = "Höhe";
-    			t15 = space();
+    			t23 = space();
     			tbody = element("tbody");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			add_location(h1, file$2, 32, 0, 626);
-    			add_location(h3, file$2, 33, 0, 688);
+    			add_location(h1, file$2, 32, 0, 609);
+    			add_location(h3, file$2, 33, 0, 671);
+    			attr_dev(label, "class", "form-label");
+    			attr_dev(label, "for", "type");
+    			add_location(label, file$2, 37, 4, 796);
+    			option0.__value = "Sonning";
+    			option0.value = option0.__value;
+    			add_location(option0, file$2, 44, 4, 963);
+    			option1.__value = "Halbschatten";
+    			option1.value = option1.__value;
+    			add_location(option1, file$2, 45, 4, 1009);
+    			option2.__value = "Schatten";
+    			option2.value = option2.__value;
+    			add_location(option2, file$2, 46, 4, 1065);
+    			attr_dev(select, "class", "form-select");
+    			attr_dev(select, "id", "type");
+    			attr_dev(select, "type", "text");
+    			if (/*artikel*/ ctx[1].standort === void 0) add_render_callback(() => /*select_change_handler*/ ctx[3].call(select));
+    			add_location(select, file$2, 38, 4, 855);
+    			attr_dev(div0, "class", "col");
+    			add_location(div0, file$2, 36, 2, 773);
+    			attr_dev(button, "class", "btn btn-primary");
+    			add_location(button, file$2, 51, 4, 1159);
+    			attr_dev(div1, "class", "col-3");
+    			add_location(div1, file$2, 50, 2, 1134);
+    			attr_dev(div2, "class", "row my-3");
+    			add_location(div2, file$2, 35, 0, 747);
     			attr_dev(th0, "scope", "col");
-    			add_location(th0, file$2, 40, 6, 832);
+    			add_location(th0, file$2, 58, 6, 1314);
     			attr_dev(th1, "scope", "col");
-    			add_location(th1, file$2, 41, 6, 863);
+    			add_location(th1, file$2, 59, 6, 1345);
     			attr_dev(th2, "scope", "col");
-    			add_location(th2, file$2, 42, 6, 896);
+    			add_location(th2, file$2, 60, 6, 1378);
     			attr_dev(th3, "scope", "col");
-    			add_location(th3, file$2, 43, 6, 939);
+    			add_location(th3, file$2, 61, 6, 1421);
     			attr_dev(th4, "scope", "col");
-    			add_location(th4, file$2, 44, 6, 976);
+    			add_location(th4, file$2, 62, 6, 1458);
     			attr_dev(th5, "scope", "col");
-    			add_location(th5, file$2, 45, 6, 1015);
-    			add_location(tr, file$2, 39, 4, 820);
-    			add_location(thead, file$2, 38, 2, 807);
-    			add_location(tbody, file$2, 48, 2, 1067);
+    			add_location(th5, file$2, 63, 6, 1497);
+    			add_location(tr, file$2, 57, 4, 1302);
+    			add_location(thead, file$2, 56, 2, 1289);
+    			add_location(tbody, file$2, 66, 2, 1549);
     			attr_dev(table, "class", "table table-striped");
-    			add_location(table, file$2, 37, 0, 768);
+    			add_location(table, file$2, 55, 0, 1250);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5069,28 +5156,54 @@ var app = (function () {
     			insert_dev(target, t1, anchor);
     			insert_dev(target, h3, anchor);
     			insert_dev(target, t3, anchor);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div0);
+    			append_dev(div0, label);
+    			append_dev(div0, t5);
+    			append_dev(div0, select);
+    			append_dev(select, option0);
+    			append_dev(select, option1);
+    			append_dev(select, option2);
+    			select_option(select, /*artikel*/ ctx[1].standort);
+    			append_dev(div2, t9);
+    			append_dev(div2, div1);
+    			append_dev(div1, button);
+    			insert_dev(target, t11, anchor);
     			insert_dev(target, table, anchor);
     			append_dev(table, thead);
     			append_dev(thead, tr);
     			append_dev(tr, th0);
-    			append_dev(tr, t5);
-    			append_dev(tr, th1);
-    			append_dev(tr, t7);
-    			append_dev(tr, th2);
-    			append_dev(tr, t9);
-    			append_dev(tr, th3);
-    			append_dev(tr, t11);
-    			append_dev(tr, th4);
     			append_dev(tr, t13);
+    			append_dev(tr, th1);
+    			append_dev(tr, t15);
+    			append_dev(tr, th2);
+    			append_dev(tr, t17);
+    			append_dev(tr, th3);
+    			append_dev(tr, t19);
+    			append_dev(tr, th4);
+    			append_dev(tr, t21);
     			append_dev(tr, th5);
-    			append_dev(table, t15);
+    			append_dev(table, t23);
     			append_dev(table, tbody);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(tbody, null);
     			}
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(select, "change", /*select_change_handler*/ ctx[3]),
+    					listen_dev(button, "click", /*getArtikel*/ ctx[2], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
     		},
     		p: function update(ctx, [dirty]) {
+    			if (dirty & /*artikel*/ 2) {
+    				select_option(select, /*artikel*/ ctx[1].standort);
+    			}
+
     			if (dirty & /*artikels*/ 1) {
     				each_value = /*artikels*/ ctx[0];
     				validate_each_argument(each_value);
@@ -5122,8 +5235,12 @@ var app = (function () {
     			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(h3);
     			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(div2);
+    			if (detaching) detach_dev(t11);
     			if (detaching) detach_dev(table);
     			destroy_each(each_blocks, detaching);
+    			mounted = false;
+    			run_all(dispose);
     		}
     	};
 
@@ -5145,8 +5262,13 @@ var app = (function () {
     	validate_slots('Artikel', slots, []);
     	let artikels = [];
     	let artikel = {};
+    	let standort;
 
     	function getArtikel() {
+    		if (standort) {
+    			query += "&standort=" + standort;
+    		}
+
     		var config = {
     			method: "get",
     			url: api_root$1 + "/api/artikel",
@@ -5168,24 +5290,31 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1$1.warn(`<Artikel> was created with unknown prop '${key}'`);
     	});
 
+    	function select_change_handler() {
+    		artikel.standort = select_value(this);
+    		$$invalidate(1, artikel);
+    	}
+
     	$$self.$capture_state = () => ({
     		axios,
     		api_root: api_root$1,
     		artikels,
     		artikel,
+    		standort,
     		getArtikel
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('artikels' in $$props) $$invalidate(0, artikels = $$props.artikels);
     		if ('artikel' in $$props) $$invalidate(1, artikel = $$props.artikel);
+    		if ('standort' in $$props) standort = $$props.standort;
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [artikels, artikel];
+    	return [artikels, artikel, getArtikel, select_change_handler];
     }
 
     class Artikel extends SvelteComponentDev {
@@ -5518,7 +5647,7 @@ var app = (function () {
     			t4 = space();
     			li1 = element("li");
     			a2 = element("a");
-    			a2.textContent = "Bestellungen";
+    			a2.textContent = "Bestellen";
     			t6 = space();
     			div2 = element("div");
     			create_component(router.$$.fragment);
@@ -5556,7 +5685,7 @@ var app = (function () {
     			attr_dev(nav, "class", "navbar navbar-expand-lg bg-light");
     			add_location(nav, file, 6, 1, 109);
     			attr_dev(div2, "class", "container");
-    			add_location(div2, file, 37, 1, 869);
+    			add_location(div2, file, 37, 1, 866);
     			attr_dev(div3, "id", "app");
     			add_location(div3, file, 5, 0, 93);
     		},
