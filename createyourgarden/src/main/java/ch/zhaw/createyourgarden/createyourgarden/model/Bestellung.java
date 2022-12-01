@@ -1,5 +1,6 @@
 package ch.zhaw.createyourgarden.createyourgarden.model;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -20,7 +21,7 @@ public class Bestellung {
     @Id
     private String id;
     @NonNull
-    private String datum;
+    private LocalDateTime datum;
     @NonNull
     private List<Artikel> artikels;
     @NonNull
