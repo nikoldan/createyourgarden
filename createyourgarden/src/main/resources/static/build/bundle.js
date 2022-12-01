@@ -82,19 +82,11 @@ var app = (function () {
     function children(element) {
         return Array.from(element.childNodes);
     }
-    function select_option(select, value) {
-        for (let i = 0; i < select.options.length; i += 1) {
-            const option = select.options[i];
-            if (option.__value === value) {
-                option.selected = true;
-                return;
-            }
-        }
-        select.selectedIndex = -1; // no option should be selected
+    function set_input_value(input, value) {
+        input.value = value == null ? '' : value;
     }
-    function select_value(select) {
-        const selected_option = select.querySelector(':checked') || select.options[0];
-        return selected_option && selected_option.__value;
+    function toggle_class(element, name, toggle) {
+        element.classList[toggle ? 'add' : 'remove'](name);
     }
     function custom_event(type, detail, { bubbles = false, cancelable = false } = {}) {
         const e = document.createEvent('CustomEvent');
@@ -4891,37 +4883,44 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[1] = list[i];
+    	child_ctx[7] = list[i];
+    	child_ctx[9] = i;
     	return child_ctx;
     }
 
-    // (68:4) {#each artikels as artikel}
-    function create_each_block(ctx) {
+    function get_each_context_1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[5] = list[i];
+    	return child_ctx;
+    }
+
+    // (73:4) {#each artikels as artikel}
+    function create_each_block_1(ctx) {
     	let tr;
     	let td0;
     	let a;
-    	let t0_value = /*artikel*/ ctx[1].id + "";
+    	let t0_value = /*artikel*/ ctx[5].id + "";
     	let t0;
     	let a_href_value;
     	let t1;
     	let td1;
-    	let t2_value = /*artikel*/ ctx[1].name + "";
+    	let t2_value = /*artikel*/ ctx[5].name + "";
     	let t2;
     	let t3;
     	let td2;
-    	let t4_value = /*artikel*/ ctx[1].dname + "";
+    	let t4_value = /*artikel*/ ctx[5].dname + "";
     	let t4;
     	let t5;
     	let td3;
-    	let t6_value = /*artikel*/ ctx[1].standort + "";
+    	let t6_value = /*artikel*/ ctx[5].standort + "";
     	let t6;
     	let t7;
     	let td4;
-    	let t8_value = /*artikel*/ ctx[1].bluetemonat + "";
+    	let t8_value = /*artikel*/ ctx[5].bluetemonat + "";
     	let t8;
     	let t9;
     	let td5;
-    	let t10_value = /*artikel*/ ctx[1].hoehe + "";
+    	let t10_value = /*artikel*/ ctx[5].hoehe + "";
     	let t10;
     	let t11;
 
@@ -4947,15 +4946,15 @@ var app = (function () {
     			td5 = element("td");
     			t10 = text(t10_value);
     			t11 = space();
-    			attr_dev(a, "href", a_href_value = "#/artikel/" + /*artikel*/ ctx[1].id);
-    			add_location(a, file$2, 69, 13, 1616);
-    			add_location(td0, file$2, 69, 8, 1611);
-    			add_location(td1, file$2, 70, 8, 1684);
-    			add_location(td2, file$2, 71, 8, 1717);
-    			add_location(td3, file$2, 72, 8, 1751);
-    			add_location(td4, file$2, 73, 8, 1788);
-    			add_location(td5, file$2, 74, 8, 1828);
-    			add_location(tr, file$2, 68, 6, 1597);
+    			attr_dev(a, "href", a_href_value = "#/artikel/" + /*artikel*/ ctx[5].id);
+    			add_location(a, file$2, 74, 13, 1688);
+    			add_location(td0, file$2, 74, 8, 1683);
+    			add_location(td1, file$2, 75, 8, 1756);
+    			add_location(td2, file$2, 76, 8, 1789);
+    			add_location(td3, file$2, 77, 8, 1823);
+    			add_location(td4, file$2, 78, 8, 1860);
+    			add_location(td5, file$2, 79, 8, 1900);
+    			add_location(tr, file$2, 73, 6, 1669);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -4980,17 +4979,17 @@ var app = (function () {
     			append_dev(tr, t11);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*artikels*/ 1 && t0_value !== (t0_value = /*artikel*/ ctx[1].id + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*artikels*/ 2 && t0_value !== (t0_value = /*artikel*/ ctx[5].id + "")) set_data_dev(t0, t0_value);
 
-    			if (dirty & /*artikels*/ 1 && a_href_value !== (a_href_value = "#/artikel/" + /*artikel*/ ctx[1].id)) {
+    			if (dirty & /*artikels*/ 2 && a_href_value !== (a_href_value = "#/artikel/" + /*artikel*/ ctx[5].id)) {
     				attr_dev(a, "href", a_href_value);
     			}
 
-    			if (dirty & /*artikels*/ 1 && t2_value !== (t2_value = /*artikel*/ ctx[1].name + "")) set_data_dev(t2, t2_value);
-    			if (dirty & /*artikels*/ 1 && t4_value !== (t4_value = /*artikel*/ ctx[1].dname + "")) set_data_dev(t4, t4_value);
-    			if (dirty & /*artikels*/ 1 && t6_value !== (t6_value = /*artikel*/ ctx[1].standort + "")) set_data_dev(t6, t6_value);
-    			if (dirty & /*artikels*/ 1 && t8_value !== (t8_value = /*artikel*/ ctx[1].bluetemonat + "")) set_data_dev(t8, t8_value);
-    			if (dirty & /*artikels*/ 1 && t10_value !== (t10_value = /*artikel*/ ctx[1].hoehe + "")) set_data_dev(t10, t10_value);
+    			if (dirty & /*artikels*/ 2 && t2_value !== (t2_value = /*artikel*/ ctx[5].name + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*artikels*/ 2 && t4_value !== (t4_value = /*artikel*/ ctx[5].dname + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*artikels*/ 2 && t6_value !== (t6_value = /*artikel*/ ctx[5].standort + "")) set_data_dev(t6, t6_value);
+    			if (dirty & /*artikels*/ 2 && t8_value !== (t8_value = /*artikel*/ ctx[5].bluetemonat + "")) set_data_dev(t8, t8_value);
+    			if (dirty & /*artikels*/ 2 && t10_value !== (t10_value = /*artikel*/ ctx[5].hoehe + "")) set_data_dev(t10, t10_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(tr);
@@ -4999,9 +4998,53 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
+    		id: create_each_block_1.name,
+    		type: "each",
+    		source: "(73:4) {#each artikels as artikel}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (88:4) {#each Array(nrOfPages) as _, i}
+    function create_each_block(ctx) {
+    	let li;
+    	let a;
+    	let t0_value = /*i*/ ctx[9] + 1 + "";
+    	let t0;
+    	let t1;
+
+    	const block = {
+    		c: function create() {
+    			li = element("li");
+    			a = element("a");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			attr_dev(a, "class", "page-link");
+    			attr_dev(a, "href", "#/artikel?page=" + (/*i*/ ctx[9] + 1));
+    			toggle_class(a, "active", /*currentPage*/ ctx[3] == /*i*/ ctx[9] + 1);
+    			add_location(a, file$2, 89, 8, 2086);
+    			attr_dev(li, "class", "page-item");
+    			add_location(li, file$2, 88, 6, 2054);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, li, anchor);
+    			append_dev(li, a);
+    			append_dev(a, t0);
+    			append_dev(li, t1);
+    		},
+    		p: noop$1,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(li);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(68:4) {#each artikels as artikel}",
+    		source: "(88:4) {#each Array(nrOfPages) as _, i}",
     		ctx
     	});
 
@@ -5013,37 +5056,46 @@ var app = (function () {
     	let t1;
     	let h3;
     	let t3;
-    	let div2;
+    	let div3;
     	let div0;
     	let label;
     	let t5;
-    	let select;
-    	let option0;
-    	let option1;
-    	let option2;
-    	let t9;
     	let div1;
+    	let input;
+    	let t6;
+    	let div2;
     	let button;
-    	let t11;
+    	let t8;
     	let table;
     	let thead;
     	let tr;
     	let th0;
-    	let t13;
+    	let t10;
     	let th1;
-    	let t15;
+    	let t12;
     	let th2;
-    	let t17;
+    	let t14;
     	let th3;
-    	let t19;
+    	let t16;
     	let th4;
-    	let t21;
+    	let t18;
     	let th5;
-    	let t23;
+    	let t20;
     	let tbody;
+    	let t21;
+    	let nav;
+    	let ul;
     	let mounted;
     	let dispose;
-    	let each_value = /*artikels*/ ctx[0];
+    	let each_value_1 = /*artikels*/ ctx[1];
+    	validate_each_argument(each_value_1);
+    	let each_blocks_1 = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks_1[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+    	}
+
+    	let each_value = Array(/*nrOfPages*/ ctx[0]);
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -5059,94 +5111,92 @@ var app = (function () {
     			h3 = element("h3");
     			h3.textContent = "Hier gibt es eine Übersicht aus unserer vielfälltigen Datenbank";
     			t3 = space();
-    			div2 = element("div");
+    			div3 = element("div");
     			div0 = element("div");
     			label = element("label");
-    			label.textContent = "Standort";
+    			label.textContent = "Standort:";
     			t5 = space();
-    			select = element("select");
-    			option0 = element("option");
-    			option0.textContent = "Sonning";
-    			option1 = element("option");
-    			option1.textContent = "Halbschatten";
-    			option2 = element("option");
-    			option2.textContent = "Schatten";
-    			t9 = space();
     			div1 = element("div");
+    			input = element("input");
+    			t6 = space();
+    			div2 = element("div");
     			button = element("button");
     			button.textContent = "Suchen";
-    			t11 = space();
+    			t8 = space();
     			table = element("table");
     			thead = element("thead");
     			tr = element("tr");
     			th0 = element("th");
     			th0.textContent = "ID";
-    			t13 = space();
+    			t10 = space();
     			th1 = element("th");
     			th1.textContent = "Name";
-    			t15 = space();
+    			t12 = space();
     			th2 = element("th");
     			th2.textContent = "Deutscher Name";
-    			t17 = space();
+    			t14 = space();
     			th3 = element("th");
     			th3.textContent = "Standort";
-    			t19 = space();
+    			t16 = space();
     			th4 = element("th");
     			th4.textContent = "Blütemonat";
-    			t21 = space();
+    			t18 = space();
     			th5 = element("th");
     			th5.textContent = "Höhe";
-    			t23 = space();
+    			t20 = space();
     			tbody = element("tbody");
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].c();
+    			}
+
+    			t21 = space();
+    			nav = element("nav");
+    			ul = element("ul");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			add_location(h1, file$2, 32, 0, 609);
-    			add_location(h3, file$2, 33, 0, 671);
-    			attr_dev(label, "class", "form-label");
-    			attr_dev(label, "for", "type");
-    			add_location(label, file$2, 37, 4, 796);
-    			option0.__value = "Sonning";
-    			option0.value = option0.__value;
-    			add_location(option0, file$2, 44, 4, 963);
-    			option1.__value = "Halbschatten";
-    			option1.value = option1.__value;
-    			add_location(option1, file$2, 45, 4, 1009);
-    			option2.__value = "Schatten";
-    			option2.value = option2.__value;
-    			add_location(option2, file$2, 46, 4, 1065);
-    			attr_dev(select, "class", "form-select");
-    			attr_dev(select, "id", "type");
-    			attr_dev(select, "type", "text");
-    			if (/*artikel*/ ctx[1].standort === void 0) add_render_callback(() => /*select_change_handler*/ ctx[3].call(select));
-    			add_location(select, file$2, 38, 4, 855);
-    			attr_dev(div0, "class", "col");
-    			add_location(div0, file$2, 36, 2, 773);
-    			attr_dev(button, "class", "btn btn-primary");
-    			add_location(button, file$2, 51, 4, 1159);
+    			add_location(h1, file$2, 40, 0, 791);
+    			add_location(h3, file$2, 41, 0, 853);
+    			attr_dev(label, "for", "");
+    			attr_dev(label, "class", "col-form-label");
+    			add_location(label, file$2, 45, 4, 983);
+    			attr_dev(div0, "class", "col-auto");
+    			add_location(div0, file$2, 44, 2, 955);
+    			attr_dev(input, "class", "form-control");
+    			attr_dev(input, "type", "text");
+    			attr_dev(input, "placeholder", "dein Text");
+    			add_location(input, file$2, 48, 4, 1077);
     			attr_dev(div1, "class", "col-3");
-    			add_location(div1, file$2, 50, 2, 1134);
-    			attr_dev(div2, "class", "row my-3");
-    			add_location(div2, file$2, 35, 0, 747);
+    			add_location(div1, file$2, 47, 2, 1052);
+    			attr_dev(button, "class", "btn btn-primary");
+    			add_location(button, file$2, 56, 4, 1231);
+    			attr_dev(div2, "class", "col-3");
+    			add_location(div2, file$2, 55, 2, 1206);
+    			attr_dev(div3, "class", "row my-3");
+    			add_location(div3, file$2, 43, 0, 929);
     			attr_dev(th0, "scope", "col");
-    			add_location(th0, file$2, 58, 6, 1314);
+    			add_location(th0, file$2, 63, 6, 1386);
     			attr_dev(th1, "scope", "col");
-    			add_location(th1, file$2, 59, 6, 1345);
+    			add_location(th1, file$2, 64, 6, 1417);
     			attr_dev(th2, "scope", "col");
-    			add_location(th2, file$2, 60, 6, 1378);
+    			add_location(th2, file$2, 65, 6, 1450);
     			attr_dev(th3, "scope", "col");
-    			add_location(th3, file$2, 61, 6, 1421);
+    			add_location(th3, file$2, 66, 6, 1493);
     			attr_dev(th4, "scope", "col");
-    			add_location(th4, file$2, 62, 6, 1458);
+    			add_location(th4, file$2, 67, 6, 1530);
     			attr_dev(th5, "scope", "col");
-    			add_location(th5, file$2, 63, 6, 1497);
-    			add_location(tr, file$2, 57, 4, 1302);
-    			add_location(thead, file$2, 56, 2, 1289);
-    			add_location(tbody, file$2, 66, 2, 1549);
+    			add_location(th5, file$2, 68, 6, 1569);
+    			add_location(tr, file$2, 62, 4, 1374);
+    			add_location(thead, file$2, 61, 2, 1361);
+    			add_location(tbody, file$2, 71, 2, 1621);
     			attr_dev(table, "class", "table table-striped");
-    			add_location(table, file$2, 55, 0, 1250);
+    			add_location(table, file$2, 60, 0, 1322);
+    			attr_dev(ul, "class", "pagination");
+    			add_location(ul, file$2, 86, 2, 1985);
+    			add_location(nav, file$2, 85, 0, 1976);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5156,56 +5206,86 @@ var app = (function () {
     			insert_dev(target, t1, anchor);
     			insert_dev(target, h3, anchor);
     			insert_dev(target, t3, anchor);
-    			insert_dev(target, div2, anchor);
-    			append_dev(div2, div0);
+    			insert_dev(target, div3, anchor);
+    			append_dev(div3, div0);
     			append_dev(div0, label);
-    			append_dev(div0, t5);
-    			append_dev(div0, select);
-    			append_dev(select, option0);
-    			append_dev(select, option1);
-    			append_dev(select, option2);
-    			select_option(select, /*artikel*/ ctx[1].standort);
-    			append_dev(div2, t9);
-    			append_dev(div2, div1);
-    			append_dev(div1, button);
-    			insert_dev(target, t11, anchor);
+    			append_dev(div3, t5);
+    			append_dev(div3, div1);
+    			append_dev(div1, input);
+    			set_input_value(input, /*wo*/ ctx[2]);
+    			append_dev(div3, t6);
+    			append_dev(div3, div2);
+    			append_dev(div2, button);
+    			insert_dev(target, t8, anchor);
     			insert_dev(target, table, anchor);
     			append_dev(table, thead);
     			append_dev(thead, tr);
     			append_dev(tr, th0);
-    			append_dev(tr, t13);
+    			append_dev(tr, t10);
     			append_dev(tr, th1);
-    			append_dev(tr, t15);
+    			append_dev(tr, t12);
     			append_dev(tr, th2);
-    			append_dev(tr, t17);
+    			append_dev(tr, t14);
     			append_dev(tr, th3);
-    			append_dev(tr, t19);
+    			append_dev(tr, t16);
     			append_dev(tr, th4);
-    			append_dev(tr, t21);
+    			append_dev(tr, t18);
     			append_dev(tr, th5);
-    			append_dev(table, t23);
+    			append_dev(table, t20);
     			append_dev(table, tbody);
 
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].m(tbody, null);
+    			}
+
+    			insert_dev(target, t21, anchor);
+    			insert_dev(target, nav, anchor);
+    			append_dev(nav, ul);
+
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(tbody, null);
+    				each_blocks[i].m(ul, null);
     			}
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(select, "change", /*select_change_handler*/ ctx[3]),
-    					listen_dev(button, "click", /*getArtikel*/ ctx[2], false, false, false)
+    					listen_dev(input, "input", /*input_input_handler*/ ctx[6]),
+    					listen_dev(button, "click", /*getArtikel*/ ctx[4], false, false, false)
     				];
 
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*artikel*/ 2) {
-    				select_option(select, /*artikel*/ ctx[1].standort);
+    			if (dirty & /*wo*/ 4 && input.value !== /*wo*/ ctx[2]) {
+    				set_input_value(input, /*wo*/ ctx[2]);
     			}
 
-    			if (dirty & /*artikels*/ 1) {
-    				each_value = /*artikels*/ ctx[0];
+    			if (dirty & /*artikels*/ 2) {
+    				each_value_1 = /*artikels*/ ctx[1];
+    				validate_each_argument(each_value_1);
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+
+    					if (each_blocks_1[i]) {
+    						each_blocks_1[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks_1[i] = create_each_block_1(child_ctx);
+    						each_blocks_1[i].c();
+    						each_blocks_1[i].m(tbody, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_1.length; i += 1) {
+    					each_blocks_1[i].d(1);
+    				}
+
+    				each_blocks_1.length = each_value_1.length;
+    			}
+
+    			if (dirty & /*currentPage, nrOfPages*/ 9) {
+    				each_value = Array(/*nrOfPages*/ ctx[0]);
     				validate_each_argument(each_value);
     				let i;
 
@@ -5217,7 +5297,7 @@ var app = (function () {
     					} else {
     						each_blocks[i] = create_each_block(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(tbody, null);
+    						each_blocks[i].m(ul, null);
     					}
     				}
 
@@ -5235,9 +5315,12 @@ var app = (function () {
     			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(h3);
     			if (detaching) detach_dev(t3);
-    			if (detaching) detach_dev(div2);
-    			if (detaching) detach_dev(t11);
+    			if (detaching) detach_dev(div3);
+    			if (detaching) detach_dev(t8);
     			if (detaching) detach_dev(table);
+    			destroy_each(each_blocks_1, detaching);
+    			if (detaching) detach_dev(t21);
+    			if (detaching) detach_dev(nav);
     			destroy_each(each_blocks, detaching);
     			mounted = false;
     			run_all(dispose);
@@ -5260,23 +5343,28 @@ var app = (function () {
     function instance$2($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Artikel', slots, []);
+    	let currentPage;
+    	let nrOfPages = 0;
     	let artikels = [];
     	let artikel = {};
-    	let standort;
+    	let wo;
 
     	function getArtikel() {
-    		if (standort) {
-    			query += "&standort=" + standort;
+    		let query = "pageSize=4&page=" + currentPage;
+
+    		if (wo) {
+    			query += "&wo=" + wo;
     		}
 
     		var config = {
     			method: "get",
-    			url: api_root$1 + "/api/artikel",
+    			url: api_root$1 + "/api/artikel" + query,
     			headers: {}
     		};
 
     		axios(config).then(function (response) {
-    			$$invalidate(0, artikels = response.data);
+    			$$invalidate(1, artikels = response.data);
+    			$$invalidate(0, nrOfPages = response.data.totalPages);
     		}).catch(function (error) {
     			alert("Could not get artikels");
     			console.log(error);
@@ -5290,31 +5378,36 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1$1.warn(`<Artikel> was created with unknown prop '${key}'`);
     	});
 
-    	function select_change_handler() {
-    		artikel.standort = select_value(this);
-    		$$invalidate(1, artikel);
+    	function input_input_handler() {
+    		wo = this.value;
+    		$$invalidate(2, wo);
     	}
 
     	$$self.$capture_state = () => ({
     		axios,
+    		querystring,
     		api_root: api_root$1,
+    		currentPage,
+    		nrOfPages,
     		artikels,
     		artikel,
-    		standort,
+    		wo,
     		getArtikel
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ('artikels' in $$props) $$invalidate(0, artikels = $$props.artikels);
-    		if ('artikel' in $$props) $$invalidate(1, artikel = $$props.artikel);
-    		if ('standort' in $$props) standort = $$props.standort;
+    		if ('currentPage' in $$props) $$invalidate(3, currentPage = $$props.currentPage);
+    		if ('nrOfPages' in $$props) $$invalidate(0, nrOfPages = $$props.nrOfPages);
+    		if ('artikels' in $$props) $$invalidate(1, artikels = $$props.artikels);
+    		if ('artikel' in $$props) $$invalidate(5, artikel = $$props.artikel);
+    		if ('wo' in $$props) $$invalidate(2, wo = $$props.wo);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [artikels, artikel, getArtikel, select_change_handler];
+    	return [nrOfPages, artikels, wo, currentPage, getArtikel, artikel, input_input_handler];
     }
 
     class Artikel extends SvelteComponentDev {

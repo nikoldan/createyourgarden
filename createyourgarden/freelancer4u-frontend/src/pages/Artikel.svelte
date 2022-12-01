@@ -1,25 +1,33 @@
 <script>
   import axios from "axios";
+  import { querystring } from "svelte-spa-router";
 
   const api_root = "http://localhost:8080";
 
+  let currentPage;
+  let nrOfPages = 0;
+
+
+
   let artikels = [];
   let artikel = {};
-  let standort;
+  let wo;
 
   function getArtikel() {
-    if (standort) {
-      query += "&standort=" + standort;
+    let query = "pageSize=4&page=" + currentPage;
+    if (wo) {
+      query += "&wo=" + wo;
     }
     var config = {
       method: "get",
-      url: api_root + "/api/artikel",
+      url: api_root + "/api/artikel" + query,
       headers: {},
     };
 
     axios(config)
       .then(function (response) {
         artikels = response.data;
+        nrOfPages = response.data.totalPages;
       })
       .catch(function (error) {
         alert("Could not get artikels");
@@ -34,20 +42,17 @@
 <h3>Hier gibt es eine Übersicht aus unserer vielfälltigen Datenbank</h3>
 
 <div class="row my-3">
-  <div class="col">
-    <label class="form-label" for="type">Standort</label>
-    <select
-    bind:value={artikel.standort}
-    class="form-select"
-    id="type"
-    type="text"
->
-    <option value="Sonning">Sonning</option>
-    <option value="Halbschatten">Halbschatten</option>
-    <option value="Schatten">Schatten</option>
-</select>
+  <div class="col-auto">
+    <label for="" class="col-form-label">Standort: </label>
   </div>
-
+  <div class="col-3">
+    <input
+      class="form-control"
+      type="text"
+      placeholder="dein Text"
+      bind:value={wo}
+    />
+  </div>
   <div class="col-3">
     <button class="btn btn-primary" on:click={getArtikel}>Suchen</button>
   </div>
@@ -77,3 +82,18 @@
     {/each}
   </tbody>
 </table>
+
+<nav>
+  <ul class="pagination">
+    {#each Array(nrOfPages) as _, i}
+      <li class="page-item">
+        <a
+          class="page-link"
+          class:active={currentPage == i + 1}
+          href={"#/artikel?page=" + (i + 1)}
+          >{i + 1}
+        </a>
+      </li>
+    {/each}
+  </ul>
+</nav>
