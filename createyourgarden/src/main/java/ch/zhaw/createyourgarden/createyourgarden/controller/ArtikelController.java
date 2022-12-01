@@ -47,4 +47,5 @@ public class ArtikelController {
         return new ResponseEntity<>(artikelRepository.findByStandort(wo), HttpStatus.OK);
     }
 
+    
 }
