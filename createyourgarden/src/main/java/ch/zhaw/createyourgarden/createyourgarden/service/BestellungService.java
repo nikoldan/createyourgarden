@@ -29,4 +29,19 @@ public class BestellungService {
         return Optional.empty();
     }
 
+    public Optional<Bestellung> bestellungBereit(String bestellungId, String kommentare) {
+        Optional<Bestellung> bBereit = bestellungRepository.findById(bestellungId);
+        if (bBereit.isPresent()) {
+            Bestellung bestellung = bBereit.get();
+            if (bestellung.getBestellungState() == BestellungState.BESTAETIGT) {
+                bestellung.setBestellungState(BestellungState.BEREITGESTELLT);
+                bestellung.setKommentare(kommentare);
+                bestellungRepository.save(bestellung);
+                return Optional.of(bestellung);
+            }
+        }
+        return Optional.empty();
+    }
+
+
 }

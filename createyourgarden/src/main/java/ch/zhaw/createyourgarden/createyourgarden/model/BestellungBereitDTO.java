@@ -7,5 +7,5 @@ import lombok.NoArgsConstructor;
 @Getter
 public class BestellungBereitDTO {
     private String kommentare;
-    private String bestellId;
+    private String bestellungId;
 }
