@@ -6,33 +6,37 @@
 
   let currentPage;
   let nrOfPages = 0;
-
-
+  let stand;
+  $: {
+    let searchParams = new URLSearchParams($querystring);
+    if (searchParams.has("page")) {
+      currentPage = searchParams.get("page");
+    } else {
+      currentPage = "1";
+    }
+    getArtikel();
+  }
 
   let artikels = [];
   let artikel = {};
-  let wo;
 
   function getArtikel() {
-    let query = "pageSize=4&page=" + currentPage;
-    if (wo) {
-      query += "&wo=" + wo;
+    let query = "pageSize=6&page=" + currentPage;
+    if (stand) {
+      query += "&wo=" + stand;
     }
     var config = {
       method: "get",
-      url: api_root + "/api/artikel" + query,
+      url: api_root + "/api/artikel?" + query,
       headers: {},
     };
 
     axios(config)
       .then(function (response) {
-        artikels = response.data;
+        artikels = response.data.content;
         nrOfPages = response.data.totalPages;
       })
-      .catch(function (error) {
-        alert("Could not get artikels");
-        console.log(error);
-      });
+      // .catch gelöscht!
   }
 
   getArtikel();
@@ -49,8 +53,8 @@
     <input
       class="form-control"
       type="text"
-      placeholder="dein Text"
-      bind:value={wo}
+      placeholder="Sonnig"
+      bind:value={stand}
     />
   </div>
   <div class="col-3">
