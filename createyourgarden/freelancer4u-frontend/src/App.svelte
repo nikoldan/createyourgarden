@@ -28,7 +28,7 @@
 						>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#/bestellung">Bestellungen</a>
+						<a class="nav-link" href="#/bestellung">Bestellen</a>
 					</li>
 				</ul>
 			</div>

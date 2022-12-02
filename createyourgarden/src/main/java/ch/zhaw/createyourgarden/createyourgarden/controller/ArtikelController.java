@@ -11,10 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ch.zhaw.createyourgarden.createyourgarden.model.Artikel;
+
 import ch.zhaw.createyourgarden.createyourgarden.repository.ArtikelRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 @RestController
 @RequestMapping("/api/artikel")
@@ -24,9 +28,24 @@ public class ArtikelController {
     ArtikelRepository artikelRepository;
 
     @GetMapping("")
-    public ResponseEntity<List<Artikel>> getAllArtikel() {
-        List<Artikel> allArtikel = artikelRepository.findAll();
-        return new ResponseEntity<>(allArtikel, HttpStatus.OK);
+    public ResponseEntity<Page<Artikel>> getAllArtikel( 
+        @RequestParam(required = false) Integer page,
+        @RequestParam(required = false) Integer pageSize,
+        @RequestParam(required = false) String wo) {
+    if (page == null) {
+        page = 1;
+    }
+    if (pageSize == null) {
+        pageSize = 2;
+    }
+    Page<Artikel> allArtikels;
+    if (wo != null){
+        allArtikels = artikelRepository.findByStandort(wo, PageRequest.of(page - 1, pageSize));
+    } else {
+        allArtikels = artikelRepository.findAll(PageRequest.of(page - 1, pageSize));
+    }
+   //     List<Artikel> allArtikel = artikelRepository.findAll();
+        return new ResponseEntity<>(allArtikels, HttpStatus.OK);
     }
     
     @GetMapping("/{id}")
@@ -39,7 +58,10 @@ public class ArtikelController {
         }
     }
 
-
+    @GetMapping("/standortwahl")
+    public ResponseEntity<List<Artikel>> getArtikelByStandort(@RequestParam String wo) {
+        return new ResponseEntity<>(artikelRepository.findByStandort(wo), HttpStatus.OK);
+    }
 
 
 }
