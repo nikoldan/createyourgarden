@@ -31,7 +31,7 @@ public class BestellungController {
             return new ResponseEntity<>(j, HttpStatus.CREATED);
         }
 
-    @GetMapping("/{id")
+    @GetMapping("/{id}")
     public ResponseEntity<Bestellung> getBestellungById(@PathVariable String id) {
         Optional<Bestellung> optBestellung = bestellungRepository.findById(id);
         if (optBestellung.isPresent()) {
