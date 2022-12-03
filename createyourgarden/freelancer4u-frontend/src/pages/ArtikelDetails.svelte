@@ -54,6 +54,5 @@
 </div>
 
 
-<a target="_blank" class="faa-btn" href="#/artikel">zurück zu den Artikeln</a>
 
 </body>
