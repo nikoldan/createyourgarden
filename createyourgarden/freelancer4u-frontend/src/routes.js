@@ -4,6 +4,7 @@ import Home from "./pages/Home.svelte";
 import Bestellung from "./pages/Bestellung.svelte";
 import Artikel from "./pages/Artikel.svelte";
 import ArtikelDetails from "./pages/ArtikelDetails.svelte"
+import Accounts from "./pages/Account.svelte";
 
 export default {
     '/': Home,
@@ -12,4 +13,5 @@ export default {
     '/artikel/:id': ArtikelDetails,
 
     '/bestellung': Bestellung,
+    '/account': Accounts,
 }
