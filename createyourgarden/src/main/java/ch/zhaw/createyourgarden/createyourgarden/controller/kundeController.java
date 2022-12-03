@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
+
 @RestController
-public class kundeController {
+public class KundeController {
 
     @Autowired
     KundeRepository kundeRepository;
