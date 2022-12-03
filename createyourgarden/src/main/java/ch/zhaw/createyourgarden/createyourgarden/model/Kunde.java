@@ -17,10 +17,10 @@ public class Kunde {
     @Id
     private String id;
     @NonNull
-    private String vorname;
-    @NonNull
     private String name;
     @NonNull
+    private String email;
+    
     private String plzOrt;  
     
      
