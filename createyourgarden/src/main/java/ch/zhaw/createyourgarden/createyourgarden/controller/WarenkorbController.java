@@ -15,8 +15,6 @@ import ch.zhaw.createyourgarden.createyourgarden.model.Warenkorb;
 import ch.zhaw.createyourgarden.createyourgarden.model.WarenkorbDTO;
 import ch.zhaw.createyourgarden.createyourgarden.repository.WarenkorbRepository;
 
-
-
 @RestController
 @RequestMapping("/api/warenkorb")
 public class WarenkorbController {
@@ -25,17 +23,18 @@ public class WarenkorbController {
 
     @PostMapping("")
     public ResponseEntity<Warenkorb> createWarenkorb(
-        @RequestBody WarenkorbDTO aDTO) {
-            Warenkorb aDAO = new Warenkorb(aDTO.getKorb(), aDTO.getKundenId(), aDTO.getGesamtPreis(), aDTO.getAnzahlArtikel());
-            Warenkorb a = warenkorbRepository.save(aDAO);
-            return new ResponseEntity<>(a, HttpStatus.CREATED);
-        }
+            @RequestBody WarenkorbDTO aDTO) {
+        // Warenkorb aDAO = new Warenkorb(aDTO.getKorb(), aDTO.getKundenId(),
+        // aDTO.getGesamtPreis(), aDTO.getAnzahlArtikel());
+        Warenkorb aDAO = new Warenkorb(aDTO.getKundenId(), aDTO.getGesamtPreis(), aDTO.getAnzahlArtikel());
+        Warenkorb a = warenkorbRepository.save(aDAO);
+        return new ResponseEntity<>(a, HttpStatus.CREATED);
+    }
 
     @GetMapping("")
     public ResponseEntity<List<Warenkorb>> getAllWarenkorb() {
         List<Warenkorb> allWarenkorb = warenkorbRepository.findAll();
         return new ResponseEntity<>(allWarenkorb, HttpStatus.OK);
     }
-
 
 }

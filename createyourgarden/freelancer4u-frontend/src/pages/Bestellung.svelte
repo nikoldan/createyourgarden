@@ -1,6 +1,7 @@
 <script>
     import axios from "axios";
     import { querystring } from "svelte-spa-router";
+    import { user } from "../store";
     // TODO: Auth0 hinzufügen: nur für registrierte Benutzer und Admin!
 
     const api_root = "http://localhost:8080";
@@ -37,6 +38,15 @@
             nrOfPages = response.data.totalPages;
         });
         // .catch gelöscht!
+    }
+
+    function artikelHinzufügen() {
+        // create Warenkorb with POST Request
+        var config = {
+            method: "post",
+            url: api_root + "/api/warenkorb?",
+            headers: {},
+        }
     }
 
     getArtikel();
@@ -80,6 +90,7 @@
             <th scope="col">Standort</th>
             <th scope="col">Blütemonat</th>
             <th scope="col">Höhe</th>
+            <th scope="col">Warenkorb hinzufügen</th>
         </tr>
     </thead>
     <tbody>
@@ -91,6 +102,7 @@
                 <td>{artikel.standort}</td>
                 <td>{artikel.bluetemonat}</td>
                 <td>{artikel.hoehe}</td>
+                <td><button type="button" class="btn btn-secondary" on:click={artikelHinzufügen}>Hinzufügen</button></td>
             </tr>
         {/each}
     </tbody>
