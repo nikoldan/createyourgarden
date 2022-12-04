@@ -7,12 +7,13 @@ import org.springframework.data.annotation.Id;
 
 
 public class Warenkorb {
+    @Id
+    private String id;
+    private List<Artikel> korb = new ArrayList<>();
+    private String kundenId;
     private double gesamtPreis = 0;
     private int anzahlArtikel = 0;
-    private List<Artikel> korb = new ArrayList<>();
-    @Id
-    private String id;;
-    private String kundenId;
+
 
     public Warenkorb() {
         
