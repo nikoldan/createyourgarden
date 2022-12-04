@@ -22,8 +22,8 @@
     let artikel = {};
 
     function getArtikel() {
-        let query = "pageSize=6&page=" + currentPage;
-        if (stand) {
+        let query = "pageSize=2&page=" + currentPage;
+        if (stand != "") {
             query += "&wo=" + stand;
         }
         var config = {
@@ -59,6 +59,7 @@
                 id="type"
                 type="text"
             >
+                <option value=""></option>
                 <option value="Sonnig">Sonnig</option>
                 <option value="Halbschatten">Halbschatten</option>
                 <option value="Schatten">Schatten</option>
@@ -102,7 +103,7 @@
                 <a
                     class="page-link"
                     class:active={currentPage == i + 1}
-                    href={"#/artikel?page=" + (i + 1)}
+                    href={"#/bestellung?page=" + (i + 1)}
                     >{i + 1}
                 </a>
             </li>
