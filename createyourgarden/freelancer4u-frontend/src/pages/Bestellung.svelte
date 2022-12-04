@@ -23,7 +23,7 @@
 
     function getArtikel() {
         let query = "pageSize=2&page=" + currentPage;
-        if (stand != "") {
+        if ((stand != "empty") && (stand != null) && (stand != "")) {
             query += "&wo=" + stand;
         }
         var config = {
@@ -59,7 +59,7 @@
                 id="type"
                 type="text"
             >
-                <option value=""></option>
+                <option value="empty"></option>
                 <option value="Sonnig">Sonnig</option>
                 <option value="Halbschatten">Halbschatten</option>
                 <option value="Schatten">Schatten</option>
