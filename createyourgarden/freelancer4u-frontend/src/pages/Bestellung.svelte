@@ -22,6 +22,8 @@
     let artikels = [];
     let artikel = {};
 
+    let warenkorbArtikel = [];
+
     function getArtikel() {
         let query = "pageSize=2&page=" + currentPage;
         if ((stand != "empty") && (stand != null) && (stand != "")) {
@@ -44,7 +46,7 @@
         // create Warenkorb with POST Request
         var config = {
             method: "post",
-            url: api_root + "/api/warenkorb?",
+            url: api_root + "/api/warenkorb",
             headers: {},
         }
     }
@@ -95,6 +97,7 @@
     </thead>
     <tbody>
         {#each artikels as artikel}
+
             <tr>
                 <td> <a href={"#/artikel/" + artikel.id}> {artikel.id}</a></td>
                 <td>{artikel.name}</td>
@@ -102,12 +105,13 @@
                 <td>{artikel.standort}</td>
                 <td>{artikel.bluetemonat}</td>
                 <td>{artikel.hoehe}</td>
-                <td><button type="button" class="btn btn-secondary" on:click={artikelHinzufügen}>Hinzufügen</button></td>
+                <td><button type="button" class="btn btn-secondary" value="{artikel.id}" on:click={artikelHinzufügen}>Hinzufügen</button></td>
             </tr>
+
         {/each}
     </tbody>
 </table>
-
+<!-- <input type=hidden bind:value={artikel.id}/> //--> 
 <nav>
     <ul class="pagination">
         {#each Array(nrOfPages) as _, i}

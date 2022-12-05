@@ -23,7 +23,7 @@ public class Warenkorb {
     private int gesamtPreis = 0;
     private int anzahlArtikel = 0;
 
- //   private List<Artikel> korb = new ArrayList<>();
+    private List<Artikel> korb = new ArrayList<>();
 
     /* 
     public Warenkorb(List<Artikel> korb, String kundenId, double gesamtPreis, int anzahlArtikel) {
@@ -39,7 +39,7 @@ public class Warenkorb {
         this.anzahlArtikel = anzahlArtikel;
     }
     
-
+*/
     public void addArtikel(Artikel artikel) {
         this.korb.add(artikel);
         anzahlArtikel++;
@@ -58,5 +58,5 @@ public class Warenkorb {
     public List<Artikel> getKorb() {
         return korb;
     }
-*/
+
 }
