@@ -38,4 +38,5 @@ public class WarenkorbController {
         return new ResponseEntity<>(allWarenkorb, HttpStatus.OK);
     }
 
+    
 }
