@@ -6,18 +6,26 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
+@NoArgsConstructor
+@RequiredArgsConstructor
 @Getter
 @Document("warenkorb")
 public class Warenkorb {
     @Id
     private String id;
-
+    @NonNull
     private String kundenId;
-    private double gesamtPreis = 0;
+    
+    private int gesamtPreis = 0;
     private int anzahlArtikel = 0;
-    private List<Artikel> korb = new ArrayList<>();
 
+ //   private List<Artikel> korb = new ArrayList<>();
+
+    /* 
     public Warenkorb(List<Artikel> korb, String kundenId, double gesamtPreis, int anzahlArtikel) {
         this.korb = korb;
         this.kundenId = kundenId;
@@ -30,6 +38,7 @@ public class Warenkorb {
         this.gesamtPreis = gesamtPreis;
         this.anzahlArtikel = anzahlArtikel;
     }
+    
 
     public void addArtikel(Artikel artikel) {
         this.korb.add(artikel);
@@ -45,8 +54,9 @@ public class Warenkorb {
         }
     }
 
+
     public List<Artikel> getKorb() {
         return korb;
     }
-
+*/
 }

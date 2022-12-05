@@ -19,7 +19,7 @@ public class KundeController {
     @Autowired
     KundeRepository kundeRepository;
 
-    @PostMapping("/kunde")
+    @PostMapping("/api/kunde")
     public ResponseEntity<Kunde> createKunde(@RequestBody KundeCreateDTO xDTO) {
         Kunde xDAO = new Kunde(xDTO.getName(), xDTO.getEmail());
         Kunde x = kundeRepository.save(xDAO);
