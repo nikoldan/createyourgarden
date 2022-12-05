@@ -2,6 +2,7 @@
     import axios from "axios";
     import { querystring } from "svelte-spa-router";
     import { user } from "../store";
+    import { jwt_token} from "../store"; 
     // TODO: Auth0 hinzufügen: nur für registrierte Benutzer und Admin!
 
     const api_root = "http://localhost:8080";
@@ -23,6 +24,7 @@
     let artikel = {};
 
     let warenkorbArtikel = [];
+    let kundenId = $user.name;
 
     function getArtikel() {
         let query = "pageSize=2&page=" + currentPage;
@@ -41,17 +43,46 @@
         });
         // .catch gelöscht!
     }
-
-    function artikelHinzufügen() {
+/*
+    function artikelWarenkorbHinzufügen() {
         // create Warenkorb with POST Request
-        var config = {
+        axios.post(api_root + "/api/warenkorb", new URLSearchParams({
+            kundenId: 'steeeestID'
+        }), {
+            headers: {Authorization: "Bearer "+$jwt_token}
+        })
+        .then((response) => {
+                window.location = "#/home";
+            })
+            .catch((error) => {
+                console.log(error);
+                alert(error);
+            });
+    }
+*/
+
+function artikelWarenkorbHinzufügen() {
+    var config = {
             method: "post",
             url: api_root + "/api/warenkorb",
-            headers: {},
-        }
+            data: {
+                kundenId: kundenId
+            },
+            headers: {Authorization: "Bearer "+$jwt_token}
+        };
+}
+
+
+    const artikelHinzufügen = (artikels) => {
+        warenkorbArtikel = [...warenkorbArtikel, artikels]
+        
     }
 
     getArtikel();
+  //  artikelWarenkorbHinzufügen()
+
+
+
 </script>
 
 <h1>Hier kannst du deine Bestellung aufgeben</h1>
@@ -59,6 +90,7 @@
     Für eine bessere Übersicht, filtere nach dem gewünschten Standort - viel
     Spass :-)
 </h3>
+<h2>{kundenId}</h2>
 
 <form class="mb-5">
     <div class="row mb-3" />
@@ -105,12 +137,13 @@
                 <td>{artikel.standort}</td>
                 <td>{artikel.bluetemonat}</td>
                 <td>{artikel.hoehe}</td>
-                <td><button type="button" class="btn btn-secondary" value="{artikel.id}" on:click={artikelHinzufügen}>Hinzufügen</button></td>
+                <td><button type="button" class="btn btn-secondary" on:click={() => artikelHinzufügen(artikels)}>Hinzufügen</button></td>
             </tr>
 
         {/each}
     </tbody>
 </table>
+
 <!-- <input type=hidden bind:value={artikel.id}/> //--> 
 <nav>
     <ul class="pagination">
@@ -128,3 +161,6 @@
 </nav>
 
 <div>Text Bestellungen</div>
+<button type="button" class="btn btn-success" on:click={artikelWarenkorbHinzufügen}>Warenkorb</button>
+
+{JSON.stringify(warenkorbArtikel)}

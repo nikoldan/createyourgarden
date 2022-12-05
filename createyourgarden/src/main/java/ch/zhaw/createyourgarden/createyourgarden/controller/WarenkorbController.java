@@ -28,7 +28,7 @@ public class WarenkorbController {
     @PostMapping("")
     public ResponseEntity<Warenkorb> createWarenkorb(
             @RequestBody WarenkorbDTO aDTO) {
-        Warenkorb aDAO = new Warenkorb(aDTO.getKundenId());
+        Warenkorb aDAO = new Warenkorb(aDTO.getKundenId(), aDTO.getGesamtPreis(), aDTO.getAnzahlArtikel(), aDTO.getKorb());
         Warenkorb a = warenkorbRepository.save(aDAO);
         return new ResponseEntity<>(a, HttpStatus.CREATED);
     }
