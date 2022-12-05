@@ -20,11 +20,15 @@
         getArtikel();
     }
 
+    const testliste = ["Saab", "Volvo", "BMW"];
+    
     let artikels = [];
     let artikel = {};
 
     let warenkorbArtikel = [];
     let kundenId = $user.name;
+    let anzahlArtikel = 0;
+    let gesamtPreis = 0;
 
     function getArtikel() {
         let query = "pageSize=2&page=" + currentPage;
@@ -43,23 +47,6 @@
         });
         // .catch gelöscht!
     }
-/*
-    function artikelWarenkorbHinzufügen() {
-        // create Warenkorb with POST Request
-        axios.post(api_root + "/api/warenkorb", new URLSearchParams({
-            kundenId: 'steeeestID'
-        }), {
-            headers: {Authorization: "Bearer "+$jwt_token}
-        })
-        .then((response) => {
-                window.location = "#/home";
-            })
-            .catch((error) => {
-                console.log(error);
-                alert(error);
-            });
-    }
-*/
 
 function artikelWarenkorbHinzufügen() {
     var config = {
@@ -75,22 +62,20 @@ function artikelWarenkorbHinzufügen() {
 
     const artikelHinzufügen = (artikels) => {
         warenkorbArtikel = [...warenkorbArtikel, artikels]
-        
+        anzahlArtikel ++;
+        gesamtPreis += 8;
     }
 
     getArtikel();
   //  artikelWarenkorbHinzufügen()
 
-
-
 </script>
 
 <h1>Hier kannst du deine Bestellung aufgeben</h1>
-<h3>
-    Für eine bessere Übersicht, filtere nach dem gewünschten Standort - viel
-    Spass :-)
-</h3>
-<h2>{kundenId}</h2>
+<h3>Testliste: {testliste}</h3>
+<h2>kundenId: {kundenId}</h2>
+<h2>Gesamtpreis: {gesamtPreis}</h2>
+<h2>Anzahl Artikel: {anzahlArtikel}</h2>
 
 <form class="mb-5">
     <div class="row mb-3" />
