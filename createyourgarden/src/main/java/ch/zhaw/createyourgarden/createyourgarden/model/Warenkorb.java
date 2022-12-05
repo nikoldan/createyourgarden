@@ -45,6 +45,7 @@ public class Warenkorb {
         }
     }
 
+    
     public List<Artikel> getKorb() {
         return korb;
     }
