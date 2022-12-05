@@ -18,6 +18,7 @@ import ch.zhaw.createyourgarden.createyourgarden.repository.WarenkorbRepository;
 @RestController
 @RequestMapping("/api/warenkorb")
 public class WarenkorbController {
+
     @Autowired
     WarenkorbRepository warenkorbRepository;
 
@@ -26,7 +27,7 @@ public class WarenkorbController {
             @RequestBody WarenkorbDTO aDTO) {
         // Warenkorb aDAO = new Warenkorb(aDTO.getKorb(), aDTO.getKundenId(),
         // aDTO.getGesamtPreis(), aDTO.getAnzahlArtikel());
-        Warenkorb aDAO = new Warenkorb(aDTO.getKundenId(), aDTO.getGesamtPreis(), aDTO.getAnzahlArtikel());
+        Warenkorb aDAO = new Warenkorb(aDTO.getKundenId());
         Warenkorb a = warenkorbRepository.save(aDAO);
         return new ResponseEntity<>(a, HttpStatus.CREATED);
     }

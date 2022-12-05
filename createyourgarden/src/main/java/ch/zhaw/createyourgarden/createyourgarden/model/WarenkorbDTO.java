@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Getter
 public class WarenkorbDTO {
     private String kundenId;
-    private double gesamtPreis;
-    private int anzahlArtikel;
+ //   private double gesamtPreis;
+  //  private int anzahlArtikel;
    //   private List<Artikel> korb; 
 }
