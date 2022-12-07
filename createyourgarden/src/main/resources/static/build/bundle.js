@@ -1734,24 +1734,40 @@ var app = (function () {
 
     function create_fragment$6(ctx) {
     	let h1;
+    	let t1;
+    	let body;
+    	let img;
+    	let img_src_value;
 
     	const block = {
     		c: function create() {
     			h1 = element("h1");
     			h1.textContent = "Welcome to Create Your Garden";
+    			t1 = space();
+    			body = element("body");
+    			img = element("img");
     			add_location(h1, file$6, 0, 0, 0);
+    			if (!src_url_equal(img.src, img_src_value = "images/naturnah_home.jpg")) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", "naturnah");
+    			add_location(img, file$6, 4, 0, 52);
+    			add_location(body, file$6, 1, 0, 40);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, body, anchor);
+    			append_dev(body, img);
     		},
     		p: noop$1,
     		i: noop$1,
     		o: noop$1,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(h1);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(body);
     		}
     	};
 
