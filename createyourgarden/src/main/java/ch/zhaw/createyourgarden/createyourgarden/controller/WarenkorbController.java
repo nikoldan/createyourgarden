@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,7 +27,7 @@ public class WarenkorbController {
     @PostMapping("")
     public ResponseEntity<Warenkorb> createWarenkorb(
             @RequestBody WarenkorbDTO aDTO) {
-        Warenkorb aDAO = new Warenkorb(aDTO.getKundenId(), aDTO.getGesamtPreis(), aDTO.getAnzahlArtikel(), aDTO.getKorb());
+        Warenkorb aDAO = new Warenkorb(aDTO.getKorb());
         Warenkorb a = warenkorbRepository.save(aDAO);
         return new ResponseEntity<>(a, HttpStatus.CREATED);
     }

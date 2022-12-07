@@ -2,7 +2,7 @@
     import axios from "axios";
     import { querystring } from "svelte-spa-router";
     import { user } from "../store";
-    import { jwt_token} from "../store"; 
+    import { jwt_token } from "../store";
     // TODO: Auth0 hinzufügen: nur für registrierte Benutzer und Admin!
 
     const api_root = "http://localhost:8080";
@@ -20,21 +20,37 @@
         getArtikel();
     }
 
-    const testliste = ["Saab", "Volvo", "BMW"];
-    
     let artikels = [];
     let artikel = {};
 
-    let warenkorbArtikel = [];
-    let kundenId = $user.name;
-    let anzahlArtikel = 0;
-    let gesamtPreis = 0;
+/* 
 
+    let warenkorb = {
+    korb: [
+        {
+            id: "8888",
+            name: "mitPostman",
+            beschreibung: "bescheeee",
+            preis: 4,
+            standort: "Sonnig",
+            bluetemonat: 2,
+            hoehe: 33,
+            dname: "dmiiii",
+        },
+    ]};
+
+    let korb = [];
+*/
+
+    let warenkorb = {
+        korb: [],
+    }
     function getArtikel() {
         let query = "pageSize=2&page=" + currentPage;
-        if ((stand != "empty") && (stand != null) && (stand != "")) {
+        if (stand != "empty" && stand != null && stand != "") {
             query += "&wo=" + stand;
         }
+
         var config = {
             method: "get",
             url: api_root + "/api/artikel?" + query,
@@ -48,34 +64,42 @@
         // .catch gelöscht!
     }
 
-function artikelWarenkorbHinzufügen() {
-    var config = {
+    function artikelWarenkorbHinzufügen() {
+        var config = {
             method: "post",
             url: api_root + "/api/warenkorb",
-            data: {
-                kundenId: kundenId
+            headers: {
+                Authorization: "Bearer " + $jwt_token,
+                "Content-Type": "application/json",
             },
-            headers: {Authorization: "Bearer "+$jwt_token}
+            data: warenkorb,
         };
-}
 
-
-    const artikelHinzufügen = (artikels) => {
-        warenkorbArtikel = [...warenkorbArtikel, artikels]
-        anzahlArtikel ++;
-        gesamtPreis += 8;
+        axios(config)
+            .then(function (response) {
+                alert("in Warenkorb hinzugefügt");
+            })
+            .catch(function (error) {
+                alert("Hat leider nicht funktioniert");
+                console.log(error);
+            });
     }
+    const artikelHinzufügen = (artikels) => {
+      warenkorb.korb.push(artikels);
+    };
 
     getArtikel();
-  //  artikelWarenkorbHinzufügen()
 
+  
 </script>
 
 <h1>Hier kannst du deine Bestellung aufgeben</h1>
-<h3>Testliste: {testliste}</h3>
-<h2>kundenId: {kundenId}</h2>
-<h2>Gesamtpreis: {gesamtPreis}</h2>
-<h2>Anzahl Artikel: {anzahlArtikel}</h2>
+
+<button
+    type="button"
+    class="btn btn-primary"
+    on:click={artikelWarenkorbHinzufügen}>Bestellen</button
+>
 
 <form class="mb-5">
     <div class="row mb-3" />
@@ -88,7 +112,7 @@ function artikelWarenkorbHinzufügen() {
                 id="type"
                 type="text"
             >
-                <option value="empty"></option>
+                <option value="empty" />
                 <option value="Sonnig">Sonnig</option>
                 <option value="Halbschatten">Halbschatten</option>
                 <option value="Schatten">Schatten</option>
@@ -114,7 +138,6 @@ function artikelWarenkorbHinzufügen() {
     </thead>
     <tbody>
         {#each artikels as artikel}
-
             <tr>
                 <td> <a href={"#/artikel/" + artikel.id}> {artikel.id}</a></td>
                 <td>{artikel.name}</td>
@@ -122,14 +145,19 @@ function artikelWarenkorbHinzufügen() {
                 <td>{artikel.standort}</td>
                 <td>{artikel.bluetemonat}</td>
                 <td>{artikel.hoehe}</td>
-                <td><button type="button" class="btn btn-secondary" on:click={() => artikelHinzufügen(artikels)}>Hinzufügen</button></td>
+                <td
+                    ><button
+                        type="button"
+                        class="btn btn-secondary"
+                        on:click={() => artikelHinzufügen(artikel)}
+                        >Hinzufügen</button
+                    ></td
+                >
             </tr>
-
         {/each}
     </tbody>
 </table>
 
-<!-- <input type=hidden bind:value={artikel.id}/> //--> 
 <nav>
     <ul class="pagination">
         {#each Array(nrOfPages) as _, i}
@@ -145,7 +173,10 @@ function artikelWarenkorbHinzufügen() {
     </ul>
 </nav>
 
-<div>Text Bestellungen</div>
-<button type="button" class="btn btn-success" on:click={artikelWarenkorbHinzufügen}>Warenkorb</button>
 
-{JSON.stringify(warenkorbArtikel)}
+<button
+    type="button"
+    class="btn btn-success"
+    on:click={artikelWarenkorbHinzufügen}>Warenkorb</button
+>
+
