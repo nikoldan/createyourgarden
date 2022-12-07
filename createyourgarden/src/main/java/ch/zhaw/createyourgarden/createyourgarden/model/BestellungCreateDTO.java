@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class BestellungCreateDTO {
     private String wunschDatum;
     private String vornameName;
+    private double gesamtPreis;
     private List<Artikel> artikels;
 
 }

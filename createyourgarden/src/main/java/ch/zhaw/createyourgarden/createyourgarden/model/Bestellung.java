@@ -19,15 +19,19 @@ public class Bestellung {
     
     private String wunschDatum;
     private String vornameName;
+    private double gesamtPreis;
     private List<Artikel> artikels;
     
     private BestellungState bestellungState = BestellungState.NEU;
 
-    public Bestellung(String wunschDatum, String vornameName, List<Artikel> artikels) {
+    public Bestellung(String wunschDatum, String vornameName, double gesamtPreis, List<Artikel> artikels) {
         this.wunschDatum = wunschDatum;
         this.vornameName = vornameName;
+        this.gesamtPreis = gesamtPreis;
         this.artikels = artikels;
     }
+
+
 
 
 
