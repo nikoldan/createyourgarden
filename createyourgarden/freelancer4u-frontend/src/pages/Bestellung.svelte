@@ -2,6 +2,7 @@
     import axios from "axios";
     import { querystring } from "svelte-spa-router";
     import { user } from "../store";
+    import { jwt_token } from "../store";
     // TODO: Auth0 hinzufügen: nur für registrierte Benutzer und Admin!
 
     const api_root = "http://localhost:8080";
@@ -22,11 +23,34 @@
     let artikels = [];
     let artikel = {};
 
+/* 
+
+    let warenkorb = {
+    korb: [
+        {
+            id: "8888",
+            name: "mitPostman",
+            beschreibung: "bescheeee",
+            preis: 4,
+            standort: "Sonnig",
+            bluetemonat: 2,
+            hoehe: 33,
+            dname: "dmiiii",
+        },
+    ]};
+
+    let korb = [];
+*/
+
+    let warenkorb = {
+        korb: [],
+    }
     function getArtikel() {
         let query = "pageSize=2&page=" + currentPage;
-        if ((stand != "empty") && (stand != null) && (stand != "")) {
+        if (stand != "empty" && stand != null && stand != "") {
             query += "&wo=" + stand;
         }
+
         var config = {
             method: "get",
             url: api_root + "/api/artikel?" + query,
@@ -40,23 +64,42 @@
         // .catch gelöscht!
     }
 
-    function artikelHinzufügen() {
-        // create Warenkorb with POST Request
+    function artikelWarenkorbHinzufügen() {
         var config = {
             method: "post",
-            url: api_root + "/api/warenkorb?",
-            headers: {},
-        }
+            url: api_root + "/api/warenkorb",
+            headers: {
+                Authorization: "Bearer " + $jwt_token,
+                "Content-Type": "application/json",
+            },
+            data: warenkorb,
+        };
+
+        axios(config)
+            .then(function (response) {
+                alert("in Warenkorb hinzugefügt");
+            })
+            .catch(function (error) {
+                alert("Hat leider nicht funktioniert");
+                console.log(error);
+            });
     }
+    const artikelHinzufügen = (artikels) => {
+      warenkorb.korb.push(artikels);
+    };
 
     getArtikel();
+
+  
 </script>
 
 <h1>Hier kannst du deine Bestellung aufgeben</h1>
-<h3>
-    Für eine bessere Übersicht, filtere nach dem gewünschten Standort - viel
-    Spass :-)
-</h3>
+
+<button
+    type="button"
+    class="btn btn-primary"
+    on:click={artikelWarenkorbHinzufügen}>Bestellen</button
+>
 
 <form class="mb-5">
     <div class="row mb-3" />
@@ -69,7 +112,7 @@
                 id="type"
                 type="text"
             >
-                <option value="empty"></option>
+                <option value="empty" />
                 <option value="Sonnig">Sonnig</option>
                 <option value="Halbschatten">Halbschatten</option>
                 <option value="Schatten">Schatten</option>
@@ -102,7 +145,14 @@
                 <td>{artikel.standort}</td>
                 <td>{artikel.bluetemonat}</td>
                 <td>{artikel.hoehe}</td>
-                <td><button type="button" class="btn btn-secondary" on:click={artikelHinzufügen}>Hinzufügen</button></td>
+                <td
+                    ><button
+                        type="button"
+                        class="btn btn-secondary"
+                        on:click={() => artikelHinzufügen(artikel)}
+                        >Hinzufügen</button
+                    ></td
+                >
             </tr>
         {/each}
     </tbody>
@@ -123,4 +173,10 @@
     </ul>
 </nav>
 
-<div>Text Bestellungen</div>
+
+<button
+    type="button"
+    class="btn btn-success"
+    on:click={artikelWarenkorbHinzufügen}>Warenkorb</button
+>
+

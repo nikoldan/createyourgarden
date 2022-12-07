@@ -9,4 +9,5 @@ import ch.zhaw.createyourgarden.createyourgarden.model.Kunde;
 
 public interface KundeRepository extends MongoRepository<Kunde, String>{
     List<Kunde> findByEmail(String email);
+    
 }

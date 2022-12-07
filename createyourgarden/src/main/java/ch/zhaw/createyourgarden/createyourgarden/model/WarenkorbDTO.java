@@ -1,13 +1,15 @@
 package ch.zhaw.createyourgarden.createyourgarden.model;
 
+import java.util.List;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
 @Getter
+@Setter
 public class WarenkorbDTO {
-    private String kundenId;
- //   private double gesamtPreis;
-  //  private int anzahlArtikel;
-   //   private List<Artikel> korb; 
+
+    private List<Warenkorb> korb;
 }

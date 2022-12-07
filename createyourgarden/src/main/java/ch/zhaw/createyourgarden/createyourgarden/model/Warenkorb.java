@@ -7,25 +7,32 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
-@NoArgsConstructor
-@RequiredArgsConstructor
+
 @Getter
+@Setter
 @Document("warenkorb")
 public class Warenkorb {
     @Id
     private String id;
-    @NonNull
-    private String kundenId;
+
+    private List<Warenkorb> korb = new ArrayList<>();
+
+    public Warenkorb(List<Warenkorb> korb) {
+        this.korb = korb;
+    }
+
     
-    private int gesamtPreis = 0;
-    private int anzahlArtikel = 0;
+/*
+    public Warenkorb(String kundenId, Double gesamtPreis, Double anzahlArtikel, List<Artikel> korb) {
+        this.kundenId = kundenId;
+        this.gesamtPreis = gesamtPreis;
+        this.anzahlArtikel = anzahlArtikel;
+        this.korb = korb;
+    }
 
- //   private List<Artikel> korb = new ArrayList<>();
-
-    /* 
+     
     public Warenkorb(List<Artikel> korb, String kundenId, double gesamtPreis, int anzahlArtikel) {
         this.korb = korb;
         this.kundenId = kundenId;
