@@ -1,5 +1,5 @@
 
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35731/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 var app = (function () {
     'use strict';
 
@@ -4852,38 +4852,32 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (140:8) {#each artikels as artikel}
+    // (139:8) {#each artikels as artikel}
     function create_each_block_1$1(ctx) {
     	let tr;
     	let td0;
-    	let a;
-    	let t0_value = /*artikel*/ ctx[7].id + "";
+    	let t0_value = /*artikel*/ ctx[7].name + "";
     	let t0;
-    	let a_href_value;
     	let t1;
     	let td1;
-    	let t2_value = /*artikel*/ ctx[7].name + "";
+    	let t2_value = /*artikel*/ ctx[7].dname + "";
     	let t2;
     	let t3;
     	let td2;
-    	let t4_value = /*artikel*/ ctx[7].dname + "";
+    	let t4_value = /*artikel*/ ctx[7].standort + "";
     	let t4;
     	let t5;
     	let td3;
-    	let t6_value = /*artikel*/ ctx[7].standort + "";
+    	let t6_value = /*artikel*/ ctx[7].bluetemonat + "";
     	let t6;
     	let t7;
     	let td4;
-    	let t8_value = /*artikel*/ ctx[7].bluetemonat + "";
+    	let t8_value = /*artikel*/ ctx[7].hoehe + "";
     	let t8;
     	let t9;
     	let td5;
-    	let t10_value = /*artikel*/ ctx[7].hoehe + "";
-    	let t10;
-    	let t11;
-    	let td6;
     	let button;
-    	let t13;
+    	let t11;
     	let mounted;
     	let dispose;
 
@@ -4895,7 +4889,6 @@ var app = (function () {
     		c: function create() {
     			tr = element("tr");
     			td0 = element("td");
-    			a = element("a");
     			t0 = text(t0_value);
     			t1 = space();
     			td1 = element("td");
@@ -4911,31 +4904,24 @@ var app = (function () {
     			t8 = text(t8_value);
     			t9 = space();
     			td5 = element("td");
-    			t10 = text(t10_value);
-    			t11 = space();
-    			td6 = element("td");
     			button = element("button");
     			button.textContent = "Hinzufügen";
-    			t13 = space();
-    			attr_dev(a, "href", a_href_value = "#/artikel/" + /*artikel*/ ctx[7].id);
-    			add_location(a, file$5, 141, 21, 3762);
-    			add_location(td0, file$5, 141, 16, 3757);
-    			add_location(td1, file$5, 142, 16, 3838);
-    			add_location(td2, file$5, 143, 16, 3879);
-    			add_location(td3, file$5, 144, 16, 3921);
-    			add_location(td4, file$5, 145, 16, 3966);
-    			add_location(td5, file$5, 146, 16, 4014);
+    			t11 = space();
+    			add_location(td0, file$5, 140, 16, 3720);
+    			add_location(td1, file$5, 141, 16, 3761);
+    			add_location(td2, file$5, 142, 16, 3803);
+    			add_location(td3, file$5, 143, 16, 3848);
+    			add_location(td4, file$5, 144, 16, 3896);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn btn-secondary");
-    			add_location(button, file$5, 148, 21, 4082);
-    			add_location(td6, file$5, 147, 16, 4056);
-    			add_location(tr, file$5, 140, 12, 3735);
+    			add_location(button, file$5, 146, 21, 3964);
+    			add_location(td5, file$5, 145, 16, 3938);
+    			add_location(tr, file$5, 139, 12, 3698);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
     			append_dev(tr, td0);
-    			append_dev(td0, a);
-    			append_dev(a, t0);
+    			append_dev(td0, t0);
     			append_dev(tr, t1);
     			append_dev(tr, td1);
     			append_dev(td1, t2);
@@ -4950,11 +4936,8 @@ var app = (function () {
     			append_dev(td4, t8);
     			append_dev(tr, t9);
     			append_dev(tr, td5);
-    			append_dev(td5, t10);
+    			append_dev(td5, button);
     			append_dev(tr, t11);
-    			append_dev(tr, td6);
-    			append_dev(td6, button);
-    			append_dev(tr, t13);
 
     			if (!mounted) {
     				dispose = listen_dev(button, "click", click_handler, false, false, false);
@@ -4963,17 +4946,11 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*artikels*/ 8 && t0_value !== (t0_value = /*artikel*/ ctx[7].id + "")) set_data_dev(t0, t0_value);
-
-    			if (dirty & /*artikels*/ 8 && a_href_value !== (a_href_value = "#/artikel/" + /*artikel*/ ctx[7].id)) {
-    				attr_dev(a, "href", a_href_value);
-    			}
-
-    			if (dirty & /*artikels*/ 8 && t2_value !== (t2_value = /*artikel*/ ctx[7].name + "")) set_data_dev(t2, t2_value);
-    			if (dirty & /*artikels*/ 8 && t4_value !== (t4_value = /*artikel*/ ctx[7].dname + "")) set_data_dev(t4, t4_value);
-    			if (dirty & /*artikels*/ 8 && t6_value !== (t6_value = /*artikel*/ ctx[7].standort + "")) set_data_dev(t6, t6_value);
-    			if (dirty & /*artikels*/ 8 && t8_value !== (t8_value = /*artikel*/ ctx[7].bluetemonat + "")) set_data_dev(t8, t8_value);
-    			if (dirty & /*artikels*/ 8 && t10_value !== (t10_value = /*artikel*/ ctx[7].hoehe + "")) set_data_dev(t10, t10_value);
+    			if (dirty & /*artikels*/ 8 && t0_value !== (t0_value = /*artikel*/ ctx[7].name + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*artikels*/ 8 && t2_value !== (t2_value = /*artikel*/ ctx[7].dname + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*artikels*/ 8 && t4_value !== (t4_value = /*artikel*/ ctx[7].standort + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*artikels*/ 8 && t6_value !== (t6_value = /*artikel*/ ctx[7].bluetemonat + "")) set_data_dev(t6, t6_value);
+    			if (dirty & /*artikels*/ 8 && t8_value !== (t8_value = /*artikel*/ ctx[7].hoehe + "")) set_data_dev(t8, t8_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(tr);
@@ -4986,14 +4963,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(140:8) {#each artikels as artikel}",
+    		source: "(139:8) {#each artikels as artikel}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (163:8) {#each Array(nrOfPages) as _, i}
+    // (161:8) {#each Array(nrOfPages) as _, i}
     function create_each_block$2(ctx) {
     	let li;
     	let a;
@@ -5010,9 +4987,9 @@ var app = (function () {
     			attr_dev(a, "class", "page-link");
     			attr_dev(a, "href", "#/bestellung?page=" + (/*i*/ ctx[15] + 1));
     			toggle_class(a, "active", /*currentPage*/ ctx[0] == /*i*/ ctx[15] + 1);
-    			add_location(a, file$5, 164, 16, 4533);
+    			add_location(a, file$5, 162, 16, 4415);
     			attr_dev(li, "class", "page-item");
-    			add_location(li, file$5, 163, 12, 4493);
+    			add_location(li, file$5, 161, 12, 4375);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -5034,7 +5011,7 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(163:8) {#each Array(nrOfPages) as _, i}",
+    		source: "(161:8) {#each Array(nrOfPages) as _, i}",
     		ctx
     	});
 
@@ -5076,13 +5053,11 @@ var app = (function () {
     	let t22;
     	let th5;
     	let t24;
-    	let th6;
-    	let t26;
     	let tbody;
-    	let t27;
+    	let t25;
     	let nav;
     	let ul;
-    	let t28;
+    	let t26;
     	let button2;
     	let mounted;
     	let dispose;
@@ -5134,33 +5109,30 @@ var app = (function () {
     			thead = element("thead");
     			tr = element("tr");
     			th0 = element("th");
-    			th0.textContent = "ID";
+    			th0.textContent = "Name";
     			t14 = space();
     			th1 = element("th");
-    			th1.textContent = "Name";
+    			th1.textContent = "Deutscher Name";
     			t16 = space();
     			th2 = element("th");
-    			th2.textContent = "Deutscher Name";
+    			th2.textContent = "Standort";
     			t18 = space();
     			th3 = element("th");
-    			th3.textContent = "Standort";
+    			th3.textContent = "Blütemonat";
     			t20 = space();
     			th4 = element("th");
-    			th4.textContent = "Blütemonat";
+    			th4.textContent = "Höhe";
     			t22 = space();
     			th5 = element("th");
-    			th5.textContent = "Höhe";
+    			th5.textContent = "Warenkorb hinzufügen";
     			t24 = space();
-    			th6 = element("th");
-    			th6.textContent = "Warenkorb hinzufügen";
-    			t26 = space();
     			tbody = element("tbody");
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].c();
     			}
 
-    			t27 = space();
+    			t25 = space();
     			nav = element("nav");
     			ul = element("ul");
 
@@ -5168,7 +5140,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			t28 = space();
+    			t26 = space();
     			button2 = element("button");
     			button2.textContent = "Warenkorb";
     			add_location(h1, file$5, 95, 0, 2366);
@@ -5209,28 +5181,26 @@ var app = (function () {
     			attr_dev(th0, "scope", "col");
     			add_location(th0, file$5, 129, 12, 3349);
     			attr_dev(th1, "scope", "col");
-    			add_location(th1, file$5, 130, 12, 3386);
+    			add_location(th1, file$5, 130, 12, 3388);
     			attr_dev(th2, "scope", "col");
-    			add_location(th2, file$5, 131, 12, 3425);
+    			add_location(th2, file$5, 131, 12, 3437);
     			attr_dev(th3, "scope", "col");
-    			add_location(th3, file$5, 132, 12, 3474);
+    			add_location(th3, file$5, 132, 12, 3480);
     			attr_dev(th4, "scope", "col");
-    			add_location(th4, file$5, 133, 12, 3517);
+    			add_location(th4, file$5, 133, 12, 3525);
     			attr_dev(th5, "scope", "col");
-    			add_location(th5, file$5, 134, 12, 3562);
-    			attr_dev(th6, "scope", "col");
-    			add_location(th6, file$5, 135, 12, 3601);
+    			add_location(th5, file$5, 134, 12, 3564);
     			add_location(tr, file$5, 128, 8, 3331);
     			add_location(thead, file$5, 127, 4, 3314);
-    			add_location(tbody, file$5, 138, 4, 3677);
+    			add_location(tbody, file$5, 137, 4, 3640);
     			attr_dev(table, "class", "table table-striped");
     			add_location(table, file$5, 126, 0, 3273);
     			attr_dev(ul, "class", "pagination");
-    			add_location(ul, file$5, 161, 4, 4414);
-    			add_location(nav, file$5, 160, 0, 4403);
+    			add_location(ul, file$5, 159, 4, 4296);
+    			add_location(nav, file$5, 158, 0, 4285);
     			attr_dev(button2, "type", "button");
     			attr_dev(button2, "class", "btn btn-success");
-    			add_location(button2, file$5, 176, 0, 4803);
+    			add_location(button2, file$5, 174, 0, 4685);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5270,16 +5240,14 @@ var app = (function () {
     			append_dev(tr, th4);
     			append_dev(tr, t22);
     			append_dev(tr, th5);
-    			append_dev(tr, t24);
-    			append_dev(tr, th6);
-    			append_dev(table, t26);
+    			append_dev(table, t24);
     			append_dev(table, tbody);
 
     			for (let i = 0; i < each_blocks_1.length; i += 1) {
     				each_blocks_1[i].m(tbody, null);
     			}
 
-    			insert_dev(target, t27, anchor);
+    			insert_dev(target, t25, anchor);
     			insert_dev(target, nav, anchor);
     			append_dev(nav, ul);
 
@@ -5287,7 +5255,7 @@ var app = (function () {
     				each_blocks[i].m(ul, null);
     			}
 
-    			insert_dev(target, t28, anchor);
+    			insert_dev(target, t26, anchor);
     			insert_dev(target, button2, anchor);
 
     			if (!mounted) {
@@ -5365,10 +5333,10 @@ var app = (function () {
     			if (detaching) detach_dev(t12);
     			if (detaching) detach_dev(table);
     			destroy_each(each_blocks_1, detaching);
-    			if (detaching) detach_dev(t27);
+    			if (detaching) detach_dev(t25);
     			if (detaching) detach_dev(nav);
     			destroy_each(each_blocks, detaching);
-    			if (detaching) detach_dev(t28);
+    			if (detaching) detach_dev(t26);
     			if (detaching) detach_dev(button2);
     			mounted = false;
     			run_all(dispose);

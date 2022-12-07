@@ -127,7 +127,6 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th scope="col">ID</th>
             <th scope="col">Name</th>
             <th scope="col">Deutscher Name</th>
             <th scope="col">Standort</th>
@@ -139,7 +138,6 @@
     <tbody>
         {#each artikels as artikel}
             <tr>
-                <td> <a href={"#/artikel/" + artikel.id}> {artikel.id}</a></td>
                 <td>{artikel.name}</td>
                 <td>{artikel.dname}</td>
                 <td>{artikel.standort}</td>
