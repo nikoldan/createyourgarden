@@ -1734,40 +1734,24 @@ var app = (function () {
 
     function create_fragment$6(ctx) {
     	let h1;
-    	let t1;
-    	let body;
-    	let img;
-    	let img_src_value;
 
     	const block = {
     		c: function create() {
     			h1 = element("h1");
     			h1.textContent = "Welcome to Create Your Garden";
-    			t1 = space();
-    			body = element("body");
-    			img = element("img");
     			add_location(h1, file$6, 0, 0, 0);
-    			if (!src_url_equal(img.src, img_src_value = "images/naturnah_home.jpg")) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "alt", "naturnah");
-    			add_location(img, file$6, 4, 0, 52);
-    			add_location(body, file$6, 1, 0, 40);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
-    			insert_dev(target, t1, anchor);
-    			insert_dev(target, body, anchor);
-    			append_dev(body, img);
     		},
     		p: noop$1,
     		i: noop$1,
     		o: noop$1,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(h1);
-    			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(body);
     		}
     	};
 
@@ -5783,6 +5767,11 @@ var app = (function () {
     	let t21;
     	let nav;
     	let ul;
+    	let t22;
+    	let div4;
+    	let t24;
+    	let img;
+    	let img_src_value;
     	let mounted;
     	let dispose;
     	let each_value_1 = /*artikels*/ ctx[3];
@@ -5856,6 +5845,11 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
+    			t22 = space();
+    			div4 = element("div");
+    			div4.textContent = "Damit dein Garden die Vielfalt bekommt, die es verdient";
+    			t24 = space();
+    			img = element("img");
     			add_location(h1, file$4, 45, 0, 941);
     			add_location(h3, file$4, 46, 0, 1003);
     			attr_dev(label, "for", "");
@@ -5895,6 +5889,10 @@ var app = (function () {
     			attr_dev(ul, "class", "pagination");
     			add_location(ul, file$4, 91, 2, 2135);
     			add_location(nav, file$4, 90, 0, 2126);
+    			add_location(div4, file$4, 105, 0, 2441);
+    			if (!src_url_equal(img.src, img_src_value = "naturnah_homekopie.jpg")) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", "naturnah");
+    			add_location(img, file$4, 106, 0, 2509);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5943,6 +5941,11 @@ var app = (function () {
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(ul, null);
     			}
+
+    			insert_dev(target, t22, anchor);
+    			insert_dev(target, div4, anchor);
+    			insert_dev(target, t24, anchor);
+    			insert_dev(target, img, anchor);
 
     			if (!mounted) {
     				dispose = [
@@ -6020,6 +6023,10 @@ var app = (function () {
     			if (detaching) detach_dev(t21);
     			if (detaching) detach_dev(nav);
     			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(t22);
+    			if (detaching) detach_dev(div4);
+    			if (detaching) detach_dev(t24);
+    			if (detaching) detach_dev(img);
     			mounted = false;
     			run_all(dispose);
     		}
