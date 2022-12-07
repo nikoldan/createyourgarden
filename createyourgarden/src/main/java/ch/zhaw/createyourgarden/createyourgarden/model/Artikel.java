@@ -22,9 +22,7 @@ public class Artikel {
     private String dName;
     @NonNull
     private String beschreibung;
-    
-    private double preis;
-    
+   
 
     private String standort;
     private int bluetemonat;

@@ -35,7 +35,6 @@ public class BestellungService {
             Bestellung bestellung = bBereit.get();
             if (bestellung.getBestellungState() == BestellungState.BESTAETIGT) {
                 bestellung.setBestellungState(BestellungState.BEREITGESTELLT);
-                bestellung.setKommentare(kommentare);
                 bestellungRepository.save(bestellung);
                 return Optional.of(bestellung);
             }

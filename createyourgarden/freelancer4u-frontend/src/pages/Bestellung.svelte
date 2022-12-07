@@ -3,7 +3,7 @@
     import { querystring } from "svelte-spa-router";
     import { user } from "../store";
     import { jwt_token } from "../store";
-    // TODO: Auth0 hinzufügen: nur für registrierte Benutzer und Admin!
+
 
     const api_root = "http://localhost:8080";
 
@@ -24,7 +24,6 @@
     let artikel = {};
 
 /* 
-
     let warenkorb = {
     korb: [
         {
@@ -41,10 +40,8 @@
 
     let korb = [];
 */
+    let warenkorb = [];
 
-    let warenkorb = {
-        korb: [],
-    }
     function getArtikel() {
         let query = "pageSize=2&page=" + currentPage;
         if (stand != "empty" && stand != null && stand != "") {
@@ -64,15 +61,15 @@
         // .catch gelöscht!
     }
 
-    function artikelWarenkorbHinzufügen() {
+    function artikelWarenkorbHinzufuegen() {
         var config = {
             method: "post",
-            url: api_root + "/api/warenkorb",
+            url: api_root + "/api/bestellung",
             headers: {
                 Authorization: "Bearer " + $jwt_token,
                 "Content-Type": "application/json",
             },
-            data: warenkorb,
+            data: {wunschDatum: wunschDatum, vornameName: vornameName, gesamtPreis: gesamtPreis, artikels: warenkorb},
         };
 
         axios(config)
@@ -84,23 +81,43 @@
                 console.log(error);
             });
     }
-    const artikelHinzufügen = (artikels) => {
-      warenkorb.korb.push(artikels);
+    const artikelHinzufuegen = (artikels) => {
+      warenkorb = [...warenkorb, artikels];
+      anzahlArtikel += 1;
+      gesamtPreis = anzahlArtikel * 8;
     };
 
     getArtikel();
+let vornameName;
+let wunschDatum;
+let gesamtPreis = 0;
+let anzahlArtikel = 0;
 
-  
 </script>
 
 <h1>Hier kannst du deine Bestellung aufgeben</h1>
+{JSON.stringify(warenkorb)}
+
+<form>
+    <div class="mb-3">
+        <label for="" class="form-label">Vor- und Nachname</label>
+        <input class="form-control" type="text" bind:value={vornameName} />
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Dein Wunschlieferdatum</label>
+        <input class="form-control" type="text" bind:value={wunschDatum} />
+    </div>
+</form>
 
 <button
     type="button"
     class="btn btn-primary"
-    on:click={artikelWarenkorbHinzufügen}>Bestellen</button
+    on:click={artikelWarenkorbHinzufuegen}>Bestellen</button
 >
+<br><br><br>
+<div>Hier kannst du nach deinem Standort für eine einfache Bestellung filtern: <br> Heute alle Pflanzen im Sonderangebot für 8 CHF erhältlich!
 
+</div>
 <form class="mb-5">
     <div class="row mb-3" />
     <div class="row mb-3">
@@ -127,7 +144,6 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th scope="col">ID</th>
             <th scope="col">Name</th>
             <th scope="col">Deutscher Name</th>
             <th scope="col">Standort</th>
@@ -139,7 +155,6 @@
     <tbody>
         {#each artikels as artikel}
             <tr>
-                <td> <a href={"#/artikel/" + artikel.id}> {artikel.id}</a></td>
                 <td>{artikel.name}</td>
                 <td>{artikel.dname}</td>
                 <td>{artikel.standort}</td>
@@ -149,7 +164,7 @@
                     ><button
                         type="button"
                         class="btn btn-secondary"
-                        on:click={() => artikelHinzufügen(artikel)}
+                        on:click={() => artikelHinzufuegen(artikel)}
                         >Hinzufügen</button
                     ></td
                 >
@@ -177,6 +192,21 @@
 <button
     type="button"
     class="btn btn-success"
-    on:click={artikelWarenkorbHinzufügen}>Warenkorb</button
+    on:click={artikelWarenkorbHinzufuegen}>Warenkorb</button
 >
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        {#each warenkorb as korb}
+            <tr>
+                <td>{korb.name}</td>
+        {/each}
+    </tbody>
+    <div>Gesamtpreis in CHF aller Artikeln aus dem Warenkorb: </div><h2>{gesamtPreis}</h2>
+</table>
 
