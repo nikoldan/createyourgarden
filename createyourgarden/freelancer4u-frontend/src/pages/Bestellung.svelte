@@ -3,7 +3,7 @@
     import { querystring } from "svelte-spa-router";
     import { user } from "../store";
     import { jwt_token } from "../store";
-    // TODO: Auth0 hinzufügen: nur für registrierte Benutzer und Admin!
+
 
     const api_root = "http://localhost:8080";
 
@@ -61,15 +61,15 @@
         // .catch gelöscht!
     }
 
-    function artikelWarenkorbHinzufügen() {
+    function artikelWarenkorbHinzufuegen() {
         var config = {
             method: "post",
-            url: api_root + "api/bestellung",
+            url: api_root + "/api/bestellung",
             headers: {
                 Authorization: "Bearer " + $jwt_token,
                 "Content-Type": "application/json",
             },
-            data: wunschDatum, vornameName, gesamtPreis, warenkorb,
+            data: {wunschDatum: wunschDatum, vornameName: vornameName, gesamtPreis: gesamtPreis, artikels: warenkorb},
         };
 
         axios(config)
@@ -81,7 +81,7 @@
                 console.log(error);
             });
     }
-    const artikelHinzufügen = (artikels) => {
+    const artikelHinzufuegen = (artikels) => {
       warenkorb = [...warenkorb, artikels];
       anzahlArtikel += 1;
       gesamtPreis = anzahlArtikel * 8;
@@ -112,7 +112,7 @@ let anzahlArtikel = 0;
 <button
     type="button"
     class="btn btn-primary"
-    on:click={artikelWarenkorbHinzufügen}>Bestellen</button
+    on:click={artikelWarenkorbHinzufuegen}>Bestellen</button
 >
 <br><br><br>
 <div>Hier kannst du nach deinem Standort für eine einfache Bestellung filtern: <br> Heute alle Pflanzen im Sonderangebot für 8 CHF erhältlich!
@@ -164,7 +164,7 @@ let anzahlArtikel = 0;
                     ><button
                         type="button"
                         class="btn btn-secondary"
-                        on:click={() => artikelHinzufügen(artikel)}
+                        on:click={() => artikelHinzufuegen(artikel)}
                         >Hinzufügen</button
                     ></td
                 >
@@ -192,7 +192,7 @@ let anzahlArtikel = 0;
 <button
     type="button"
     class="btn btn-success"
-    on:click={artikelWarenkorbHinzufügen}>Warenkorb</button
+    on:click={artikelWarenkorbHinzufuegen}>Warenkorb</button
 >
 
 <table class="table table-striped">

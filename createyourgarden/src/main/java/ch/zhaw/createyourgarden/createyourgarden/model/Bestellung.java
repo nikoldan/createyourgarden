@@ -1,6 +1,5 @@
 package ch.zhaw.createyourgarden.createyourgarden.model;
 
-
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
