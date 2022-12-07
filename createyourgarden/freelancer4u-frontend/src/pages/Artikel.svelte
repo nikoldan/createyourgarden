@@ -103,3 +103,5 @@
   </ul>
 </nav>
 
+<div>Damit dein Garden die Vielfalt bekommt, die es verdient</div>
+<img src="naturnah_homekopie.jpg" alt="naturnah">
