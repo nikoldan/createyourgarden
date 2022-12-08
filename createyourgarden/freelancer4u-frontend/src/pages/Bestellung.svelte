@@ -57,7 +57,7 @@
 
         axios(config)
             .then(function (response) {
-                alert("in Warenkorb hinzugefügt");
+                alert("Vielen Dank für deine Bestellung");
             })
             .catch(function (error) {
                 alert("Hat leider nicht funktioniert");
@@ -69,6 +69,10 @@
       anzahlArtikel += 1;
       gesamtPreis = anzahlArtikel * 8;
     };
+
+function artikelEntfernen(artikels) {
+    // muss noch implementieren!!!  warenkorb -= artikels;
+}
 
     getArtikel();
 let vornameName;
@@ -171,23 +175,26 @@ let anzahlArtikel = 0;
     </ul>
 </nav>
 
-
-<button
-    type="button"
-    class="btn btn-success"
-    on:click={artikelWarenkorbHinzufuegen}>Warenkorb</button
->
+<div>Deine ausgewählte Artikel:</div>
 
 <table class="table table-striped">
     <thead>
         <tr>
             <th scope="col">Name</th>
+            <th scope="col">Entfernen</th>
         </tr>
     </thead>
     <tbody>
         {#each warenkorb as korb}
             <tr>
                 <td>{korb.name}</td>
+                <td
+                ><button
+                    type="button"
+                    class="btn btn-secondary"
+                    on:click={() => artikelEntfernen(artikel)}
+                    >Entfernen</button
+                ></td>
         {/each}
     </tbody>
     <div>Gesamtpreis in CHF aller Artikeln aus dem Warenkorb: </div><h2>{gesamtPreis}</h2>

@@ -1,5 +1,8 @@
 <h1>Welcome to Create Your Garden</h1>
 
+<video src="Apfelmp4.mp4" muted autoplay loop />
+
+
 
 <style>
 	:global(body) {
@@ -11,4 +14,10 @@
 		background-color: #1d3040;
 		color: #bfc2c7;
 	}
+
+	video {
+		max-width: 1200px;
+
+	}
+
 </style>
