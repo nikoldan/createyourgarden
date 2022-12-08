@@ -4858,7 +4858,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (156:8) {#each artikels as artikel}
+    // (139:8) {#each artikels as artikel}
     function create_each_block_2(ctx) {
     	let tr;
     	let td0;
@@ -4913,16 +4913,16 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Hinzufügen";
     			t11 = space();
-    			add_location(td0, file$5, 157, 16, 4431);
-    			add_location(td1, file$5, 158, 16, 4472);
-    			add_location(td2, file$5, 159, 16, 4514);
-    			add_location(td3, file$5, 160, 16, 4559);
-    			add_location(td4, file$5, 161, 16, 4607);
+    			add_location(td0, file$5, 140, 16, 4095);
+    			add_location(td1, file$5, 141, 16, 4136);
+    			add_location(td2, file$5, 142, 16, 4178);
+    			add_location(td3, file$5, 143, 16, 4223);
+    			add_location(td4, file$5, 144, 16, 4271);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn btn-secondary");
-    			add_location(button, file$5, 163, 21, 4675);
-    			add_location(td5, file$5, 162, 16, 4649);
-    			add_location(tr, file$5, 156, 12, 4409);
+    			add_location(button, file$5, 146, 21, 4339);
+    			add_location(td5, file$5, 145, 16, 4313);
+    			add_location(tr, file$5, 139, 12, 4073);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -4969,14 +4969,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(156:8) {#each artikels as artikel}",
+    		source: "(139:8) {#each artikels as artikel}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (178:8) {#each Array(nrOfPages) as _, i}
+    // (161:8) {#each Array(nrOfPages) as _, i}
     function create_each_block_1$1(ctx) {
     	let li;
     	let a;
@@ -4993,9 +4993,9 @@ var app = (function () {
     			attr_dev(a, "class", "page-link");
     			attr_dev(a, "href", "#/bestellung?page=" + (/*i*/ ctx[24] + 1));
     			toggle_class(a, "active", /*currentPage*/ ctx[0] == /*i*/ ctx[24] + 1);
-    			add_location(a, file$5, 179, 16, 5127);
+    			add_location(a, file$5, 162, 16, 4791);
     			attr_dev(li, "class", "page-item");
-    			add_location(li, file$5, 178, 12, 5087);
+    			add_location(li, file$5, 161, 12, 4751);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -5017,14 +5017,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1$1.name,
     		type: "each",
-    		source: "(178:8) {#each Array(nrOfPages) as _, i}",
+    		source: "(161:8) {#each Array(nrOfPages) as _, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (205:8) {#each warenkorb as korb}
+    // (188:8) {#each warenkorb as korb}
     function create_each_block$2(ctx) {
     	let tr;
     	let td;
@@ -5038,8 +5038,8 @@ var app = (function () {
     			td = element("td");
     			t0 = text(t0_value);
     			t1 = space();
-    			add_location(td, file$5, 206, 16, 5735);
-    			add_location(tr, file$5, 205, 12, 5713);
+    			add_location(td, file$5, 189, 16, 5399);
+    			add_location(tr, file$5, 188, 12, 5377);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -5059,7 +5059,7 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(205:8) {#each warenkorb as korb}",
+    		source: "(188:8) {#each warenkorb as korb}",
     		ctx
     	});
 
@@ -5275,95 +5275,95 @@ var app = (function () {
     			div6.textContent = "Gesamtpreis in CHF aller Artikeln aus dem Warenkorb: ";
     			h2 = element("h2");
     			t45 = text(/*gesamtPreis*/ ctx[7]);
-    			add_location(h1, file$5, 97, 0, 2495);
+    			add_location(h1, file$5, 80, 0, 2159);
     			attr_dev(label0, "for", "");
     			attr_dev(label0, "class", "form-label");
-    			add_location(label0, file$5, 102, 8, 2617);
+    			add_location(label0, file$5, 85, 8, 2281);
     			attr_dev(input0, "class", "form-control");
     			attr_dev(input0, "type", "text");
-    			add_location(input0, file$5, 103, 8, 2685);
+    			add_location(input0, file$5, 86, 8, 2349);
     			attr_dev(div0, "class", "mb-3");
-    			add_location(div0, file$5, 101, 4, 2589);
+    			add_location(div0, file$5, 84, 4, 2253);
     			attr_dev(label1, "for", "");
     			attr_dev(label1, "class", "form-label");
-    			add_location(label1, file$5, 106, 8, 2798);
+    			add_location(label1, file$5, 89, 8, 2462);
     			attr_dev(input1, "class", "form-control");
     			attr_dev(input1, "type", "text");
-    			add_location(input1, file$5, 107, 8, 2871);
+    			add_location(input1, file$5, 90, 8, 2535);
     			attr_dev(div1, "class", "mb-3");
-    			add_location(div1, file$5, 105, 4, 2770);
-    			add_location(form0, file$5, 100, 0, 2577);
+    			add_location(div1, file$5, 88, 4, 2434);
+    			add_location(form0, file$5, 83, 0, 2241);
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "btn btn-primary");
-    			add_location(button0, file$5, 111, 0, 2963);
-    			add_location(br0, file$5, 116, 0, 3085);
-    			add_location(br1, file$5, 116, 4, 3089);
-    			add_location(br2, file$5, 116, 8, 3093);
-    			add_location(br3, file$5, 117, 79, 3178);
-    			add_location(div2, file$5, 117, 0, 3099);
+    			add_location(button0, file$5, 94, 0, 2627);
+    			add_location(br0, file$5, 99, 0, 2749);
+    			add_location(br1, file$5, 99, 4, 2753);
+    			add_location(br2, file$5, 99, 8, 2757);
+    			add_location(br3, file$5, 100, 79, 2842);
+    			add_location(div2, file$5, 100, 0, 2763);
     			attr_dev(div3, "class", "row mb-3");
-    			add_location(div3, file$5, 121, 4, 3278);
+    			add_location(div3, file$5, 104, 4, 2942);
     			attr_dev(label2, "class", "form-label");
     			attr_dev(label2, "for", "type");
-    			add_location(label2, file$5, 124, 12, 3371);
+    			add_location(label2, file$5, 107, 12, 3035);
     			option0.__value = "empty";
     			option0.value = option0.__value;
-    			add_location(option0, file$5, 131, 16, 3607);
+    			add_location(option0, file$5, 114, 16, 3271);
     			option1.__value = "Sonnig";
     			option1.value = option1.__value;
-    			add_location(option1, file$5, 132, 16, 3649);
+    			add_location(option1, file$5, 115, 16, 3313);
     			option2.__value = "Halbschatten";
     			option2.value = option2.__value;
-    			add_location(option2, file$5, 133, 16, 3705);
+    			add_location(option2, file$5, 116, 16, 3369);
     			option3.__value = "Schatten";
     			option3.value = option3.__value;
-    			add_location(option3, file$5, 134, 16, 3773);
+    			add_location(option3, file$5, 117, 16, 3437);
     			attr_dev(select, "class", "form-select");
     			attr_dev(select, "id", "type");
     			attr_dev(select, "type", "text");
     			if (/*stand*/ ctx[2] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[15].call(select));
-    			add_location(select, file$5, 125, 12, 3438);
+    			add_location(select, file$5, 108, 12, 3102);
     			attr_dev(div4, "class", "col");
-    			add_location(div4, file$5, 123, 8, 3340);
+    			add_location(div4, file$5, 106, 8, 3004);
     			attr_dev(div5, "class", "row mb-3");
-    			add_location(div5, file$5, 122, 4, 3308);
+    			add_location(div5, file$5, 105, 4, 2972);
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "btn btn-primary");
-    			add_location(button1, file$5, 138, 4, 3872);
+    			add_location(button1, file$5, 121, 4, 3536);
     			attr_dev(form1, "class", "mb-5");
-    			add_location(form1, file$5, 120, 0, 3253);
+    			add_location(form1, file$5, 103, 0, 2917);
     			attr_dev(th0, "scope", "col");
-    			add_location(th0, file$5, 146, 12, 4060);
+    			add_location(th0, file$5, 129, 12, 3724);
     			attr_dev(th1, "scope", "col");
-    			add_location(th1, file$5, 147, 12, 4099);
+    			add_location(th1, file$5, 130, 12, 3763);
     			attr_dev(th2, "scope", "col");
-    			add_location(th2, file$5, 148, 12, 4148);
+    			add_location(th2, file$5, 131, 12, 3812);
     			attr_dev(th3, "scope", "col");
-    			add_location(th3, file$5, 149, 12, 4191);
+    			add_location(th3, file$5, 132, 12, 3855);
     			attr_dev(th4, "scope", "col");
-    			add_location(th4, file$5, 150, 12, 4236);
+    			add_location(th4, file$5, 133, 12, 3900);
     			attr_dev(th5, "scope", "col");
-    			add_location(th5, file$5, 151, 12, 4275);
-    			add_location(tr0, file$5, 145, 8, 4042);
-    			add_location(thead0, file$5, 144, 4, 4025);
-    			add_location(tbody0, file$5, 154, 4, 4351);
+    			add_location(th5, file$5, 134, 12, 3939);
+    			add_location(tr0, file$5, 128, 8, 3706);
+    			add_location(thead0, file$5, 127, 4, 3689);
+    			add_location(tbody0, file$5, 137, 4, 4015);
     			attr_dev(table0, "class", "table table-striped");
-    			add_location(table0, file$5, 143, 0, 3984);
+    			add_location(table0, file$5, 126, 0, 3648);
     			attr_dev(ul, "class", "pagination");
-    			add_location(ul, file$5, 176, 4, 5008);
-    			add_location(nav, file$5, 175, 0, 4997);
+    			add_location(ul, file$5, 159, 4, 4672);
+    			add_location(nav, file$5, 158, 0, 4661);
     			attr_dev(button2, "type", "button");
     			attr_dev(button2, "class", "btn btn-success");
-    			add_location(button2, file$5, 191, 0, 5397);
+    			add_location(button2, file$5, 174, 0, 5061);
     			attr_dev(th6, "scope", "col");
-    			add_location(th6, file$5, 200, 12, 5597);
-    			add_location(tr1, file$5, 199, 8, 5579);
-    			add_location(thead1, file$5, 198, 4, 5562);
-    			add_location(tbody1, file$5, 203, 4, 5657);
-    			add_location(div6, file$5, 209, 4, 5792);
-    			add_location(h2, file$5, 209, 68, 5856);
+    			add_location(th6, file$5, 183, 12, 5261);
+    			add_location(tr1, file$5, 182, 8, 5243);
+    			add_location(thead1, file$5, 181, 4, 5226);
+    			add_location(tbody1, file$5, 186, 4, 5321);
+    			add_location(div6, file$5, 192, 4, 5456);
+    			add_location(h2, file$5, 192, 68, 5520);
     			attr_dev(table1, "class", "table table-striped");
-    			add_location(table1, file$5, 197, 0, 5521);
+    			add_location(table1, file$5, 180, 0, 5185);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5624,24 +5624,6 @@ var app = (function () {
     	let stand;
     	let artikels = [];
     	let artikel = {};
-
-    	/* 
-        let warenkorb = {
-        korb: [
-            {
-                id: "8888",
-                name: "mitPostman",
-                beschreibung: "bescheeee",
-                preis: 4,
-                standort: "Sonnig",
-                bluetemonat: 2,
-                hoehe: 33,
-                dname: "dmiiii",
-            },
-        ]};
-
-        let korb = [];
-    */
     	let warenkorb = [];
 
     	function getArtikel() {

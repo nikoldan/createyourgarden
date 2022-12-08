@@ -23,7 +23,6 @@
     let artikels = [];
     let artikel = {};
 
-*/
     let warenkorb = [];
 
     function getArtikel() {
