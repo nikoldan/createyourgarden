@@ -23,22 +23,6 @@
     let artikels = [];
     let artikel = {};
 
-/* 
-    let warenkorb = {
-    korb: [
-        {
-            id: "8888",
-            name: "mitPostman",
-            beschreibung: "bescheeee",
-            preis: 4,
-            standort: "Sonnig",
-            bluetemonat: 2,
-            hoehe: 33,
-            dname: "dmiiii",
-        },
-    ]};
-
-    let korb = [];
 */
     let warenkorb = [];
 
@@ -58,7 +42,7 @@
             artikels = response.data.content;
             nrOfPages = response.data.totalPages;
         });
-        // .catch gelöscht!
+        
     }
 
     function artikelWarenkorbHinzufuegen() {
