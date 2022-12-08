@@ -75,11 +75,11 @@ let vornameName;
 let wunschDatum;
 let gesamtPreis = 0;
 let anzahlArtikel = 0;
-
+// {JSON.stringify(warenkorb)}
 </script>
 
 <h1>Hier kannst du deine Bestellung aufgeben</h1>
-{JSON.stringify(warenkorb)}
+
 
 <form>
     <div class="mb-3">
