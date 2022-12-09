@@ -44,7 +44,6 @@ public class ArtikelController {
     } else {
         allArtikels = artikelRepository.findAll(PageRequest.of(page - 1, pageSize));
     }
-   //     List<Artikel> allArtikel = artikelRepository.findAll();
         return new ResponseEntity<>(allArtikels, HttpStatus.OK);
     }
     
@@ -62,6 +61,5 @@ public class ArtikelController {
     public ResponseEntity<List<Artikel>> getArtikelByStandort(@RequestParam String wo) {
         return new ResponseEntity<>(artikelRepository.findByStandort(wo), HttpStatus.OK);
     }
-
 
 }

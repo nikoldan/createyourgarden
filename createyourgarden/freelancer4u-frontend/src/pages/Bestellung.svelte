@@ -23,23 +23,6 @@
     let artikels = [];
     let artikel = {};
 
-/* 
-    let warenkorb = {
-    korb: [
-        {
-            id: "8888",
-            name: "mitPostman",
-            beschreibung: "bescheeee",
-            preis: 4,
-            standort: "Sonnig",
-            bluetemonat: 2,
-            hoehe: 33,
-            dname: "dmiiii",
-        },
-    ]};
-
-    let korb = [];
-*/
     let warenkorb = [];
 
     function getArtikel() {
@@ -58,7 +41,7 @@
             artikels = response.data.content;
             nrOfPages = response.data.totalPages;
         });
-        // .catch gelöscht!
+        
     }
 
     function artikelWarenkorbHinzufuegen() {
@@ -74,7 +57,7 @@
 
         axios(config)
             .then(function (response) {
-                alert("in Warenkorb hinzugefügt");
+                alert("Vielen Dank für deine Bestellung");
             })
             .catch(function (error) {
                 alert("Hat leider nicht funktioniert");
@@ -87,16 +70,20 @@
       gesamtPreis = anzahlArtikel * 8;
     };
 
+function artikelEntfernen(artikels) {
+    // muss noch implementieren!!!  warenkorb -= artikels;
+}
+
     getArtikel();
 let vornameName;
 let wunschDatum;
 let gesamtPreis = 0;
 let anzahlArtikel = 0;
-
+// {JSON.stringify(warenkorb)}
 </script>
 
 <h1>Hier kannst du deine Bestellung aufgeben</h1>
-{JSON.stringify(warenkorb)}
+
 
 <form>
     <div class="mb-3">
@@ -188,23 +175,26 @@ let anzahlArtikel = 0;
     </ul>
 </nav>
 
-
-<button
-    type="button"
-    class="btn btn-success"
-    on:click={artikelWarenkorbHinzufuegen}>Warenkorb</button
->
+<div>Deine ausgewählte Artikel:</div>
 
 <table class="table table-striped">
     <thead>
         <tr>
             <th scope="col">Name</th>
+            <th scope="col">Entfernen</th>
         </tr>
     </thead>
     <tbody>
         {#each warenkorb as korb}
             <tr>
                 <td>{korb.name}</td>
+                <td
+                ><button
+                    type="button"
+                    class="btn btn-secondary"
+                    on:click={() => artikelEntfernen(artikel)}
+                    >Entfernen</button
+                ></td>
         {/each}
     </tbody>
     <div>Gesamtpreis in CHF aller Artikeln aus dem Warenkorb: </div><h2>{gesamtPreis}</h2>

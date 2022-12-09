@@ -47,14 +47,6 @@ public class WarenkorbController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-/* 
-    @PutMapping("/{id}")
-    public ResponseEntity<Warenkorb> updateWarenkorb(@PathVariable String id) {
-        Optional<Warenkorb> upWarenkorb = warenkorbRepository.findById(id);
-        if (upWarenkorb.isPresent()) {
-            
-        }
-    }
-*/
+
 
 }
