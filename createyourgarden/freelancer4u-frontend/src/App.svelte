@@ -33,12 +33,6 @@
 						</li>
 					{/if}
 					{#if $isAuthenticated}
-						<li class="nav-item">
-							<a class="nav-link" href="#/warenkorb">Warenkorb</a
-							>
-						</li>
-					{/if}
-					{#if $isAuthenticated}
 					<li class="nav-item">
 						<a class="nav-link" href="#/uebersichtbestellungen">Übersicht Bestellungen</a
 						>
