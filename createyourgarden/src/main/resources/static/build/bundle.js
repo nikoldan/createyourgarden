@@ -4785,7 +4785,7 @@ var app = (function () {
     			h1.textContent = "Welcome to Create Your Garden";
     			t1 = space();
     			t2 = text(t2_value);
-    			add_location(h1, file$7, 28, 0, 573);
+    			add_location(h1, file$7, 28, 0, 585);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4829,7 +4829,7 @@ var app = (function () {
     		var config = {
     			method: "get",
     			url: "https://open.plantbook.io/api/v1/plant/detail/acer buergerianum/",
-    			headers: { Authorization: token }
+    			headers: { Authorization: "Bearer " + token }
     		};
 
     		axios(config).then(function (response) {

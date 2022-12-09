@@ -11,7 +11,7 @@ function getPlant() {
     var config = {
       method: "get",
       url: "https://open.plantbook.io/api/v1/plant/detail/acer buergerianum/",
-      headers: {Authorization: token},
+      headers: {Authorization: "Bearer " + token},
     };
 
     axios(config)
