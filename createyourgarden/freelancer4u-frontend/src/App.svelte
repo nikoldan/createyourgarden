@@ -25,7 +25,9 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#/artikel">Pflanzen</a>
 					</li>
-
+					<li class="nav-item">
+						<a class="nav-link" href="#/bilder">Bilder</a>
+					</li>
 					{#if $isAuthenticated}
 						<li class="nav-item">
 							<a class="nav-link" href="#/bestellung">Bestellen</a
