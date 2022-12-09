@@ -1,5 +1,6 @@
 package ch.zhaw.createyourgarden.createyourgarden.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,12 @@ public class BestellungController {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @GetMapping("")
+    public ResponseEntity<List<Bestellung>> getAllBestellung() {
+        List<Bestellung> allBestellung = bestellungRepository.findAll();
+        return new ResponseEntity<>(allBestellung, HttpStatus.OK);        
     }
 
 }

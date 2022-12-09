@@ -44,7 +44,6 @@ public class ArtikelController {
     } else {
         allArtikels = artikelRepository.findAll(PageRequest.of(page - 1, pageSize));
     }
-   //     List<Artikel> allArtikel = artikelRepository.findAll();
         return new ResponseEntity<>(allArtikels, HttpStatus.OK);
     }
     
