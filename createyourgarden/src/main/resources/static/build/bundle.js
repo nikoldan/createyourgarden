@@ -6858,7 +6858,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (52:8) {#each bestellungen as bestellung}
+    // (56:8) {#each bestellungen as bestellung}
     function create_each_block(ctx) {
     	let tr;
     	let td0;
@@ -6906,15 +6906,15 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Status aendern";
     			t9 = space();
-    			add_location(td0, file$1, 53, 16, 1086);
-    			add_location(td1, file$1, 54, 16, 1137);
-    			add_location(td2, file$1, 55, 16, 1188);
-    			add_location(td3, file$1, 56, 16, 1239);
+    			add_location(td0, file$1, 57, 16, 1233);
+    			add_location(td1, file$1, 58, 16, 1284);
+    			add_location(td2, file$1, 59, 16, 1335);
+    			add_location(td3, file$1, 60, 16, 1386);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn btn-secondary");
-    			add_location(button, file$1, 58, 21, 1320);
-    			add_location(td4, file$1, 57, 16, 1294);
-    			add_location(tr, file$1, 52, 12, 1064);
+    			add_location(button, file$1, 62, 21, 1467);
+    			add_location(td4, file$1, 61, 16, 1441);
+    			add_location(tr, file$1, 56, 12, 1211);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -6957,7 +6957,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(52:8) {#each bestellungen as bestellung}",
+    		source: "(56:8) {#each bestellungen as bestellung}",
     		ctx
     	});
 
@@ -7018,22 +7018,22 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h1, file$1, 38, 0, 610);
+    			add_location(h1, file$1, 40, 0, 753);
     			attr_dev(th0, "scope", "col");
-    			add_location(th0, file$1, 43, 12, 740);
+    			add_location(th0, file$1, 47, 12, 887);
     			attr_dev(th1, "scope", "col");
-    			add_location(th1, file$1, 44, 12, 791);
+    			add_location(th1, file$1, 48, 12, 938);
     			attr_dev(th2, "scope", "col");
-    			add_location(th2, file$1, 45, 12, 843);
+    			add_location(th2, file$1, 49, 12, 990);
     			attr_dev(th3, "scope", "col");
-    			add_location(th3, file$1, 46, 12, 889);
+    			add_location(th3, file$1, 50, 12, 1036);
     			attr_dev(th4, "scope", "col");
-    			add_location(th4, file$1, 47, 12, 930);
-    			add_location(tr, file$1, 42, 8, 722);
-    			add_location(thead, file$1, 41, 4, 705);
-    			add_location(tbody, file$1, 50, 4, 999);
+    			add_location(th4, file$1, 51, 12, 1077);
+    			add_location(tr, file$1, 46, 8, 869);
+    			add_location(thead, file$1, 45, 4, 852);
+    			add_location(tbody, file$1, 54, 4, 1146);
     			attr_dev(table, "class", "table table-striped");
-    			add_location(table, file$1, 40, 0, 664);
+    			add_location(table, file$1, 44, 0, 811);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7113,16 +7113,22 @@ var app = (function () {
     }
 
     function instance$1($$self, $$props, $$invalidate) {
+    	let $jwt_token;
+    	validate_store(jwt_token, 'jwt_token');
+    	component_subscribe($$self, jwt_token, $$value => $$invalidate(3, $jwt_token = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('UebersichtBestellungen', slots, []);
-    	let bestellungen = [];
+    	let bestellungen = [{}];
     	let bestellung = {};
 
     	function getBestellungen() {
     		var config = {
     			method: "get",
-    			url: api_root + "/api/bestellung?",
-    			headers: {}
+    			url: api_root + "/api/bestellung",
+    			headers: {
+    				Authorization: "Bearer " + $jwt_token,
+    				"Content-Type": "application/json"
+    			}
     		};
 
     		axios(config).then(function (response) {
@@ -7143,11 +7149,13 @@ var app = (function () {
     		axios,
     		user,
     		jwt_token,
+    		Bestellung,
     		api_root,
     		bestellungen,
     		bestellung,
     		getBestellungen,
-    		statusAendern
+    		statusAendern,
+    		$jwt_token
     	});
 
     	$$self.$inject_state = $$props => {
