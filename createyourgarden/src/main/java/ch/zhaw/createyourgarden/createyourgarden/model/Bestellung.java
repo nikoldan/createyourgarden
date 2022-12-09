@@ -23,15 +23,16 @@ public class Bestellung {
     
     private BestellungState bestellungState = BestellungState.NEU;
 
+    public Bestellung() {
+        
+    }
+
     public Bestellung(String wunschDatum, String vornameName, double gesamtPreis, List<Artikel> artikels) {
         this.wunschDatum = wunschDatum;
         this.vornameName = vornameName;
         this.gesamtPreis = gesamtPreis;
         this.artikels = artikels;
+
     }
-
-
-
-
 
 }
