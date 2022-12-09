@@ -6,6 +6,7 @@ import Artikel from "./pages/Artikel.svelte";
 import ArtikelDetails from "./pages/ArtikelDetails.svelte"
 import Accounts from "./pages/Account.svelte";
 import UebersichtBestellungen from "./pages/UebersichtBestellungen.svelte";
+import Bilder from "./pages/Bilder.svelte";
 
 export default {
     '/': Home,
@@ -16,4 +17,5 @@ export default {
     '/bestellung': Bestellung,
     '/account': Accounts,
     '/uebersichtbestellungen': UebersichtBestellungen,
+    '/bilder': Bilder,
 }

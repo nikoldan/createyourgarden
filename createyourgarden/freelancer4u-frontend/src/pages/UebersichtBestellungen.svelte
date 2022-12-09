@@ -4,19 +4,21 @@ import axios from "axios";
 
     import { user } from "../store";
     import { jwt_token } from "../store";
+    import Bestellung from "./Bestellung.svelte";
 
     const api_root = "http://localhost:8080";
 
 
-let bestellungen = [];
+let bestellungen = [{}];
 let bestellung = {};
 
 function getBestellungen() {
 
         var config = {
             method: "get",
-            url: api_root + "/api/bestellung?",
-            headers: {},
+            url: api_root + "/api/bestellung",
+            headers: {Authorization: "Bearer " + $jwt_token,
+                "Content-Type": "application/json",},
         };
 
         axios(config).then(function (response) {
@@ -37,6 +39,8 @@ function statusAendern() {
 </script>
 
 <h1>Übersicht aller Bestellungen inkl. Status</h1>
+
+
 
 <table class="table table-striped">
     <thead>
