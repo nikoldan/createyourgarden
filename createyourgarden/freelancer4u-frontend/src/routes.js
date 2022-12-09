@@ -5,7 +5,6 @@ import Bestellung from "./pages/Bestellung.svelte";
 import Artikel from "./pages/Artikel.svelte";
 import ArtikelDetails from "./pages/ArtikelDetails.svelte"
 import Accounts from "./pages/Account.svelte";
-import Warenkorb from "./pages/Warenkorb.svelte";
 import UebersichtBestellungen from "./pages/UebersichtBestellungen.svelte";
 
 export default {
@@ -16,6 +15,5 @@ export default {
 
     '/bestellung': Bestellung,
     '/account': Accounts,
-    '/warenkorb': Warenkorb,
     '/uebersichtbestellungen': UebersichtBestellungen,
 }
