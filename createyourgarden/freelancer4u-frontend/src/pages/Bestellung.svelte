@@ -84,7 +84,6 @@ let anzahlArtikel = 0;
 
 <h1>Hier kannst du deine Bestellung aufgeben</h1>
 
-
 <form>
     <div class="mb-3">
         <label for="" class="form-label">Vor- und Nachname</label>
