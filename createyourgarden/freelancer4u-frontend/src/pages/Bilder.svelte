@@ -24,7 +24,8 @@
 
 </script>
 
-<h1>Hier findest du eine Vielzahl von Bildern</h1>
+<h1>Für die Innenbegrünung - eine Auswahl toller Zimmenpflanzen</h1>
+<div>Als Insperation für deine neue Zimmerpflanze. Du findest diese in den meisten Gärtnereien</div>
 
 <table class="table table-striped">
 	<thead>
