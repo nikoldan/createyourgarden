@@ -4875,7 +4875,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    function get_each_context_1$1(ctx, list, i) {
+    function get_each_context_1$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
     	child_ctx[23] = list[i];
     	child_ctx[25] = i;
@@ -5007,7 +5007,7 @@ var app = (function () {
     }
 
     // (164:8) {#each Array(nrOfPages) as _, i}
-    function create_each_block_1$1(ctx) {
+    function create_each_block_1$2(ctx) {
     	let li;
     	let a;
     	let t0_value = /*i*/ ctx[25] + 1 + "";
@@ -5045,7 +5045,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_each_block_1$1.name,
+    		id: create_each_block_1$2.name,
     		type: "each",
     		source: "(164:8) {#each Array(nrOfPages) as _, i}",
     		ctx
@@ -5208,7 +5208,7 @@ var app = (function () {
     	let each_blocks_1 = [];
 
     	for (let i = 0; i < each_value_1.length; i += 1) {
-    		each_blocks_1[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
+    		each_blocks_1[i] = create_each_block_1$2(get_each_context_1$2(ctx, each_value_1, i));
     	}
 
     	let each_value = /*warenkorb*/ ctx[4];
@@ -5569,12 +5569,12 @@ var app = (function () {
     				let i;
 
     				for (i = 0; i < each_value_1.length; i += 1) {
-    					const child_ctx = get_each_context_1$1(ctx, each_value_1, i);
+    					const child_ctx = get_each_context_1$2(ctx, each_value_1, i);
 
     					if (each_blocks_1[i]) {
     						each_blocks_1[i].p(child_ctx, dirty);
     					} else {
-    						each_blocks_1[i] = create_each_block_1$1(child_ctx);
+    						each_blocks_1[i] = create_each_block_1$2(child_ctx);
     						each_blocks_1[i].c();
     						each_blocks_1[i].m(ul, null);
     					}
@@ -5859,14 +5859,14 @@ var app = (function () {
     	return child_ctx;
     }
 
-    function get_each_context_1(ctx, list, i) {
+    function get_each_context_1$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
     	child_ctx[5] = list[i];
     	return child_ctx;
     }
 
     // (78:4) {#each artikels as artikel}
-    function create_each_block_1(ctx) {
+    function create_each_block_1$1(ctx) {
     	let tr;
     	let td0;
     	let a;
@@ -5969,7 +5969,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_each_block_1.name,
+    		id: create_each_block_1$1.name,
     		type: "each",
     		source: "(78:4) {#each artikels as artikel}",
     		ctx
@@ -6072,7 +6072,7 @@ var app = (function () {
     	let each_blocks_1 = [];
 
     	for (let i = 0; i < each_value_1.length; i += 1) {
-    		each_blocks_1[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+    		each_blocks_1[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
     	}
 
     	let each_value = Array(/*nrOfPages*/ ctx[1]);
@@ -6260,12 +6260,12 @@ var app = (function () {
     				let i;
 
     				for (i = 0; i < each_value_1.length; i += 1) {
-    					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+    					const child_ctx = get_each_context_1$1(ctx, each_value_1, i);
 
     					if (each_blocks_1[i]) {
     						each_blocks_1[i].p(child_ctx, dirty);
     					} else {
-    						each_blocks_1[i] = create_each_block_1(child_ctx);
+    						each_blocks_1[i] = create_each_block_1$1(child_ctx);
     						each_blocks_1[i].c();
     						each_blocks_1[i].m(tbody, null);
     					}
@@ -6846,7 +6846,63 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (119:8) {#each bestellungen as bestellung}
+    function get_each_context_1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[14] = list[i];
+    	return child_ctx;
+    }
+
+    // (121:0) {#each state as s}
+    function create_each_block_1(ctx) {
+    	let li;
+    	let t0;
+    	let strong;
+    	let t1_value = /*s*/ ctx[14].count + "";
+    	let t1;
+    	let t2;
+    	let t3_value = /*s*/ ctx[14].id + "";
+    	let t3;
+
+    	const block = {
+    		c: function create() {
+    			li = element("li");
+    			t0 = text("Zur Zeit haben ");
+    			strong = element("strong");
+    			t1 = text(t1_value);
+    			t2 = text(" Bestellungen den Status: ");
+    			t3 = text(t3_value);
+    			add_location(strong, file$2, 121, 23, 3396);
+    			add_location(li, file$2, 121, 4, 3377);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, li, anchor);
+    			append_dev(li, t0);
+    			append_dev(li, strong);
+    			append_dev(strong, t1);
+    			append_dev(li, t2);
+    			append_dev(li, t3);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*state*/ 2 && t1_value !== (t1_value = /*s*/ ctx[14].count + "")) set_data_dev(t1, t1_value);
+    			if (dirty & /*state*/ 2 && t3_value !== (t3_value = /*s*/ ctx[14].id + "")) set_data_dev(t3, t3_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(li);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1.name,
+    		type: "each",
+    		source: "(121:0) {#each state as s}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (138:8) {#each bestellungen as bestellung}
     function create_each_block$1(ctx) {
     	let tr;
     	let td0;
@@ -6901,16 +6957,23 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Status aendern";
     			t11 = space();
-    			add_location(td0, file$2, 120, 16, 3570);
-    			add_location(td1, file$2, 121, 16, 3612);
-    			add_location(td2, file$2, 122, 16, 3663);
-    			add_location(td3, file$2, 123, 16, 3714);
-    			add_location(td4, file$2, 124, 16, 3765);
+    			attr_dev(td0, "class", "svelte-1w1kfep");
+    			add_location(td0, file$2, 139, 16, 3938);
+    			attr_dev(td1, "class", "svelte-1w1kfep");
+    			add_location(td1, file$2, 140, 16, 3980);
+    			attr_dev(td2, "class", "svelte-1w1kfep");
+    			add_location(td2, file$2, 141, 16, 4031);
+    			attr_dev(td3, "class", "svelte-1w1kfep");
+    			add_location(td3, file$2, 142, 16, 4082);
+    			attr_dev(td4, "class", "svelte-1w1kfep");
+    			add_location(td4, file$2, 143, 16, 4133);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn btn-info");
-    			add_location(button, file$2, 126, 21, 3846);
-    			add_location(td5, file$2, 125, 16, 3820);
-    			add_location(tr, file$2, 119, 12, 3548);
+    			add_location(button, file$2, 145, 21, 4214);
+    			attr_dev(td5, "class", "svelte-1w1kfep");
+    			add_location(td5, file$2, 144, 16, 4188);
+    			attr_dev(tr, "class", "svelte-1w1kfep");
+    			add_location(tr, file$2, 138, 12, 3916);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -6957,7 +7020,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(119:8) {#each bestellungen as bestellung}",
+    		source: "(138:8) {#each bestellungen as bestellung}",
     		ctx
     	});
 
@@ -6973,45 +7036,50 @@ var app = (function () {
     	let t3;
     	let h31;
     	let t5;
-    	let t6_value = JSON.stringify(/*bestellungId*/ ctx[1]) + "";
-    	let t6;
-    	let t7;
     	let table0;
-    	let thead0;
     	let tr0;
     	let th0;
-    	let t9;
+    	let t7;
     	let th1;
-    	let t11;
-    	let tbody0;
+    	let t9;
     	let tr1;
-    	let th2;
-    	let t13;
     	let td0;
-    	let t15;
-    	let tr2;
-    	let th3;
-    	let t17;
+    	let t11;
     	let td1;
-    	let t19;
+    	let t13;
+    	let tr2;
+    	let td2;
+    	let t15;
+    	let td3;
+    	let t17;
     	let br2;
-    	let t20;
+    	let t18;
+    	let ul;
+    	let t19;
     	let table1;
-    	let thead1;
+    	let thead;
     	let tr3;
+    	let th2;
+    	let t21;
+    	let th3;
+    	let t23;
     	let th4;
-    	let t22;
+    	let t25;
     	let th5;
-    	let t24;
+    	let t27;
     	let th6;
-    	let t26;
+    	let t29;
     	let th7;
-    	let t28;
-    	let th8;
-    	let t30;
-    	let th9;
-    	let t32;
-    	let tbody1;
+    	let t31;
+    	let tbody;
+    	let each_value_1 = /*state*/ ctx[1];
+    	validate_each_argument(each_value_1);
+    	let each_blocks_1 = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks_1[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+    	}
+
     	let each_value = /*bestellungen*/ ctx[0];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -7033,102 +7101,115 @@ var app = (function () {
     			h31 = element("h3");
     			h31.textContent = "Mögliche Änderungen:";
     			t5 = space();
-    			t6 = text(t6_value);
-    			t7 = space();
     			table0 = element("table");
-    			thead0 = element("thead");
     			tr0 = element("tr");
     			th0 = element("th");
     			th0.textContent = "Status";
-    			t9 = space();
+    			t7 = space();
     			th1 = element("th");
     			th1.textContent = "Neuer Status";
-    			t11 = space();
-    			tbody0 = element("tbody");
+    			t9 = space();
     			tr1 = element("tr");
-    			th2 = element("th");
-    			th2.textContent = "NEU";
-    			t13 = space();
     			td0 = element("td");
-    			td0.textContent = "BESTÄTIGT";
-    			t15 = space();
-    			tr2 = element("tr");
-    			th3 = element("th");
-    			th3.textContent = "BESTÄTIGT";
-    			t17 = space();
+    			td0.textContent = "NEU";
+    			t11 = space();
     			td1 = element("td");
-    			td1.textContent = "BEREITGESTELLT";
-    			t19 = space();
+    			td1.textContent = "BESTÄTIGT";
+    			t13 = space();
+    			tr2 = element("tr");
+    			td2 = element("td");
+    			td2.textContent = "BESTÄTIGT";
+    			t15 = space();
+    			td3 = element("td");
+    			td3.textContent = "BEREITGESTELLT";
+    			t17 = space();
     			br2 = element("br");
-    			t20 = space();
+    			t18 = space();
+    			ul = element("ul");
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].c();
+    			}
+
+    			t19 = space();
     			table1 = element("table");
-    			thead1 = element("thead");
+    			thead = element("thead");
     			tr3 = element("tr");
+    			th2 = element("th");
+    			th2.textContent = "ID";
+    			t21 = space();
+    			th3 = element("th");
+    			th3.textContent = "Vorname Nachname";
+    			t23 = space();
     			th4 = element("th");
-    			th4.textContent = "ID";
-    			t22 = space();
+    			th4.textContent = "Wunschlieferdatum";
+    			t25 = space();
     			th5 = element("th");
-    			th5.textContent = "Vorname Nachname";
-    			t24 = space();
+    			th5.textContent = "Gesamtpreis";
+    			t27 = space();
     			th6 = element("th");
-    			th6.textContent = "Wunschlieferdatum";
-    			t26 = space();
+    			th6.textContent = "Status";
+    			t29 = space();
     			th7 = element("th");
-    			th7.textContent = "Gesamtpreis";
-    			t28 = space();
-    			th8 = element("th");
-    			th8.textContent = "Status";
-    			t30 = space();
-    			th9 = element("th");
-    			th9.textContent = "Status ändern";
-    			t32 = space();
-    			tbody1 = element("tbody");
+    			th7.textContent = "Status ändern";
+    			t31 = space();
+    			tbody = element("tbody");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			add_location(h1, file$2, 83, 0, 2477);
-    			add_location(br0, file$2, 83, 50, 2527);
-    			add_location(h30, file$2, 84, 0, 2533);
-    			add_location(br1, file$2, 84, 62, 2595);
-    			add_location(h31, file$2, 85, 0, 2601);
-    			attr_dev(th0, "scope", "col");
-    			add_location(th0, file$2, 90, 10, 2752);
-    			attr_dev(th1, "scope", "col");
-    			add_location(th1, file$2, 91, 10, 2791);
-    			attr_dev(tr0, "class", "table-info");
-    			add_location(tr0, file$2, 89, 8, 2717);
-    			add_location(thead0, file$2, 88, 4, 2700);
-    			attr_dev(th2, "scope", "row");
-    			add_location(th2, file$2, 96, 8, 2894);
-    			add_location(td0, file$2, 97, 10, 2930);
-    			add_location(tr1, file$2, 95, 8, 2880);
-    			attr_dev(th3, "scope", "row");
-    			add_location(th3, file$2, 100, 12, 2991);
-    			add_location(td1, file$2, 101, 12, 3035);
-    			add_location(tr2, file$2, 99, 8, 2973);
-    			add_location(tbody0, file$2, 94, 6, 2863);
-    			attr_dev(table0, "class", "table table-sm");
-    			add_location(table0, file$2, 87, 0, 2664);
-    			add_location(br2, file$2, 104, 8, 3103);
+    			add_location(h1, file$2, 99, 0, 2943);
+    			add_location(br0, file$2, 99, 50, 2993);
+    			add_location(h30, file$2, 100, 0, 2999);
+    			add_location(br1, file$2, 100, 62, 3061);
+    			add_location(h31, file$2, 101, 0, 3067);
+    			attr_dev(th0, "class", "svelte-1w1kfep");
+    			add_location(th0, file$2, 105, 6, 3125);
+    			attr_dev(th1, "class", "svelte-1w1kfep");
+    			add_location(th1, file$2, 106, 6, 3148);
+    			attr_dev(tr0, "class", "svelte-1w1kfep");
+    			add_location(tr0, file$2, 104, 4, 3113);
+    			attr_dev(td0, "class", "svelte-1w1kfep");
+    			add_location(td0, file$2, 109, 6, 3198);
+    			attr_dev(td1, "class", "svelte-1w1kfep");
+    			add_location(td1, file$2, 110, 6, 3218);
+    			attr_dev(tr1, "class", "svelte-1w1kfep");
+    			add_location(tr1, file$2, 108, 4, 3186);
+    			attr_dev(td2, "class", "svelte-1w1kfep");
+    			add_location(td2, file$2, 113, 6, 3265);
+    			attr_dev(td3, "class", "svelte-1w1kfep");
+    			add_location(td3, file$2, 114, 6, 3291);
+    			attr_dev(tr2, "class", "svelte-1w1kfep");
+    			add_location(tr2, file$2, 112, 4, 3253);
+    			attr_dev(table0, "class", "svelte-1w1kfep");
+    			add_location(table0, file$2, 103, 0, 3100);
+    			add_location(br2, file$2, 116, 10, 3337);
+    			add_location(ul, file$2, 119, 0, 3347);
+    			attr_dev(th2, "scope", "col");
+    			attr_dev(th2, "class", "svelte-1w1kfep");
+    			add_location(th2, file$2, 128, 12, 3555);
+    			attr_dev(th3, "scope", "col");
+    			attr_dev(th3, "class", "svelte-1w1kfep");
+    			add_location(th3, file$2, 129, 12, 3592);
     			attr_dev(th4, "scope", "col");
-    			add_location(th4, file$2, 109, 12, 3187);
+    			attr_dev(th4, "class", "svelte-1w1kfep");
+    			add_location(th4, file$2, 130, 12, 3643);
     			attr_dev(th5, "scope", "col");
-    			add_location(th5, file$2, 110, 12, 3224);
+    			attr_dev(th5, "class", "svelte-1w1kfep");
+    			add_location(th5, file$2, 131, 12, 3695);
     			attr_dev(th6, "scope", "col");
-    			add_location(th6, file$2, 111, 12, 3275);
+    			attr_dev(th6, "class", "svelte-1w1kfep");
+    			add_location(th6, file$2, 132, 12, 3741);
     			attr_dev(th7, "scope", "col");
-    			add_location(th7, file$2, 112, 12, 3327);
-    			attr_dev(th8, "scope", "col");
-    			add_location(th8, file$2, 113, 12, 3373);
-    			attr_dev(th9, "scope", "col");
-    			add_location(th9, file$2, 114, 12, 3414);
-    			add_location(tr3, file$2, 108, 8, 3169);
-    			add_location(thead1, file$2, 107, 4, 3152);
-    			add_location(tbody1, file$2, 117, 4, 3483);
-    			attr_dev(table1, "class", "table table-striped");
-    			add_location(table1, file$2, 106, 0, 3111);
+    			attr_dev(th7, "class", "svelte-1w1kfep");
+    			add_location(th7, file$2, 133, 12, 3782);
+    			attr_dev(tr3, "class", "svelte-1w1kfep");
+    			add_location(tr3, file$2, 127, 8, 3537);
+    			add_location(thead, file$2, 126, 4, 3520);
+    			add_location(tbody, file$2, 136, 4, 3851);
+    			attr_dev(table1, "class", "table table-striped svelte-1w1kfep");
+    			add_location(table1, file$2, 125, 0, 3479);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7142,51 +7223,76 @@ var app = (function () {
     			insert_dev(target, t3, anchor);
     			insert_dev(target, h31, anchor);
     			insert_dev(target, t5, anchor);
-    			insert_dev(target, t6, anchor);
-    			insert_dev(target, t7, anchor);
     			insert_dev(target, table0, anchor);
-    			append_dev(table0, thead0);
-    			append_dev(thead0, tr0);
+    			append_dev(table0, tr0);
     			append_dev(tr0, th0);
-    			append_dev(tr0, t9);
+    			append_dev(tr0, t7);
     			append_dev(tr0, th1);
-    			append_dev(table0, t11);
-    			append_dev(table0, tbody0);
-    			append_dev(tbody0, tr1);
-    			append_dev(tr1, th2);
-    			append_dev(tr1, t13);
+    			append_dev(table0, t9);
+    			append_dev(table0, tr1);
     			append_dev(tr1, td0);
-    			append_dev(tbody0, t15);
-    			append_dev(tbody0, tr2);
-    			append_dev(tr2, th3);
-    			append_dev(tr2, t17);
-    			append_dev(tr2, td1);
-    			append_dev(table0, t19);
+    			append_dev(tr1, t11);
+    			append_dev(tr1, td1);
+    			append_dev(table0, t13);
+    			append_dev(table0, tr2);
+    			append_dev(tr2, td2);
+    			append_dev(tr2, t15);
+    			append_dev(tr2, td3);
+    			append_dev(table0, t17);
     			insert_dev(target, br2, anchor);
-    			insert_dev(target, t20, anchor);
+    			insert_dev(target, t18, anchor);
+    			insert_dev(target, ul, anchor);
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].m(ul, null);
+    			}
+
+    			insert_dev(target, t19, anchor);
     			insert_dev(target, table1, anchor);
-    			append_dev(table1, thead1);
-    			append_dev(thead1, tr3);
+    			append_dev(table1, thead);
+    			append_dev(thead, tr3);
+    			append_dev(tr3, th2);
+    			append_dev(tr3, t21);
+    			append_dev(tr3, th3);
+    			append_dev(tr3, t23);
     			append_dev(tr3, th4);
-    			append_dev(tr3, t22);
+    			append_dev(tr3, t25);
     			append_dev(tr3, th5);
-    			append_dev(tr3, t24);
+    			append_dev(tr3, t27);
     			append_dev(tr3, th6);
-    			append_dev(tr3, t26);
+    			append_dev(tr3, t29);
     			append_dev(tr3, th7);
-    			append_dev(tr3, t28);
-    			append_dev(tr3, th8);
-    			append_dev(tr3, t30);
-    			append_dev(tr3, th9);
-    			append_dev(table1, t32);
-    			append_dev(table1, tbody1);
+    			append_dev(table1, t31);
+    			append_dev(table1, tbody);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(tbody1, null);
+    				each_blocks[i].m(tbody, null);
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*bestellungId*/ 2 && t6_value !== (t6_value = JSON.stringify(/*bestellungId*/ ctx[1]) + "")) set_data_dev(t6, t6_value);
+    			if (dirty & /*state*/ 2) {
+    				each_value_1 = /*state*/ ctx[1];
+    				validate_each_argument(each_value_1);
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+
+    					if (each_blocks_1[i]) {
+    						each_blocks_1[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks_1[i] = create_each_block_1(child_ctx);
+    						each_blocks_1[i].c();
+    						each_blocks_1[i].m(ul, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_1.length; i += 1) {
+    					each_blocks_1[i].d(1);
+    				}
+
+    				each_blocks_1.length = each_value_1.length;
+    			}
 
     			if (dirty & /*idZumUpdaten, bestellungen*/ 5) {
     				each_value = /*bestellungen*/ ctx[0];
@@ -7201,7 +7307,7 @@ var app = (function () {
     					} else {
     						each_blocks[i] = create_each_block$1(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(tbody1, null);
+    						each_blocks[i].m(tbody, null);
     					}
     				}
 
@@ -7223,11 +7329,12 @@ var app = (function () {
     			if (detaching) detach_dev(t3);
     			if (detaching) detach_dev(h31);
     			if (detaching) detach_dev(t5);
-    			if (detaching) detach_dev(t6);
-    			if (detaching) detach_dev(t7);
     			if (detaching) detach_dev(table0);
     			if (detaching) detach_dev(br2);
-    			if (detaching) detach_dev(t20);
+    			if (detaching) detach_dev(t18);
+    			if (detaching) detach_dev(ul);
+    			destroy_each(each_blocks_1, detaching);
+    			if (detaching) detach_dev(t19);
     			if (detaching) detach_dev(table1);
     			destroy_each(each_blocks, detaching);
     		}
@@ -7249,15 +7356,32 @@ var app = (function () {
     function instance$2($$self, $$props, $$invalidate) {
     	let $jwt_token;
     	validate_store(jwt_token, 'jwt_token');
-    	component_subscribe($$self, jwt_token, $$value => $$invalidate(5, $jwt_token = $$value));
+    	component_subscribe($$self, jwt_token, $$value => $$invalidate(6, $jwt_token = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('UebersichtBestellungen', slots, []);
     	let bestellungen = [];
     	let bestellung = {};
     	let status;
     	let bestellungId = [];
+    	let state = [];
+    	getBestellState();
 
     	function getBestellungen() {
+    		var config = {
+    			method: "get",
+    			url: api_root + "/api/bestellung/bystate",
+    			headers: {
+    				Authorization: "Bearer " + $jwt_token,
+    				"Content-Type": "application/json"
+    			}
+    		};
+
+    		axios(config).then(function (response) {
+    			$$invalidate(1, state = response.data);
+    		});
+    	}
+
+    	function getBestellState() {
     		var config = {
     			method: "get",
     			url: api_root + "/api/bestellung",
@@ -7286,7 +7410,7 @@ var app = (function () {
     		axios(config).then(function (response) {
     			alert("Glückwunsch! Die Bestellung wurde aktualisiert");
     		}).catch(function (error) {
-    			alert("Hat leider nicht funktioniert");
+    			alert("Hat leider nicht funktioniert. Versuche es nochmals");
     			console.log(error);
     		});
     	}
@@ -7312,10 +7436,10 @@ var app = (function () {
 
     	const idZumUpdaten = (bestellung, stati) => {
     		if (stati === "NEU") {
-    			$$invalidate(1, bestellungId = bestellung);
+    			bestellungId = bestellung;
     			getBestaetigen();
     		} else if (stati === "BESTAETIGT") {
-    			$$invalidate(1, bestellungId = bestellung);
+    			bestellungId = bestellung;
     			getBereitgestellt();
     		} else {
     			alert("Status kann nicht mehr geändert werden. Falls du Hilfe brauchst, wende dich an den Admin");
@@ -7342,7 +7466,9 @@ var app = (function () {
     		bestellung,
     		status,
     		bestellungId,
+    		state,
     		getBestellungen,
+    		getBestellState,
     		getBestaetigen,
     		getBereitgestellt,
     		idZumUpdaten,
@@ -7353,14 +7479,15 @@ var app = (function () {
     		if ('bestellungen' in $$props) $$invalidate(0, bestellungen = $$props.bestellungen);
     		if ('bestellung' in $$props) $$invalidate(3, bestellung = $$props.bestellung);
     		if ('status' in $$props) status = $$props.status;
-    		if ('bestellungId' in $$props) $$invalidate(1, bestellungId = $$props.bestellungId);
+    		if ('bestellungId' in $$props) bestellungId = $$props.bestellungId;
+    		if ('state' in $$props) $$invalidate(1, state = $$props.state);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [bestellungen, bestellungId, idZumUpdaten, bestellung, click_handler];
+    	return [bestellungen, state, idZumUpdaten, bestellung, click_handler];
     }
 
     class UebersichtBestellungen extends SvelteComponentDev {

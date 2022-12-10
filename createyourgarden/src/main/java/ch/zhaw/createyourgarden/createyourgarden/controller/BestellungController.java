@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import ch.zhaw.createyourgarden.createyourgarden.model.BestellStateAggregationDTO;
 import ch.zhaw.createyourgarden.createyourgarden.model.Bestellung;
 import ch.zhaw.createyourgarden.createyourgarden.model.BestellungCreateDTO;
 import ch.zhaw.createyourgarden.createyourgarden.repository.BestellungRepository;
@@ -46,6 +47,11 @@ public class BestellungController {
     public ResponseEntity<List<Bestellung>> getAllBestellung() {
         List<Bestellung> allBestellung = bestellungRepository.findAll();
         return new ResponseEntity<>(allBestellung, HttpStatus.OK);        
+    }
+
+    @GetMapping("/bystate")
+    public ResponseEntity<List<BestellStateAggregationDTO>> getBestellStateAggregation() {
+        return new ResponseEntity<>(bestellungRepository.getBestellStateAggregation(), HttpStatus.OK);
     }
 
 }

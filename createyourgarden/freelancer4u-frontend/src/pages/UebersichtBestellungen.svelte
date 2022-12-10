@@ -10,8 +10,23 @@ let bestellungen = [];
 let bestellung = {};
 let status;
 let bestellungId = [];
-
+let state = [];
+getBestellState();
 function getBestellungen() {
+        var config = {
+            method: "get",
+            url: api_root + "/api/bestellung/bystate",
+            headers: {Authorization: "Bearer " + $jwt_token,
+                "Content-Type": "application/json",},
+        };
+
+        axios(config).then(function (response) {
+            state = response.data;
+        });
+    }
+
+
+    function getBestellState() {
         var config = {
             method: "get",
             url: api_root + "/api/bestellung",
@@ -23,6 +38,7 @@ function getBestellungen() {
             bestellungen = response.data;
         });
     }
+
 
 function getBestaetigen() {
     var config = {
@@ -39,7 +55,7 @@ function getBestaetigen() {
                 alert("Glückwunsch! Die Bestellung wurde aktualisiert");
             })
             .catch(function (error) {
-                alert("Hat leider nicht funktioniert");
+                alert("Hat leider nicht funktioniert. Versuche es nochmals");
                 console.log(error);
             });
     }
@@ -77,32 +93,35 @@ const idZumUpdaten  = (bestellung, stati) => {
 }
     getBestellungen();
 
-    // 
+    //  {JSON.stringify(state)}
 
 </script>
 
 <h1>Übersicht aller Bestellungen inkl. Status</h1><br>
 <h3>Statusupgrades kannst du mit nur einem Klick upgraden</h3><br>
 <h3>Mögliche Änderungen:</h3>
-{JSON.stringify(bestellungId)}
-<table class="table table-sm">
-    <thead>
-        <tr class="table-info">
-          <th scope="col">Status</th>
-          <th scope="col">Neuer Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-        <th scope="row">NEU</th>
-          <td>BESTÄTIGT</td>
-        </tr>
-        <tr>
-            <th scope="row">BESTÄTIGT</th>
-            <td>BEREITGESTELLT</td>
-          </tr>
-        </tbody>
-</table><br>
+
+<table>
+    <tr>
+      <th>Status</th>
+      <th>Neuer Status</th>
+    </tr>
+    <tr>
+      <td>NEU</td>
+      <td>BESTÄTIGT</td>
+    </tr>
+    <tr>
+      <td>BESTÄTIGT</td>
+      <td>BEREITGESTELLT</td>
+    </tr>
+  </table><br>
+
+
+<ul>
+{#each state as s}
+    <li>Zur Zeit haben <strong>{s.count}</strong> Bestellungen den Status: {s.id}</li>
+{/each}
+</ul>
 
 <table class="table table-striped">
     <thead>
@@ -137,3 +156,20 @@ const idZumUpdaten  = (bestellung, stati) => {
 </table>
 
 
+<style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #00ACC1;
+    }
+    
+    tr:hover {background-color: #00ACC1;}
+
+   
+
+    </style>
