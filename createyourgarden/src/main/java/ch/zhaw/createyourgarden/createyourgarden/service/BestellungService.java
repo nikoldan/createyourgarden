@@ -29,7 +29,7 @@ public class BestellungService {
         return Optional.empty();
     }
 
-    public Optional<Bestellung> bestellungBereit(String bestellungId, String kommentare) {
+    public Optional<Bestellung> bestellungBereit(String bestellungId) {
         Optional<Bestellung> bBereit = bestellungRepository.findById(bestellungId);
         if (bBereit.isPresent()) {
             Bestellung bestellung = bBereit.get();
