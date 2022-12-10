@@ -6871,8 +6871,8 @@ var app = (function () {
     			t1 = text(t1_value);
     			t2 = text(" Bestellungen den Status: ");
     			t3 = text(t3_value);
-    			add_location(strong, file$2, 121, 23, 3374);
-    			add_location(li, file$2, 121, 4, 3355);
+    			add_location(strong, file$2, 121, 23, 3396);
+    			add_location(li, file$2, 121, 4, 3377);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -6958,22 +6958,22 @@ var app = (function () {
     			button.textContent = "Status aendern";
     			t11 = space();
     			attr_dev(td0, "class", "svelte-1w1kfep");
-    			add_location(td0, file$2, 139, 16, 3916);
+    			add_location(td0, file$2, 139, 16, 3938);
     			attr_dev(td1, "class", "svelte-1w1kfep");
-    			add_location(td1, file$2, 140, 16, 3958);
+    			add_location(td1, file$2, 140, 16, 3980);
     			attr_dev(td2, "class", "svelte-1w1kfep");
-    			add_location(td2, file$2, 141, 16, 4009);
+    			add_location(td2, file$2, 141, 16, 4031);
     			attr_dev(td3, "class", "svelte-1w1kfep");
-    			add_location(td3, file$2, 142, 16, 4060);
+    			add_location(td3, file$2, 142, 16, 4082);
     			attr_dev(td4, "class", "svelte-1w1kfep");
-    			add_location(td4, file$2, 143, 16, 4111);
+    			add_location(td4, file$2, 143, 16, 4133);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn btn-info");
-    			add_location(button, file$2, 145, 21, 4192);
+    			add_location(button, file$2, 145, 21, 4214);
     			attr_dev(td5, "class", "svelte-1w1kfep");
-    			add_location(td5, file$2, 144, 16, 4166);
+    			add_location(td5, file$2, 144, 16, 4188);
     			attr_dev(tr, "class", "svelte-1w1kfep");
-    			add_location(tr, file$2, 138, 12, 3894);
+    			add_location(tr, file$2, 138, 12, 3916);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -7159,57 +7159,57 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h1, file$2, 99, 0, 2921);
-    			add_location(br0, file$2, 99, 50, 2971);
-    			add_location(h30, file$2, 100, 0, 2977);
-    			add_location(br1, file$2, 100, 62, 3039);
-    			add_location(h31, file$2, 101, 0, 3045);
+    			add_location(h1, file$2, 99, 0, 2943);
+    			add_location(br0, file$2, 99, 50, 2993);
+    			add_location(h30, file$2, 100, 0, 2999);
+    			add_location(br1, file$2, 100, 62, 3061);
+    			add_location(h31, file$2, 101, 0, 3067);
     			attr_dev(th0, "class", "svelte-1w1kfep");
-    			add_location(th0, file$2, 105, 6, 3103);
+    			add_location(th0, file$2, 105, 6, 3125);
     			attr_dev(th1, "class", "svelte-1w1kfep");
-    			add_location(th1, file$2, 106, 6, 3126);
+    			add_location(th1, file$2, 106, 6, 3148);
     			attr_dev(tr0, "class", "svelte-1w1kfep");
-    			add_location(tr0, file$2, 104, 4, 3091);
+    			add_location(tr0, file$2, 104, 4, 3113);
     			attr_dev(td0, "class", "svelte-1w1kfep");
-    			add_location(td0, file$2, 109, 6, 3176);
+    			add_location(td0, file$2, 109, 6, 3198);
     			attr_dev(td1, "class", "svelte-1w1kfep");
-    			add_location(td1, file$2, 110, 6, 3196);
+    			add_location(td1, file$2, 110, 6, 3218);
     			attr_dev(tr1, "class", "svelte-1w1kfep");
-    			add_location(tr1, file$2, 108, 4, 3164);
+    			add_location(tr1, file$2, 108, 4, 3186);
     			attr_dev(td2, "class", "svelte-1w1kfep");
-    			add_location(td2, file$2, 113, 6, 3243);
+    			add_location(td2, file$2, 113, 6, 3265);
     			attr_dev(td3, "class", "svelte-1w1kfep");
-    			add_location(td3, file$2, 114, 6, 3269);
+    			add_location(td3, file$2, 114, 6, 3291);
     			attr_dev(tr2, "class", "svelte-1w1kfep");
-    			add_location(tr2, file$2, 112, 4, 3231);
+    			add_location(tr2, file$2, 112, 4, 3253);
     			attr_dev(table0, "class", "svelte-1w1kfep");
-    			add_location(table0, file$2, 103, 0, 3078);
-    			add_location(br2, file$2, 116, 10, 3315);
-    			add_location(ul, file$2, 119, 0, 3325);
+    			add_location(table0, file$2, 103, 0, 3100);
+    			add_location(br2, file$2, 116, 10, 3337);
+    			add_location(ul, file$2, 119, 0, 3347);
     			attr_dev(th2, "scope", "col");
     			attr_dev(th2, "class", "svelte-1w1kfep");
-    			add_location(th2, file$2, 128, 12, 3533);
+    			add_location(th2, file$2, 128, 12, 3555);
     			attr_dev(th3, "scope", "col");
     			attr_dev(th3, "class", "svelte-1w1kfep");
-    			add_location(th3, file$2, 129, 12, 3570);
+    			add_location(th3, file$2, 129, 12, 3592);
     			attr_dev(th4, "scope", "col");
     			attr_dev(th4, "class", "svelte-1w1kfep");
-    			add_location(th4, file$2, 130, 12, 3621);
+    			add_location(th4, file$2, 130, 12, 3643);
     			attr_dev(th5, "scope", "col");
     			attr_dev(th5, "class", "svelte-1w1kfep");
-    			add_location(th5, file$2, 131, 12, 3673);
+    			add_location(th5, file$2, 131, 12, 3695);
     			attr_dev(th6, "scope", "col");
     			attr_dev(th6, "class", "svelte-1w1kfep");
-    			add_location(th6, file$2, 132, 12, 3719);
+    			add_location(th6, file$2, 132, 12, 3741);
     			attr_dev(th7, "scope", "col");
     			attr_dev(th7, "class", "svelte-1w1kfep");
-    			add_location(th7, file$2, 133, 12, 3760);
+    			add_location(th7, file$2, 133, 12, 3782);
     			attr_dev(tr3, "class", "svelte-1w1kfep");
-    			add_location(tr3, file$2, 127, 8, 3515);
-    			add_location(thead, file$2, 126, 4, 3498);
-    			add_location(tbody, file$2, 136, 4, 3829);
+    			add_location(tr3, file$2, 127, 8, 3537);
+    			add_location(thead, file$2, 126, 4, 3520);
+    			add_location(tbody, file$2, 136, 4, 3851);
     			attr_dev(table1, "class", "table table-striped svelte-1w1kfep");
-    			add_location(table1, file$2, 125, 0, 3457);
+    			add_location(table1, file$2, 125, 0, 3479);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7410,7 +7410,7 @@ var app = (function () {
     		axios(config).then(function (response) {
     			alert("Glückwunsch! Die Bestellung wurde aktualisiert");
     		}).catch(function (error) {
-    			alert("Hat leider nicht funktioniert");
+    			alert("Hat leider nicht funktioniert. Versuche es nochmals");
     			console.log(error);
     		});
     	}

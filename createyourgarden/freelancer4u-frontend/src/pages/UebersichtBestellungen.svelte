@@ -55,7 +55,7 @@ function getBestaetigen() {
                 alert("Glückwunsch! Die Bestellung wurde aktualisiert");
             })
             .catch(function (error) {
-                alert("Hat leider nicht funktioniert");
+                alert("Hat leider nicht funktioniert. Versuche es nochmals");
                 console.log(error);
             });
     }
