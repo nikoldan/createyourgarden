@@ -7386,7 +7386,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (39:2) {#each plants as plant}
+    // (40:2) {#each plants as plant}
     function create_each_block(ctx) {
     	let tr;
     	let td0;
@@ -7421,14 +7421,14 @@ var app = (function () {
     			td3 = element("td");
     			img = element("img");
     			t6 = space();
-    			add_location(td0, file$1, 40, 4, 829);
-    			add_location(td1, file$1, 41, 4, 854);
-    			add_location(td2, file$1, 42, 4, 890);
+    			add_location(td0, file$1, 41, 4, 949);
+    			add_location(td1, file$1, 42, 4, 974);
+    			add_location(td2, file$1, 43, 4, 1010);
     			if (!src_url_equal(img.src, img_src_value = /*plant*/ ctx[2].img)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Link zum Bild");
-    			add_location(img, file$1, 43, 9, 928);
-    			add_location(td3, file$1, 43, 4, 923);
-    			add_location(tr, file$1, 39, 3, 819);
+    			add_location(img, file$1, 44, 9, 1048);
+    			add_location(td3, file$1, 44, 4, 1043);
+    			add_location(tr, file$1, 40, 3, 939);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -7463,7 +7463,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(39:2) {#each plants as plant}",
+    		source: "(40:2) {#each plants as plant}",
     		ctx
     	});
 
@@ -7473,17 +7473,19 @@ var app = (function () {
     function create_fragment$1(ctx) {
     	let h1;
     	let t1;
+    	let div;
+    	let t3;
     	let table;
     	let thead;
     	let tr;
     	let th0;
-    	let t3;
-    	let th1;
     	let t5;
-    	let th2;
+    	let th1;
     	let t7;
-    	let th3;
+    	let th2;
     	let t9;
+    	let th3;
+    	let t11;
     	let tbody;
     	let each_value = /*plants*/ ctx[0];
     	validate_each_argument(each_value);
@@ -7496,23 +7498,26 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			h1 = element("h1");
-    			h1.textContent = "Hier findest du eine Vielzahl von Bildern";
+    			h1.textContent = "Für die Innenbegrünung - eine Auswahl toller Zimmenpflanzen";
     			t1 = space();
+    			div = element("div");
+    			div.textContent = "Als Insperation für deine neue Zimmerpflanze. Du findest diese in den meisten Gärtnereien";
+    			t3 = space();
     			table = element("table");
     			thead = element("thead");
     			tr = element("tr");
     			th0 = element("th");
     			th0.textContent = "ID";
-    			t3 = space();
+    			t5 = space();
     			th1 = element("th");
     			th1.textContent = "Latin name";
-    			t5 = space();
+    			t7 = space();
     			th2 = element("th");
     			th2.textContent = "Kategorie";
-    			t7 = space();
+    			t9 = space();
     			th3 = element("th");
     			th3.textContent = "Bild";
-    			t9 = space();
+    			t11 = space();
     			tbody = element("tbody");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -7520,19 +7525,20 @@ var app = (function () {
     			}
 
     			add_location(h1, file$1, 26, 0, 521);
+    			add_location(div, file$1, 27, 0, 591);
     			attr_dev(th0, "scope", "col");
-    			add_location(th0, file$1, 31, 3, 633);
+    			add_location(th0, file$1, 32, 3, 753);
     			attr_dev(th1, "scope", "col");
-    			add_location(th1, file$1, 32, 3, 661);
+    			add_location(th1, file$1, 33, 3, 781);
     			attr_dev(th2, "scope", "col");
-    			add_location(th2, file$1, 33, 3, 697);
+    			add_location(th2, file$1, 34, 3, 817);
     			attr_dev(th3, "scope", "col");
-    			add_location(th3, file$1, 34, 3, 732);
-    			add_location(tr, file$1, 30, 2, 624);
-    			add_location(thead, file$1, 29, 1, 613);
-    			add_location(tbody, file$1, 37, 1, 780);
+    			add_location(th3, file$1, 35, 3, 852);
+    			add_location(tr, file$1, 31, 2, 744);
+    			add_location(thead, file$1, 30, 1, 733);
+    			add_location(tbody, file$1, 38, 1, 900);
     			attr_dev(table, "class", "table table-striped");
-    			add_location(table, file$1, 28, 0, 575);
+    			add_location(table, file$1, 29, 0, 695);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7540,17 +7546,19 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
     			insert_dev(target, t1, anchor);
+    			insert_dev(target, div, anchor);
+    			insert_dev(target, t3, anchor);
     			insert_dev(target, table, anchor);
     			append_dev(table, thead);
     			append_dev(thead, tr);
     			append_dev(tr, th0);
-    			append_dev(tr, t3);
-    			append_dev(tr, th1);
     			append_dev(tr, t5);
-    			append_dev(tr, th2);
+    			append_dev(tr, th1);
     			append_dev(tr, t7);
+    			append_dev(tr, th2);
+    			append_dev(tr, t9);
     			append_dev(tr, th3);
-    			append_dev(table, t9);
+    			append_dev(table, t11);
     			append_dev(table, tbody);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -7587,6 +7595,8 @@ var app = (function () {
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(h1);
     			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div);
+    			if (detaching) detach_dev(t3);
     			if (detaching) detach_dev(table);
     			destroy_each(each_blocks, detaching);
     		}
