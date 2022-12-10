@@ -6842,31 +6842,31 @@ var app = (function () {
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[2] = list[i];
+    	child_ctx[3] = list[i];
     	return child_ctx;
     }
 
-    // (110:8) {#each bestellungen as bestellung}
+    // (119:8) {#each bestellungen as bestellung}
     function create_each_block$1(ctx) {
     	let tr;
     	let td0;
-    	let t0_value = /*bestellung*/ ctx[2].id + "";
+    	let t0_value = /*bestellung*/ ctx[3].id + "";
     	let t0;
     	let t1;
     	let td1;
-    	let t2_value = /*bestellung*/ ctx[2].vornameName + "";
+    	let t2_value = /*bestellung*/ ctx[3].vornameName + "";
     	let t2;
     	let t3;
     	let td2;
-    	let t4_value = /*bestellung*/ ctx[2].wunschDatum + "";
+    	let t4_value = /*bestellung*/ ctx[3].wunschDatum + "";
     	let t4;
     	let t5;
     	let td3;
-    	let t6_value = /*bestellung*/ ctx[2].gesamtPreis + "";
+    	let t6_value = /*bestellung*/ ctx[3].gesamtPreis + "";
     	let t6;
     	let t7;
     	let td4;
-    	let t8_value = /*bestellung*/ ctx[2].bestellungState + "";
+    	let t8_value = /*bestellung*/ ctx[3].bestellungState + "";
     	let t8;
     	let t9;
     	let td5;
@@ -6876,7 +6876,7 @@ var app = (function () {
     	let dispose;
 
     	function click_handler() {
-    		return /*click_handler*/ ctx[3](/*bestellung*/ ctx[2]);
+    		return /*click_handler*/ ctx[4](/*bestellung*/ ctx[3]);
     	}
 
     	const block = {
@@ -6901,16 +6901,16 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Status aendern";
     			t11 = space();
-    			add_location(td0, file$2, 111, 16, 3022);
-    			add_location(td1, file$2, 112, 16, 3064);
-    			add_location(td2, file$2, 113, 16, 3115);
-    			add_location(td3, file$2, 114, 16, 3166);
-    			add_location(td4, file$2, 115, 16, 3217);
+    			add_location(td0, file$2, 120, 16, 3570);
+    			add_location(td1, file$2, 121, 16, 3612);
+    			add_location(td2, file$2, 122, 16, 3663);
+    			add_location(td3, file$2, 123, 16, 3714);
+    			add_location(td4, file$2, 124, 16, 3765);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn btn-info");
-    			add_location(button, file$2, 117, 21, 3298);
-    			add_location(td5, file$2, 116, 16, 3272);
-    			add_location(tr, file$2, 110, 12, 3000);
+    			add_location(button, file$2, 126, 21, 3846);
+    			add_location(td5, file$2, 125, 16, 3820);
+    			add_location(tr, file$2, 119, 12, 3548);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -6940,11 +6940,11 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*bestellungen*/ 1 && t0_value !== (t0_value = /*bestellung*/ ctx[2].id + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*bestellungen*/ 1 && t2_value !== (t2_value = /*bestellung*/ ctx[2].vornameName + "")) set_data_dev(t2, t2_value);
-    			if (dirty & /*bestellungen*/ 1 && t4_value !== (t4_value = /*bestellung*/ ctx[2].wunschDatum + "")) set_data_dev(t4, t4_value);
-    			if (dirty & /*bestellungen*/ 1 && t6_value !== (t6_value = /*bestellung*/ ctx[2].gesamtPreis + "")) set_data_dev(t6, t6_value);
-    			if (dirty & /*bestellungen*/ 1 && t8_value !== (t8_value = /*bestellung*/ ctx[2].bestellungState + "")) set_data_dev(t8, t8_value);
+    			if (dirty & /*bestellungen*/ 1 && t0_value !== (t0_value = /*bestellung*/ ctx[3].id + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*bestellungen*/ 1 && t2_value !== (t2_value = /*bestellung*/ ctx[3].vornameName + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*bestellungen*/ 1 && t4_value !== (t4_value = /*bestellung*/ ctx[3].wunschDatum + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*bestellungen*/ 1 && t6_value !== (t6_value = /*bestellung*/ ctx[3].gesamtPreis + "")) set_data_dev(t6, t6_value);
+    			if (dirty & /*bestellungen*/ 1 && t8_value !== (t8_value = /*bestellung*/ ctx[3].bestellungState + "")) set_data_dev(t8, t8_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(tr);
@@ -6957,7 +6957,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(110:8) {#each bestellungen as bestellung}",
+    		source: "(119:8) {#each bestellungen as bestellung}",
     		ctx
     	});
 
@@ -6973,41 +6973,44 @@ var app = (function () {
     	let t3;
     	let h31;
     	let t5;
+    	let t6_value = JSON.stringify(/*bestellungId*/ ctx[1]) + "";
+    	let t6;
+    	let t7;
     	let table0;
     	let thead0;
     	let tr0;
     	let th0;
-    	let t7;
-    	let th1;
     	let t9;
+    	let th1;
+    	let t11;
     	let tbody0;
     	let tr1;
     	let th2;
-    	let t11;
-    	let td0;
     	let t13;
+    	let td0;
+    	let t15;
     	let tr2;
     	let th3;
-    	let t15;
-    	let td1;
     	let t17;
+    	let td1;
+    	let t19;
     	let br2;
-    	let t18;
+    	let t20;
     	let table1;
     	let thead1;
     	let tr3;
     	let th4;
-    	let t20;
-    	let th5;
     	let t22;
-    	let th6;
+    	let th5;
     	let t24;
-    	let th7;
+    	let th6;
     	let t26;
-    	let th8;
+    	let th7;
     	let t28;
-    	let th9;
+    	let th8;
     	let t30;
+    	let th9;
+    	let t32;
     	let tbody1;
     	let each_value = /*bestellungen*/ ctx[0];
     	validate_each_argument(each_value);
@@ -7030,100 +7033,102 @@ var app = (function () {
     			h31 = element("h3");
     			h31.textContent = "Mögliche Änderungen:";
     			t5 = space();
+    			t6 = text(t6_value);
+    			t7 = space();
     			table0 = element("table");
     			thead0 = element("thead");
     			tr0 = element("tr");
     			th0 = element("th");
     			th0.textContent = "Status";
-    			t7 = space();
+    			t9 = space();
     			th1 = element("th");
     			th1.textContent = "Neuer Status";
-    			t9 = space();
+    			t11 = space();
     			tbody0 = element("tbody");
     			tr1 = element("tr");
     			th2 = element("th");
     			th2.textContent = "NEU";
-    			t11 = space();
+    			t13 = space();
     			td0 = element("td");
     			td0.textContent = "BESTÄTIGT";
-    			t13 = space();
+    			t15 = space();
     			tr2 = element("tr");
     			th3 = element("th");
     			th3.textContent = "BESTÄTIGT";
-    			t15 = space();
+    			t17 = space();
     			td1 = element("td");
     			td1.textContent = "BEREITGESTELLT";
-    			t17 = space();
+    			t19 = space();
     			br2 = element("br");
-    			t18 = space();
+    			t20 = space();
     			table1 = element("table");
     			thead1 = element("thead");
     			tr3 = element("tr");
     			th4 = element("th");
     			th4.textContent = "ID";
-    			t20 = space();
+    			t22 = space();
     			th5 = element("th");
     			th5.textContent = "Vorname Nachname";
-    			t22 = space();
+    			t24 = space();
     			th6 = element("th");
     			th6.textContent = "Wunschlieferdatum";
-    			t24 = space();
+    			t26 = space();
     			th7 = element("th");
     			th7.textContent = "Gesamtpreis";
-    			t26 = space();
+    			t28 = space();
     			th8 = element("th");
     			th8.textContent = "Status";
-    			t28 = space();
+    			t30 = space();
     			th9 = element("th");
     			th9.textContent = "Status ändern";
-    			t30 = space();
+    			t32 = space();
     			tbody1 = element("tbody");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			add_location(h1, file$2, 74, 0, 1959);
-    			add_location(br0, file$2, 74, 50, 2009);
-    			add_location(h30, file$2, 75, 0, 2015);
-    			add_location(br1, file$2, 75, 62, 2077);
-    			add_location(h31, file$2, 76, 0, 2083);
+    			add_location(h1, file$2, 83, 0, 2477);
+    			add_location(br0, file$2, 83, 50, 2527);
+    			add_location(h30, file$2, 84, 0, 2533);
+    			add_location(br1, file$2, 84, 62, 2595);
+    			add_location(h31, file$2, 85, 0, 2601);
     			attr_dev(th0, "scope", "col");
-    			add_location(th0, file$2, 81, 10, 2204);
+    			add_location(th0, file$2, 90, 10, 2752);
     			attr_dev(th1, "scope", "col");
-    			add_location(th1, file$2, 82, 10, 2243);
+    			add_location(th1, file$2, 91, 10, 2791);
     			attr_dev(tr0, "class", "table-info");
-    			add_location(tr0, file$2, 80, 8, 2169);
-    			add_location(thead0, file$2, 79, 4, 2152);
+    			add_location(tr0, file$2, 89, 8, 2717);
+    			add_location(thead0, file$2, 88, 4, 2700);
     			attr_dev(th2, "scope", "row");
-    			add_location(th2, file$2, 87, 8, 2346);
-    			add_location(td0, file$2, 88, 10, 2382);
-    			add_location(tr1, file$2, 86, 8, 2332);
+    			add_location(th2, file$2, 96, 8, 2894);
+    			add_location(td0, file$2, 97, 10, 2930);
+    			add_location(tr1, file$2, 95, 8, 2880);
     			attr_dev(th3, "scope", "row");
-    			add_location(th3, file$2, 91, 12, 2443);
-    			add_location(td1, file$2, 92, 12, 2487);
-    			add_location(tr2, file$2, 90, 8, 2425);
-    			add_location(tbody0, file$2, 85, 6, 2315);
+    			add_location(th3, file$2, 100, 12, 2991);
+    			add_location(td1, file$2, 101, 12, 3035);
+    			add_location(tr2, file$2, 99, 8, 2973);
+    			add_location(tbody0, file$2, 94, 6, 2863);
     			attr_dev(table0, "class", "table table-sm");
-    			add_location(table0, file$2, 78, 0, 2116);
-    			add_location(br2, file$2, 95, 8, 2555);
+    			add_location(table0, file$2, 87, 0, 2664);
+    			add_location(br2, file$2, 104, 8, 3103);
     			attr_dev(th4, "scope", "col");
-    			add_location(th4, file$2, 100, 12, 2639);
+    			add_location(th4, file$2, 109, 12, 3187);
     			attr_dev(th5, "scope", "col");
-    			add_location(th5, file$2, 101, 12, 2676);
+    			add_location(th5, file$2, 110, 12, 3224);
     			attr_dev(th6, "scope", "col");
-    			add_location(th6, file$2, 102, 12, 2727);
+    			add_location(th6, file$2, 111, 12, 3275);
     			attr_dev(th7, "scope", "col");
-    			add_location(th7, file$2, 103, 12, 2779);
+    			add_location(th7, file$2, 112, 12, 3327);
     			attr_dev(th8, "scope", "col");
-    			add_location(th8, file$2, 104, 12, 2825);
+    			add_location(th8, file$2, 113, 12, 3373);
     			attr_dev(th9, "scope", "col");
-    			add_location(th9, file$2, 105, 12, 2866);
-    			add_location(tr3, file$2, 99, 8, 2621);
-    			add_location(thead1, file$2, 98, 4, 2604);
-    			add_location(tbody1, file$2, 108, 4, 2935);
+    			add_location(th9, file$2, 114, 12, 3414);
+    			add_location(tr3, file$2, 108, 8, 3169);
+    			add_location(thead1, file$2, 107, 4, 3152);
+    			add_location(tbody1, file$2, 117, 4, 3483);
     			attr_dev(table1, "class", "table table-striped");
-    			add_location(table1, file$2, 97, 0, 2563);
+    			add_location(table1, file$2, 106, 0, 3111);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7137,41 +7142,43 @@ var app = (function () {
     			insert_dev(target, t3, anchor);
     			insert_dev(target, h31, anchor);
     			insert_dev(target, t5, anchor);
+    			insert_dev(target, t6, anchor);
+    			insert_dev(target, t7, anchor);
     			insert_dev(target, table0, anchor);
     			append_dev(table0, thead0);
     			append_dev(thead0, tr0);
     			append_dev(tr0, th0);
-    			append_dev(tr0, t7);
+    			append_dev(tr0, t9);
     			append_dev(tr0, th1);
-    			append_dev(table0, t9);
+    			append_dev(table0, t11);
     			append_dev(table0, tbody0);
     			append_dev(tbody0, tr1);
     			append_dev(tr1, th2);
-    			append_dev(tr1, t11);
+    			append_dev(tr1, t13);
     			append_dev(tr1, td0);
-    			append_dev(tbody0, t13);
+    			append_dev(tbody0, t15);
     			append_dev(tbody0, tr2);
     			append_dev(tr2, th3);
-    			append_dev(tr2, t15);
+    			append_dev(tr2, t17);
     			append_dev(tr2, td1);
-    			append_dev(table0, t17);
+    			append_dev(table0, t19);
     			insert_dev(target, br2, anchor);
-    			insert_dev(target, t18, anchor);
+    			insert_dev(target, t20, anchor);
     			insert_dev(target, table1, anchor);
     			append_dev(table1, thead1);
     			append_dev(thead1, tr3);
     			append_dev(tr3, th4);
-    			append_dev(tr3, t20);
-    			append_dev(tr3, th5);
     			append_dev(tr3, t22);
-    			append_dev(tr3, th6);
+    			append_dev(tr3, th5);
     			append_dev(tr3, t24);
-    			append_dev(tr3, th7);
+    			append_dev(tr3, th6);
     			append_dev(tr3, t26);
-    			append_dev(tr3, th8);
+    			append_dev(tr3, th7);
     			append_dev(tr3, t28);
+    			append_dev(tr3, th8);
+    			append_dev(tr3, t30);
     			append_dev(tr3, th9);
-    			append_dev(table1, t30);
+    			append_dev(table1, t32);
     			append_dev(table1, tbody1);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -7179,7 +7186,9 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*idZumUpdaten, bestellungen*/ 3) {
+    			if (dirty & /*bestellungId*/ 2 && t6_value !== (t6_value = JSON.stringify(/*bestellungId*/ ctx[1]) + "")) set_data_dev(t6, t6_value);
+
+    			if (dirty & /*idZumUpdaten, bestellungen*/ 5) {
     				each_value = /*bestellungen*/ ctx[0];
     				validate_each_argument(each_value);
     				let i;
@@ -7214,9 +7223,11 @@ var app = (function () {
     			if (detaching) detach_dev(t3);
     			if (detaching) detach_dev(h31);
     			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(t6);
+    			if (detaching) detach_dev(t7);
     			if (detaching) detach_dev(table0);
     			if (detaching) detach_dev(br2);
-    			if (detaching) detach_dev(t18);
+    			if (detaching) detach_dev(t20);
     			if (detaching) detach_dev(table1);
     			destroy_each(each_blocks, detaching);
     		}
@@ -7238,7 +7249,7 @@ var app = (function () {
     function instance$2($$self, $$props, $$invalidate) {
     	let $jwt_token;
     	validate_store(jwt_token, 'jwt_token');
-    	component_subscribe($$self, jwt_token, $$value => $$invalidate(6, $jwt_token = $$value));
+    	component_subscribe($$self, jwt_token, $$value => $$invalidate(5, $jwt_token = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('UebersichtBestellungen', slots, []);
     	let bestellungen = [];
@@ -7261,7 +7272,7 @@ var app = (function () {
     		});
     	}
 
-    	function getStatusUpdate() {
+    	function getBestaetigen() {
     		var config = {
     			method: "post",
     			url: api_root + "/api/service/bBestaetigung",
@@ -7280,21 +7291,35 @@ var app = (function () {
     		});
     	}
 
-    	function statusAendern(inputStatus) {
-    		if (inputStatus === "NEU") {
-    			status = "BESTAETIGT";
-    			getStatusUpdate();
-    		} else if (inputStatus === "BESTAETIGT") {
-    			status = "BEREITGESTELLT";
-    			getStatusUpdate();
+    	function getBereitgestellt() {
+    		var config = {
+    			method: "post",
+    			url: api_root + "/api/service/bBereitgestellt",
+    			headers: {
+    				Authorization: "Bearer " + $jwt_token,
+    				"Content-Type": "application/json"
+    			},
+    			data: { bestellungId }
+    		};
+
+    		axios(config).then(function (response) {
+    			alert("Glückwunsch! Die Bestellung wurde aktualisiert");
+    		}).catch(function (error) {
+    			alert("Hat leider nicht funktioniert");
+    			console.log(error);
+    		});
+    	}
+
+    	const idZumUpdaten = (bestellung, stati) => {
+    		if (stati === "NEU") {
+    			$$invalidate(1, bestellungId = bestellung);
+    			getBestaetigen();
+    		} else if (stati === "BESTAETIGT") {
+    			$$invalidate(1, bestellungId = bestellung);
+    			getBereitgestellt();
     		} else {
     			alert("Status kann nicht mehr geändert werden. Falls du Hilfe brauchst, wende dich an den Admin");
     		}
-    	}
-
-    	const idZumUpdaten = bestellung => {
-    		bestellungId = bestellung;
-    		getStatusUpdate();
     	};
 
     	getBestellungen();
@@ -7304,7 +7329,7 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1.warn(`<UebersichtBestellungen> was created with unknown prop '${key}'`);
     	});
 
-    	const click_handler = bestellung => idZumUpdaten(bestellung.id);
+    	const click_handler = bestellung => idZumUpdaten(bestellung.id, bestellung.bestellungState);
 
     	$$self.$capture_state = () => ({
     		axios,
@@ -7318,24 +7343,24 @@ var app = (function () {
     		status,
     		bestellungId,
     		getBestellungen,
-    		getStatusUpdate,
-    		statusAendern,
+    		getBestaetigen,
+    		getBereitgestellt,
     		idZumUpdaten,
     		$jwt_token
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('bestellungen' in $$props) $$invalidate(0, bestellungen = $$props.bestellungen);
-    		if ('bestellung' in $$props) $$invalidate(2, bestellung = $$props.bestellung);
+    		if ('bestellung' in $$props) $$invalidate(3, bestellung = $$props.bestellung);
     		if ('status' in $$props) status = $$props.status;
-    		if ('bestellungId' in $$props) bestellungId = $$props.bestellungId;
+    		if ('bestellungId' in $$props) $$invalidate(1, bestellungId = $$props.bestellungId);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [bestellungen, idZumUpdaten, bestellung, click_handler];
+    	return [bestellungen, bestellungId, idZumUpdaten, bestellung, click_handler];
     }
 
     class UebersichtBestellungen extends SvelteComponentDev {

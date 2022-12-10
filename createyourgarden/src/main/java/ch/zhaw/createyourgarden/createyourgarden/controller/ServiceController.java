@@ -23,7 +23,7 @@ public class ServiceController {
     @Autowired
     BestellungService bestellungService;
 
-    @JsonCreator
+   // @JsonCreator
     @PostMapping("/bBestaetigung")
     public ResponseEntity<Bestellung> bestellungBestaetigen(@RequestBody bestellungBestaetigenDTO bestellDTO) {
         Optional<Bestellung> bestaetigeBestaetigung = bestellungService.bestellungBestaetigen(bestellDTO.getBestellungId());
