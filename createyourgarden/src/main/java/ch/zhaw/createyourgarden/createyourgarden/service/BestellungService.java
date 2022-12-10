@@ -22,6 +22,7 @@ public class BestellungService {
                 if (bestellung.getBestellungState() == BestellungState.NEU) {
                     bestellung.setBestellungState(BestellungState.BESTAETIGT);
                     bestellungRepository.save(bestellung);
+                    return Optional.of(bestellung);
                 }
 
             }
