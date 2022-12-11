@@ -911,7 +911,7 @@ var app = (function () {
     }
 
     // (260:0) {#if componentParams}
-    function create_if_block$1(ctx) {
+    function create_if_block$2(ctx) {
     	let switch_instance;
     	let switch_instance_anchor;
     	let current;
@@ -996,7 +996,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block$1.name,
+    		id: create_if_block$2.name,
     		type: "if",
     		source: "(260:0) {#if componentParams}",
     		ctx
@@ -1010,7 +1010,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$1, create_else_block$1];
+    	const if_block_creators = [create_if_block$2, create_else_block$1];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -4943,16 +4943,16 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Hinzufügen";
     			t11 = space();
-    			add_location(td0, file$6, 143, 16, 4208);
-    			add_location(td1, file$6, 144, 16, 4249);
-    			add_location(td2, file$6, 145, 16, 4291);
-    			add_location(td3, file$6, 146, 16, 4336);
-    			add_location(td4, file$6, 147, 16, 4384);
+    			add_location(td0, file$6, 143, 16, 4209);
+    			add_location(td1, file$6, 144, 16, 4250);
+    			add_location(td2, file$6, 145, 16, 4292);
+    			add_location(td3, file$6, 146, 16, 4337);
+    			add_location(td4, file$6, 147, 16, 4385);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn btn-secondary");
-    			add_location(button, file$6, 149, 21, 4452);
-    			add_location(td5, file$6, 148, 16, 4426);
-    			add_location(tr, file$6, 142, 12, 4186);
+    			add_location(button, file$6, 149, 21, 4453);
+    			add_location(td5, file$6, 148, 16, 4427);
+    			add_location(tr, file$6, 142, 12, 4187);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -5023,9 +5023,9 @@ var app = (function () {
     			attr_dev(a, "class", "page-link");
     			attr_dev(a, "href", "#/bestellung?page=" + (/*i*/ ctx[25] + 1));
     			toggle_class(a, "active", /*currentPage*/ ctx[0] == /*i*/ ctx[25] + 1);
-    			add_location(a, file$6, 165, 16, 4904);
+    			add_location(a, file$6, 165, 16, 4905);
     			attr_dev(li, "class", "page-item");
-    			add_location(li, file$6, 164, 12, 4864);
+    			add_location(li, file$6, 164, 12, 4865);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -5077,12 +5077,12 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Entfernen";
     			t3 = space();
-    			add_location(td0, file$6, 188, 16, 5471);
+    			add_location(td0, file$6, 188, 16, 5472);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn btn-secondary");
-    			add_location(button, file$6, 190, 17, 5531);
-    			add_location(td1, file$6, 189, 16, 5509);
-    			add_location(tr, file$6, 187, 12, 5449);
+    			add_location(button, file$6, 190, 17, 5532);
+    			add_location(td1, file$6, 189, 16, 5510);
+    			add_location(tr, file$6, 187, 12, 5450);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -5328,95 +5328,95 @@ var app = (function () {
     			div7.textContent = "Gesamtpreis in CHF aller Artikeln aus dem Warenkorb: ";
     			h2 = element("h2");
     			t45 = text(/*gesamtPreis*/ ctx[7]);
-    			add_location(h1, file$6, 84, 0, 2301);
+    			add_location(h1, file$6, 84, 0, 2302);
     			attr_dev(label0, "for", "");
     			attr_dev(label0, "class", "form-label");
-    			add_location(label0, file$6, 88, 8, 2394);
+    			add_location(label0, file$6, 88, 8, 2395);
     			attr_dev(input0, "class", "form-control");
     			attr_dev(input0, "type", "text");
-    			add_location(input0, file$6, 89, 8, 2462);
+    			add_location(input0, file$6, 89, 8, 2463);
     			attr_dev(div0, "class", "mb-3");
-    			add_location(div0, file$6, 87, 4, 2366);
+    			add_location(div0, file$6, 87, 4, 2367);
     			attr_dev(label1, "for", "");
     			attr_dev(label1, "class", "form-label");
-    			add_location(label1, file$6, 92, 8, 2575);
+    			add_location(label1, file$6, 92, 8, 2576);
     			attr_dev(input1, "class", "form-control");
     			attr_dev(input1, "type", "text");
-    			add_location(input1, file$6, 93, 8, 2648);
+    			add_location(input1, file$6, 93, 8, 2649);
     			attr_dev(div1, "class", "mb-3");
-    			add_location(div1, file$6, 91, 4, 2547);
-    			add_location(form0, file$6, 86, 0, 2354);
+    			add_location(div1, file$6, 91, 4, 2548);
+    			add_location(form0, file$6, 86, 0, 2355);
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "btn btn-primary");
-    			add_location(button0, file$6, 97, 0, 2740);
-    			add_location(br0, file$6, 102, 0, 2862);
-    			add_location(br1, file$6, 102, 4, 2866);
-    			add_location(br2, file$6, 102, 8, 2870);
-    			add_location(br3, file$6, 103, 79, 2955);
-    			add_location(div2, file$6, 103, 0, 2876);
+    			add_location(button0, file$6, 97, 0, 2741);
+    			add_location(br0, file$6, 102, 0, 2863);
+    			add_location(br1, file$6, 102, 4, 2867);
+    			add_location(br2, file$6, 102, 8, 2871);
+    			add_location(br3, file$6, 103, 79, 2956);
+    			add_location(div2, file$6, 103, 0, 2877);
     			attr_dev(div3, "class", "row mb-3");
-    			add_location(div3, file$6, 107, 4, 3055);
+    			add_location(div3, file$6, 107, 4, 3056);
     			attr_dev(label2, "class", "form-label");
     			attr_dev(label2, "for", "type");
-    			add_location(label2, file$6, 110, 12, 3148);
+    			add_location(label2, file$6, 110, 12, 3149);
     			option0.__value = "empty";
     			option0.value = option0.__value;
-    			add_location(option0, file$6, 117, 16, 3384);
+    			add_location(option0, file$6, 117, 16, 3385);
     			option1.__value = "Sonnig";
     			option1.value = option1.__value;
-    			add_location(option1, file$6, 118, 16, 3426);
+    			add_location(option1, file$6, 118, 16, 3427);
     			option2.__value = "Halbschatten";
     			option2.value = option2.__value;
-    			add_location(option2, file$6, 119, 16, 3482);
+    			add_location(option2, file$6, 119, 16, 3483);
     			option3.__value = "Schatten";
     			option3.value = option3.__value;
-    			add_location(option3, file$6, 120, 16, 3550);
+    			add_location(option3, file$6, 120, 16, 3551);
     			attr_dev(select, "class", "form-select");
     			attr_dev(select, "id", "type");
     			attr_dev(select, "type", "text");
     			if (/*stand*/ ctx[2] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[15].call(select));
-    			add_location(select, file$6, 111, 12, 3215);
+    			add_location(select, file$6, 111, 12, 3216);
     			attr_dev(div4, "class", "col");
-    			add_location(div4, file$6, 109, 8, 3117);
+    			add_location(div4, file$6, 109, 8, 3118);
     			attr_dev(div5, "class", "row mb-3");
-    			add_location(div5, file$6, 108, 4, 3085);
+    			add_location(div5, file$6, 108, 4, 3086);
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "btn btn-primary");
-    			add_location(button1, file$6, 124, 4, 3649);
+    			add_location(button1, file$6, 124, 4, 3650);
     			attr_dev(form1, "class", "mb-5");
-    			add_location(form1, file$6, 106, 0, 3030);
+    			add_location(form1, file$6, 106, 0, 3031);
     			attr_dev(th0, "scope", "col");
-    			add_location(th0, file$6, 132, 12, 3837);
+    			add_location(th0, file$6, 132, 12, 3838);
     			attr_dev(th1, "scope", "col");
-    			add_location(th1, file$6, 133, 12, 3876);
+    			add_location(th1, file$6, 133, 12, 3877);
     			attr_dev(th2, "scope", "col");
-    			add_location(th2, file$6, 134, 12, 3925);
+    			add_location(th2, file$6, 134, 12, 3926);
     			attr_dev(th3, "scope", "col");
-    			add_location(th3, file$6, 135, 12, 3968);
+    			add_location(th3, file$6, 135, 12, 3969);
     			attr_dev(th4, "scope", "col");
-    			add_location(th4, file$6, 136, 12, 4013);
+    			add_location(th4, file$6, 136, 12, 4014);
     			attr_dev(th5, "scope", "col");
-    			add_location(th5, file$6, 137, 12, 4052);
-    			add_location(tr0, file$6, 131, 8, 3819);
-    			add_location(thead0, file$6, 130, 4, 3802);
-    			add_location(tbody0, file$6, 140, 4, 4128);
+    			add_location(th5, file$6, 137, 12, 4053);
+    			add_location(tr0, file$6, 131, 8, 3820);
+    			add_location(thead0, file$6, 130, 4, 3803);
+    			add_location(tbody0, file$6, 140, 4, 4129);
     			attr_dev(table0, "class", "table table-striped");
-    			add_location(table0, file$6, 129, 0, 3761);
+    			add_location(table0, file$6, 129, 0, 3762);
     			attr_dev(ul, "class", "pagination");
-    			add_location(ul, file$6, 162, 4, 4785);
-    			add_location(nav, file$6, 161, 0, 4774);
-    			add_location(div6, file$6, 176, 0, 5172);
+    			add_location(ul, file$6, 162, 4, 4786);
+    			add_location(nav, file$6, 161, 0, 4775);
+    			add_location(div6, file$6, 176, 0, 5173);
     			attr_dev(th6, "scope", "col");
-    			add_location(th6, file$6, 181, 12, 5289);
+    			add_location(th6, file$6, 181, 12, 5290);
     			attr_dev(th7, "scope", "col");
-    			add_location(th7, file$6, 182, 12, 5328);
-    			add_location(tr1, file$6, 180, 8, 5271);
-    			add_location(thead1, file$6, 179, 4, 5254);
-    			add_location(tbody1, file$6, 185, 4, 5393);
-    			add_location(div7, file$6, 198, 4, 5785);
-    			add_location(h2, file$6, 198, 68, 5849);
+    			add_location(th7, file$6, 182, 12, 5329);
+    			add_location(tr1, file$6, 180, 8, 5272);
+    			add_location(thead1, file$6, 179, 4, 5255);
+    			add_location(tbody1, file$6, 185, 4, 5394);
+    			add_location(div7, file$6, 198, 4, 5786);
+    			add_location(h2, file$6, 198, 68, 5850);
     			attr_dev(table1, "class", "table table-striped");
-    			add_location(table1, file$6, 178, 0, 5213);
+    			add_location(table1, file$6, 178, 0, 5214);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5714,7 +5714,7 @@ var app = (function () {
     		};
 
     		axios(config).then(function (response) {
-    			alert("Vielen Dank für deine Bestellung");
+    			alert("Vielen Dank für deine Bestellung ");
     		}).catch(function (error) {
     			alert("Hat leider nicht funktioniert");
     			console.log(error);
@@ -6703,6 +6703,48 @@ var app = (function () {
     /* src\pages\Account.svelte generated by Svelte v3.53.1 */
     const file$3 = "src\\pages\\Account.svelte";
 
+    // (15:0) {#if $user.user_roles && $user.user_roles.length > 0}
+    function create_if_block$1(ctx) {
+    	let p;
+    	let t0;
+    	let b;
+    	let t1_value = /*$user*/ ctx[0].user_roles + "";
+    	let t1;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			t0 = text("Deinem Benutzer wurde folgende Rolle zugeteilt:\r\n        ");
+    			b = element("b");
+    			t1 = text(t1_value);
+    			add_location(b, file$3, 16, 8, 392);
+    			add_location(p, file$3, 15, 4, 332);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t0);
+    			append_dev(p, b);
+    			append_dev(b, t1);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*$user*/ 1 && t1_value !== (t1_value = /*$user*/ ctx[0].user_roles + "")) set_data_dev(t1, t1_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$1.name,
+    		type: "if",
+    		source: "(15:0) {#if $user.user_roles && $user.user_roles.length > 0}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
     function create_fragment$3(ctx) {
     	let h1;
     	let t1;
@@ -6724,6 +6766,9 @@ var app = (function () {
     	let t9;
     	let t10_value = /*$user*/ ctx[0].email + "";
     	let t10;
+    	let t11;
+    	let if_block_anchor;
+    	let if_block = /*$user*/ ctx[0].user_roles && /*$user*/ ctx[0].user_roles.length > 0 && create_if_block$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -6744,14 +6789,17 @@ var app = (function () {
     			li2 = element("li");
     			t9 = text("Deine E-Mail: ");
     			t10 = text(t10_value);
-    			add_location(h1, file$3, 5, 0, 63);
+    			t11 = space();
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    			add_location(h1, file$3, 4, 0, 61);
     			if (!src_url_equal(img.src, img_src_value = /*$user*/ ctx[0].picture)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "Profilbild");
-    			add_location(img, file$3, 7, 0, 91);
-    			add_location(li0, file$3, 10, 4, 147);
-    			add_location(li1, file$3, 11, 4, 180);
-    			add_location(li2, file$3, 12, 4, 226);
-    			add_location(ul, file$3, 9, 0, 137);
+    			add_location(img, file$3, 6, 0, 89);
+    			add_location(li0, file$3, 9, 4, 147);
+    			add_location(li1, file$3, 10, 4, 180);
+    			add_location(li2, file$3, 11, 4, 226);
+    			add_location(ul, file$3, 8, 0, 137);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6773,6 +6821,9 @@ var app = (function () {
     			append_dev(ul, li2);
     			append_dev(li2, t9);
     			append_dev(li2, t10);
+    			insert_dev(target, t11, anchor);
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, [dirty]) {
     			if (dirty & /*$user*/ 1 && !src_url_equal(img.src, img_src_value = /*$user*/ ctx[0].picture)) {
@@ -6782,6 +6833,19 @@ var app = (function () {
     			if (dirty & /*$user*/ 1 && t4_value !== (t4_value = /*$user*/ ctx[0].name + "")) set_data_dev(t4, t4_value);
     			if (dirty & /*$user*/ 1 && t7_value !== (t7_value = /*$user*/ ctx[0].nickname + "")) set_data_dev(t7, t7_value);
     			if (dirty & /*$user*/ 1 && t10_value !== (t10_value = /*$user*/ ctx[0].email + "")) set_data_dev(t10, t10_value);
+
+    			if (/*$user*/ ctx[0].user_roles && /*$user*/ ctx[0].user_roles.length > 0) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block$1(ctx);
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
     		},
     		i: noop$1,
     		o: noop$1,
@@ -6791,6 +6855,9 @@ var app = (function () {
     			if (detaching) detach_dev(img);
     			if (detaching) detach_dev(t2);
     			if (detaching) detach_dev(ul);
+    			if (detaching) detach_dev(t11);
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
     		}
     	};
 
@@ -7886,7 +7953,7 @@ var app = (function () {
     	return block;
     }
 
-    // (37:5) {#if $isAuthenticated}
+    // (37:5) {#if $isAuthenticated && $user.user_roles && $user.user_roles.includes("admin") }
     function create_if_block_2(ctx) {
     	let li;
     	let a;
@@ -7898,9 +7965,9 @@ var app = (function () {
     			a.textContent = "Übersicht Bestellungen";
     			attr_dev(a, "class", "nav-link");
     			attr_dev(a, "href", "#/uebersichtbestellungen");
-    			add_location(a, file, 38, 6, 1126);
+    			add_location(a, file, 38, 6, 1185);
     			attr_dev(li, "class", "nav-item");
-    			add_location(li, file, 37, 5, 1097);
+    			add_location(li, file, 37, 5, 1156);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -7915,7 +7982,7 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(37:5) {#if $isAuthenticated}",
+    		source: "(37:5) {#if $isAuthenticated && $user.user_roles && $user.user_roles.includes(\\\"admin\\\") }",
     		ctx
     	});
 
@@ -7934,9 +8001,9 @@ var app = (function () {
     			a.textContent = "Account";
     			attr_dev(a, "class", "nav-link");
     			attr_dev(a, "href", "#/account");
-    			add_location(a, file, 44, 7, 1302);
+    			add_location(a, file, 44, 7, 1361);
     			attr_dev(li, "class", "nav-item");
-    			add_location(li, file, 43, 6, 1272);
+    			add_location(li, file, 43, 6, 1331);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -7970,7 +8037,7 @@ var app = (function () {
     			button.textContent = "Log In";
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn btn-primary");
-    			add_location(button, file, 59, 6, 1663);
+    			add_location(button, file, 59, 6, 1722);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -8017,10 +8084,10 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Log Out";
     			attr_dev(span, "class", "navbar-text me-2");
-    			add_location(span, file, 50, 6, 1449);
+    			add_location(span, file, 50, 6, 1508);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn btn-primary");
-    			add_location(button, file, 53, 6, 1524);
+    			add_location(button, file, 53, 6, 1583);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -8074,6 +8141,7 @@ var app = (function () {
     	let a2;
     	let t6;
     	let t7;
+    	let show_if = /*$isAuthenticated*/ ctx[0] && /*$user*/ ctx[1].user_roles && /*$user*/ ctx[1].user_roles.includes("admin");
     	let t8;
     	let t9;
     	let div0;
@@ -8082,7 +8150,7 @@ var app = (function () {
     	let router;
     	let current;
     	let if_block0 = /*$isAuthenticated*/ ctx[0] && create_if_block_3(ctx);
-    	let if_block1 = /*$isAuthenticated*/ ctx[0] && create_if_block_2(ctx);
+    	let if_block1 = show_if && create_if_block_2(ctx);
     	let if_block2 = /*$isAuthenticated*/ ctx[0] && create_if_block_1(ctx);
 
     	function select_block_type(ctx, dirty) {
@@ -8152,7 +8220,7 @@ var app = (function () {
     			attr_dev(ul, "class", "navbar-nav me-auto mb-2 mb-lg-0");
     			add_location(ul, file, 23, 4, 672);
     			attr_dev(div0, "class", "d-flex");
-    			add_location(div0, file, 48, 4, 1392);
+    			add_location(div0, file, 48, 4, 1451);
     			attr_dev(div1, "class", "collapse navbar-collapse");
     			attr_dev(div1, "id", "navbarNav");
     			add_location(div1, file, 22, 3, 613);
@@ -8161,7 +8229,7 @@ var app = (function () {
     			attr_dev(nav, "class", "navbar navbar-expand-lg bg-light");
     			add_location(nav, file, 8, 1, 203);
     			attr_dev(div3, "class", "container");
-    			add_location(div3, file, 70, 1, 1846);
+    			add_location(div3, file, 70, 1, 1905);
     			attr_dev(div4, "id", "app");
     			add_location(div4, file, 7, 0, 186);
     		},
@@ -8210,7 +8278,9 @@ var app = (function () {
     				if_block0 = null;
     			}
 
-    			if (/*$isAuthenticated*/ ctx[0]) {
+    			if (dirty & /*$isAuthenticated, $user*/ 3) show_if = /*$isAuthenticated*/ ctx[0] && /*$user*/ ctx[1].user_roles && /*$user*/ ctx[1].user_roles.includes("admin");
+
+    			if (show_if) {
     				if (if_block1) ; else {
     					if_block1 = create_if_block_2(ctx);
     					if_block1.c();

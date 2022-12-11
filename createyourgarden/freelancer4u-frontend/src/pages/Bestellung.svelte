@@ -57,7 +57,7 @@
 
         axios(config)
             .then(function (response) {
-                alert("Vielen Dank für deine Bestellung");
+                alert("Vielen Dank für deine Bestellung ");
             })
             .catch(function (error) {
                 alert("Hat leider nicht funktioniert");

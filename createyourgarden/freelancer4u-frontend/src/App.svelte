@@ -34,7 +34,7 @@
 							>
 						</li>
 					{/if}
-					{#if $isAuthenticated}
+					{#if $isAuthenticated && $user.user_roles && $user.user_roles.includes("admin") }
 					<li class="nav-item">
 						<a class="nav-link" href="#/uebersichtbestellungen">Übersicht Bestellungen</a
 						>
