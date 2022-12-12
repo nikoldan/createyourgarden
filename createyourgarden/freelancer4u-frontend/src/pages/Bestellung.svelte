@@ -71,8 +71,13 @@
     };
 
 function artikelEntfernen(korb) {
-    // muss noch implementieren!!!  warenkorb -= artikels;
-
+    if (warenkorb.length == 1) {
+        warenkorb = [];
+    } else {
+        warenkorb = warenkorb.splice(warenkorb.indexOf(korb)-1, 1);
+    }
+    anzahlArtikel -= 1;
+    gesamtPreis -= 8;
 }
 
     getArtikel();

@@ -4871,44 +4871,44 @@ var app = (function () {
 
     function get_each_context$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[20] = list[i];
+    	child_ctx[21] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1$2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[23] = list[i];
-    	child_ctx[25] = i;
+    	child_ctx[24] = list[i];
+    	child_ctx[26] = i;
     	return child_ctx;
     }
 
     function get_each_context_2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[11] = list[i];
+    	child_ctx[12] = list[i];
     	return child_ctx;
     }
 
-    // (143:8) {#each artikels as artikel}
+    // (148:8) {#each artikels as artikel}
     function create_each_block_2(ctx) {
     	let tr;
     	let td0;
-    	let t0_value = /*artikel*/ ctx[11].name + "";
+    	let t0_value = /*artikel*/ ctx[12].name + "";
     	let t0;
     	let t1;
     	let td1;
-    	let t2_value = /*artikel*/ ctx[11].dname + "";
+    	let t2_value = /*artikel*/ ctx[12].dname + "";
     	let t2;
     	let t3;
     	let td2;
-    	let t4_value = /*artikel*/ ctx[11].standort + "";
+    	let t4_value = /*artikel*/ ctx[12].standort + "";
     	let t4;
     	let t5;
     	let td3;
-    	let t6_value = /*artikel*/ ctx[11].bluetemonat + "";
+    	let t6_value = /*artikel*/ ctx[12].bluetemonat + "";
     	let t6;
     	let t7;
     	let td4;
-    	let t8_value = /*artikel*/ ctx[11].hoehe + "";
+    	let t8_value = /*artikel*/ ctx[12].hoehe + "";
     	let t8;
     	let t9;
     	let td5;
@@ -4918,7 +4918,7 @@ var app = (function () {
     	let dispose;
 
     	function click_handler() {
-    		return /*click_handler*/ ctx[16](/*artikel*/ ctx[11]);
+    		return /*click_handler*/ ctx[17](/*artikel*/ ctx[12]);
     	}
 
     	const block = {
@@ -4943,16 +4943,16 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Hinzufügen";
     			t11 = space();
-    			add_location(td0, file$6, 144, 16, 4207);
-    			add_location(td1, file$6, 145, 16, 4248);
-    			add_location(td2, file$6, 146, 16, 4290);
-    			add_location(td3, file$6, 147, 16, 4335);
-    			add_location(td4, file$6, 148, 16, 4383);
+    			add_location(td0, file$6, 149, 16, 4342);
+    			add_location(td1, file$6, 150, 16, 4383);
+    			add_location(td2, file$6, 151, 16, 4425);
+    			add_location(td3, file$6, 152, 16, 4470);
+    			add_location(td4, file$6, 153, 16, 4518);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn btn-secondary");
-    			add_location(button, file$6, 150, 21, 4451);
-    			add_location(td5, file$6, 149, 16, 4425);
-    			add_location(tr, file$6, 143, 12, 4185);
+    			add_location(button, file$6, 155, 21, 4586);
+    			add_location(td5, file$6, 154, 16, 4560);
+    			add_location(tr, file$6, 148, 12, 4320);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -4982,11 +4982,11 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*artikels*/ 8 && t0_value !== (t0_value = /*artikel*/ ctx[11].name + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*artikels*/ 8 && t2_value !== (t2_value = /*artikel*/ ctx[11].dname + "")) set_data_dev(t2, t2_value);
-    			if (dirty & /*artikels*/ 8 && t4_value !== (t4_value = /*artikel*/ ctx[11].standort + "")) set_data_dev(t4, t4_value);
-    			if (dirty & /*artikels*/ 8 && t6_value !== (t6_value = /*artikel*/ ctx[11].bluetemonat + "")) set_data_dev(t6, t6_value);
-    			if (dirty & /*artikels*/ 8 && t8_value !== (t8_value = /*artikel*/ ctx[11].hoehe + "")) set_data_dev(t8, t8_value);
+    			if (dirty & /*artikels*/ 8 && t0_value !== (t0_value = /*artikel*/ ctx[12].name + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*artikels*/ 8 && t2_value !== (t2_value = /*artikel*/ ctx[12].dname + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*artikels*/ 8 && t4_value !== (t4_value = /*artikel*/ ctx[12].standort + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*artikels*/ 8 && t6_value !== (t6_value = /*artikel*/ ctx[12].bluetemonat + "")) set_data_dev(t6, t6_value);
+    			if (dirty & /*artikels*/ 8 && t8_value !== (t8_value = /*artikel*/ ctx[12].hoehe + "")) set_data_dev(t8, t8_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(tr);
@@ -4999,18 +4999,18 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(143:8) {#each artikels as artikel}",
+    		source: "(148:8) {#each artikels as artikel}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (165:8) {#each Array(nrOfPages) as _, i}
+    // (170:8) {#each Array(nrOfPages) as _, i}
     function create_each_block_1$2(ctx) {
     	let li;
     	let a;
-    	let t0_value = /*i*/ ctx[25] + 1 + "";
+    	let t0_value = /*i*/ ctx[26] + 1 + "";
     	let t0;
     	let t1;
 
@@ -5021,11 +5021,11 @@ var app = (function () {
     			t0 = text(t0_value);
     			t1 = space();
     			attr_dev(a, "class", "page-link");
-    			attr_dev(a, "href", "#/bestellung?page=" + (/*i*/ ctx[25] + 1));
-    			toggle_class(a, "active", /*currentPage*/ ctx[0] == /*i*/ ctx[25] + 1);
-    			add_location(a, file$6, 166, 16, 4903);
+    			attr_dev(a, "href", "#/bestellung?page=" + (/*i*/ ctx[26] + 1));
+    			toggle_class(a, "active", /*currentPage*/ ctx[0] == /*i*/ ctx[26] + 1);
+    			add_location(a, file$6, 171, 16, 5038);
     			attr_dev(li, "class", "page-item");
-    			add_location(li, file$6, 165, 12, 4863);
+    			add_location(li, file$6, 170, 12, 4998);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -5035,7 +5035,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*currentPage*/ 1) {
-    				toggle_class(a, "active", /*currentPage*/ ctx[0] == /*i*/ ctx[25] + 1);
+    				toggle_class(a, "active", /*currentPage*/ ctx[0] == /*i*/ ctx[26] + 1);
     			}
     		},
     		d: function destroy(detaching) {
@@ -5047,18 +5047,18 @@ var app = (function () {
     		block,
     		id: create_each_block_1$2.name,
     		type: "each",
-    		source: "(165:8) {#each Array(nrOfPages) as _, i}",
+    		source: "(170:8) {#each Array(nrOfPages) as _, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (188:8) {#each warenkorb as korb}
+    // (193:8) {#each warenkorb as korb}
     function create_each_block$3(ctx) {
     	let tr;
     	let td0;
-    	let t0_value = /*korb*/ ctx[20].name + "";
+    	let t0_value = /*korb*/ ctx[21].name + "";
     	let t0;
     	let t1;
     	let td1;
@@ -5068,7 +5068,7 @@ var app = (function () {
     	let dispose;
 
     	function click_handler_1() {
-    		return /*click_handler_1*/ ctx[17](/*korb*/ ctx[20]);
+    		return /*click_handler_1*/ ctx[18](/*korb*/ ctx[21]);
     	}
 
     	const block = {
@@ -5081,12 +5081,12 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Entfernen";
     			t3 = space();
-    			add_location(td0, file$6, 189, 16, 5470);
+    			add_location(td0, file$6, 194, 16, 5605);
     			attr_dev(button, "type", "button");
     			attr_dev(button, "class", "btn btn-secondary");
-    			add_location(button, file$6, 191, 17, 5530);
-    			add_location(td1, file$6, 190, 16, 5508);
-    			add_location(tr, file$6, 188, 12, 5448);
+    			add_location(button, file$6, 196, 17, 5665);
+    			add_location(td1, file$6, 195, 16, 5643);
+    			add_location(tr, file$6, 193, 12, 5583);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -5104,7 +5104,7 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*warenkorb*/ 16 && t0_value !== (t0_value = /*korb*/ ctx[20].name + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*warenkorb*/ 16 && t0_value !== (t0_value = /*korb*/ ctx[21].name + "")) set_data_dev(t0, t0_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(tr);
@@ -5117,7 +5117,7 @@ var app = (function () {
     		block,
     		id: create_each_block$3.name,
     		type: "each",
-    		source: "(188:8) {#each warenkorb as korb}",
+    		source: "(193:8) {#each warenkorb as korb}",
     		ctx
     	});
 
@@ -5338,95 +5338,95 @@ var app = (function () {
     			div7.textContent = "Gesamtpreis in CHF aller Artikeln aus dem Warenkorb: ";
     			h2 = element("h2");
     			t47 = text(/*gesamtPreis*/ ctx[7]);
-    			add_location(h1, file$6, 85, 0, 2300);
+    			add_location(h1, file$6, 90, 0, 2435);
     			attr_dev(label0, "for", "");
     			attr_dev(label0, "class", "form-label");
-    			add_location(label0, file$6, 89, 8, 2393);
+    			add_location(label0, file$6, 94, 8, 2528);
     			attr_dev(input0, "class", "form-control");
     			attr_dev(input0, "type", "text");
-    			add_location(input0, file$6, 90, 8, 2461);
+    			add_location(input0, file$6, 95, 8, 2596);
     			attr_dev(div0, "class", "mb-3");
-    			add_location(div0, file$6, 88, 4, 2365);
+    			add_location(div0, file$6, 93, 4, 2500);
     			attr_dev(label1, "for", "");
     			attr_dev(label1, "class", "form-label");
-    			add_location(label1, file$6, 93, 8, 2574);
+    			add_location(label1, file$6, 98, 8, 2709);
     			attr_dev(input1, "class", "form-control");
     			attr_dev(input1, "type", "text");
-    			add_location(input1, file$6, 94, 8, 2647);
+    			add_location(input1, file$6, 99, 8, 2782);
     			attr_dev(div1, "class", "mb-3");
-    			add_location(div1, file$6, 92, 4, 2546);
-    			add_location(form0, file$6, 87, 0, 2353);
+    			add_location(div1, file$6, 97, 4, 2681);
+    			add_location(form0, file$6, 92, 0, 2488);
     			attr_dev(button0, "type", "button");
     			attr_dev(button0, "class", "btn btn-primary");
-    			add_location(button0, file$6, 98, 0, 2739);
-    			add_location(br0, file$6, 103, 0, 2861);
-    			add_location(br1, file$6, 103, 4, 2865);
-    			add_location(br2, file$6, 103, 8, 2869);
-    			add_location(br3, file$6, 104, 79, 2954);
-    			add_location(div2, file$6, 104, 0, 2875);
+    			add_location(button0, file$6, 103, 0, 2874);
+    			add_location(br0, file$6, 108, 0, 2996);
+    			add_location(br1, file$6, 108, 4, 3000);
+    			add_location(br2, file$6, 108, 8, 3004);
+    			add_location(br3, file$6, 109, 79, 3089);
+    			add_location(div2, file$6, 109, 0, 3010);
     			attr_dev(div3, "class", "row mb-3");
-    			add_location(div3, file$6, 108, 4, 3054);
+    			add_location(div3, file$6, 113, 4, 3189);
     			attr_dev(label2, "class", "form-label");
     			attr_dev(label2, "for", "type");
-    			add_location(label2, file$6, 111, 12, 3147);
+    			add_location(label2, file$6, 116, 12, 3282);
     			option0.__value = "empty";
     			option0.value = option0.__value;
-    			add_location(option0, file$6, 118, 16, 3383);
+    			add_location(option0, file$6, 123, 16, 3518);
     			option1.__value = "Sonnig";
     			option1.value = option1.__value;
-    			add_location(option1, file$6, 119, 16, 3425);
+    			add_location(option1, file$6, 124, 16, 3560);
     			option2.__value = "Halbschatten";
     			option2.value = option2.__value;
-    			add_location(option2, file$6, 120, 16, 3481);
+    			add_location(option2, file$6, 125, 16, 3616);
     			option3.__value = "Schatten";
     			option3.value = option3.__value;
-    			add_location(option3, file$6, 121, 16, 3549);
+    			add_location(option3, file$6, 126, 16, 3684);
     			attr_dev(select, "class", "form-select");
     			attr_dev(select, "id", "type");
     			attr_dev(select, "type", "text");
-    			if (/*stand*/ ctx[2] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[15].call(select));
-    			add_location(select, file$6, 112, 12, 3214);
+    			if (/*stand*/ ctx[2] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[16].call(select));
+    			add_location(select, file$6, 117, 12, 3349);
     			attr_dev(div4, "class", "col");
-    			add_location(div4, file$6, 110, 8, 3116);
+    			add_location(div4, file$6, 115, 8, 3251);
     			attr_dev(div5, "class", "row mb-3");
-    			add_location(div5, file$6, 109, 4, 3084);
+    			add_location(div5, file$6, 114, 4, 3219);
     			attr_dev(button1, "type", "button");
     			attr_dev(button1, "class", "btn btn-primary");
-    			add_location(button1, file$6, 125, 4, 3648);
+    			add_location(button1, file$6, 130, 4, 3783);
     			attr_dev(form1, "class", "mb-5");
-    			add_location(form1, file$6, 107, 0, 3029);
+    			add_location(form1, file$6, 112, 0, 3164);
     			attr_dev(th0, "scope", "col");
-    			add_location(th0, file$6, 133, 12, 3836);
+    			add_location(th0, file$6, 138, 12, 3971);
     			attr_dev(th1, "scope", "col");
-    			add_location(th1, file$6, 134, 12, 3875);
+    			add_location(th1, file$6, 139, 12, 4010);
     			attr_dev(th2, "scope", "col");
-    			add_location(th2, file$6, 135, 12, 3924);
+    			add_location(th2, file$6, 140, 12, 4059);
     			attr_dev(th3, "scope", "col");
-    			add_location(th3, file$6, 136, 12, 3967);
+    			add_location(th3, file$6, 141, 12, 4102);
     			attr_dev(th4, "scope", "col");
-    			add_location(th4, file$6, 137, 12, 4012);
+    			add_location(th4, file$6, 142, 12, 4147);
     			attr_dev(th5, "scope", "col");
-    			add_location(th5, file$6, 138, 12, 4051);
-    			add_location(tr0, file$6, 132, 8, 3818);
-    			add_location(thead0, file$6, 131, 4, 3801);
-    			add_location(tbody0, file$6, 141, 4, 4127);
+    			add_location(th5, file$6, 143, 12, 4186);
+    			add_location(tr0, file$6, 137, 8, 3953);
+    			add_location(thead0, file$6, 136, 4, 3936);
+    			add_location(tbody0, file$6, 146, 4, 4262);
     			attr_dev(table0, "class", "table table-striped");
-    			add_location(table0, file$6, 130, 0, 3760);
+    			add_location(table0, file$6, 135, 0, 3895);
     			attr_dev(ul, "class", "pagination");
-    			add_location(ul, file$6, 163, 4, 4784);
-    			add_location(nav, file$6, 162, 0, 4773);
-    			add_location(div6, file$6, 177, 0, 5171);
+    			add_location(ul, file$6, 168, 4, 4919);
+    			add_location(nav, file$6, 167, 0, 4908);
+    			add_location(div6, file$6, 182, 0, 5306);
     			attr_dev(th6, "scope", "col");
-    			add_location(th6, file$6, 182, 12, 5288);
+    			add_location(th6, file$6, 187, 12, 5423);
     			attr_dev(th7, "scope", "col");
-    			add_location(th7, file$6, 183, 12, 5327);
-    			add_location(tr1, file$6, 181, 8, 5270);
-    			add_location(thead1, file$6, 180, 4, 5253);
-    			add_location(tbody1, file$6, 186, 4, 5392);
-    			add_location(div7, file$6, 199, 4, 5781);
-    			add_location(h2, file$6, 199, 68, 5845);
+    			add_location(th7, file$6, 188, 12, 5462);
+    			add_location(tr1, file$6, 186, 8, 5405);
+    			add_location(thead1, file$6, 185, 4, 5388);
+    			add_location(tbody1, file$6, 191, 4, 5527);
+    			add_location(div7, file$6, 204, 4, 5916);
+    			add_location(h2, file$6, 204, 68, 5980);
     			attr_dev(table1, "class", "table table-striped");
-    			add_location(table1, file$6, 179, 0, 5212);
+    			add_location(table1, file$6, 184, 0, 5347);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5528,10 +5528,10 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[13]),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[14]),
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[14]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[15]),
     					listen_dev(button0, "click", /*artikelWarenkorbHinzufuegen*/ ctx[9], false, false, false),
-    					listen_dev(select, "change", /*select_change_handler*/ ctx[15]),
+    					listen_dev(select, "change", /*select_change_handler*/ ctx[16]),
     					listen_dev(button1, "click", /*getArtikel*/ ctx[8], false, false, false)
     				];
 
@@ -5601,7 +5601,7 @@ var app = (function () {
     				each_blocks_1.length = each_value_1.length;
     			}
 
-    			if (dirty & /*artikelEntfernen, warenkorb*/ 16) {
+    			if (dirty & /*artikelEntfernen, warenkorb*/ 2064) {
     				each_value = /*warenkorb*/ ctx[4];
     				validate_each_argument(each_value);
     				let i;
@@ -5674,17 +5674,13 @@ var app = (function () {
 
     const api_root$3 = "http://localhost:8080";
 
-    function artikelEntfernen(korb) {
-    	
-    } // muss noch implementieren!!!  warenkorb -= artikels;
-
     function instance$6($$self, $$props, $$invalidate) {
     	let $jwt_token;
     	let $querystring;
     	validate_store(jwt_token, 'jwt_token');
-    	component_subscribe($$self, jwt_token, $$value => $$invalidate(19, $jwt_token = $$value));
+    	component_subscribe($$self, jwt_token, $$value => $$invalidate(20, $jwt_token = $$value));
     	validate_store(querystring, 'querystring');
-    	component_subscribe($$self, querystring, $$value => $$invalidate(12, $querystring = $$value));
+    	component_subscribe($$self, querystring, $$value => $$invalidate(13, $querystring = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Bestellung', slots, []);
     	let currentPage;
@@ -5743,6 +5739,17 @@ var app = (function () {
     		$$invalidate(7, gesamtPreis = anzahlArtikel * 8);
     	};
 
+    	function artikelEntfernen(korb) {
+    		if (warenkorb.length == 1) {
+    			$$invalidate(4, warenkorb = []);
+    		} else {
+    			$$invalidate(4, warenkorb = warenkorb.splice(warenkorb.indexOf(korb) - 1, 1));
+    		}
+
+    		anzahlArtikel -= 1;
+    		$$invalidate(7, gesamtPreis -= 8);
+    	}
+
     	getArtikel();
     	let vornameName;
     	let wunschDatum;
@@ -5770,7 +5777,7 @@ var app = (function () {
     	}
 
     	const click_handler = artikel => artikelHinzufuegen(artikel);
-    	const click_handler_1 = korb => artikelEntfernen();
+    	const click_handler_1 = korb => artikelEntfernen(korb);
 
     	$$self.$capture_state = () => ({
     		axios,
@@ -5801,7 +5808,7 @@ var app = (function () {
     		if ('nrOfPages' in $$props) $$invalidate(1, nrOfPages = $$props.nrOfPages);
     		if ('stand' in $$props) $$invalidate(2, stand = $$props.stand);
     		if ('artikels' in $$props) $$invalidate(3, artikels = $$props.artikels);
-    		if ('artikel' in $$props) $$invalidate(11, artikel = $$props.artikel);
+    		if ('artikel' in $$props) $$invalidate(12, artikel = $$props.artikel);
     		if ('warenkorb' in $$props) $$invalidate(4, warenkorb = $$props.warenkorb);
     		if ('vornameName' in $$props) $$invalidate(5, vornameName = $$props.vornameName);
     		if ('wunschDatum' in $$props) $$invalidate(6, wunschDatum = $$props.wunschDatum);
@@ -5814,7 +5821,7 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*$querystring*/ 4096) {
+    		if ($$self.$$.dirty & /*$querystring*/ 8192) {
     			{
     				let searchParams = new URLSearchParams($querystring);
 
@@ -5841,6 +5848,7 @@ var app = (function () {
     		getArtikel,
     		artikelWarenkorbHinzufuegen,
     		artikelHinzufuegen,
+    		artikelEntfernen,
     		artikel,
     		$querystring,
     		input0_input_handler,
