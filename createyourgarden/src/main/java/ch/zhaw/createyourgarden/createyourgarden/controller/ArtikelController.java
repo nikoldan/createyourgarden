@@ -41,10 +41,12 @@ public class ArtikelController {
     Page<Artikel> allArtikels;
     if (wo != null){
         allArtikels = artikelRepository.findByStandort(wo, PageRequest.of(page - 1, pageSize));
+        return new ResponseEntity<>(allArtikels, HttpStatus.OK);
     } else {
         allArtikels = artikelRepository.findAll(PageRequest.of(page - 1, pageSize));
-    }
         return new ResponseEntity<>(allArtikels, HttpStatus.OK);
+    }
+        
     }
     
     @GetMapping("/{id}")
