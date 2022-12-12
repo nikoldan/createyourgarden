@@ -7,29 +7,33 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 
+
 @SpringBootTest
 @AutoConfigureMockMvc(addFilters = false) // User Token
-public class BestellungTest {
+public class ArtikelControllerTest {
     
     @Autowired
     private MockMvc mvc;
 
     @Test
-    public void testCreateBestellung() throws Exception {
-        var result = mvc.perform(post("/api/bestellung").content("{\"wunschDatum\": \"29.11.2033\",\"vornameName\": \"TestName\",\"gesamtPreis\": 18,\"artikels\": [{\"id\": \"455555\",\"name\": \"artikelname\",\"dName\": \"deutscherName..\",\"beschreibung\": \"besekjk\",\"standort\": \"sanndndn\",\"bluetemonat\": 5,\"hoehe\": 33}]}")
+    public void testGetAllArtikel() throws Exception {
+        var result = mvc.perform(get("/api/artikel")
         .contentType(MediaType.APPLICATION_JSON))
         .andDo(print())
-        .andExpect(status().isCreated())
+        .andExpect(status().isOk())
         .andReturn();
 
-        assertTrue(result.getResponse().getContentAsString().contains("\"wunschDatum\":\"29.11.2033\""));
+        assertFalse(result.getResponse().getContentAsString().contains("\"totalElements\":0"));
+        assertTrue(result.getResponse().getContentAsString().contains("standort"));
     }
+
+
 
 }
