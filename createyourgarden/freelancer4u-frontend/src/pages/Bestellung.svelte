@@ -26,7 +26,7 @@
     let warenkorb = [];
 
     function getArtikel() {
-        let query = "pageSize=10&page=" + currentPage;
+        let query = "pageSize=6&page=" + currentPage;
         if (stand != "empty" && stand != null && stand != "") {
             query += "&wo=" + stand;
         }
@@ -70,8 +70,9 @@
       gesamtPreis = anzahlArtikel * 8;
     };
 
-function artikelEntfernen(artikels) {
+function artikelEntfernen(korb) {
     // muss noch implementieren!!!  warenkorb -= artikels;
+
 }
 
     getArtikel();
@@ -79,9 +80,9 @@ let vornameName;
 let wunschDatum;
 let gesamtPreis = 0;
 let anzahlArtikel = 0;
-// {JSON.stringify(warenkorb)}
+// 
 </script>
-
+{JSON.stringify(warenkorb)}
 <h1>Hier kannst du deine Bestellung aufgeben</h1>
 
 <form>
@@ -191,7 +192,7 @@ let anzahlArtikel = 0;
                 ><button
                     type="button"
                     class="btn btn-secondary"
-                    on:click={() => artikelEntfernen(artikel)}
+                    on:click={() => artikelEntfernen(korb)}
                     >Entfernen</button
                 ></td>
         {/each}
