@@ -36,7 +36,7 @@ public class ArtikelController {
         page = 1;
     }
     if (pageSize == null) {
-        pageSize = 2;
+        pageSize = 10;
     }
     Page<Artikel> allArtikels;
     if (wo != null){
