@@ -22,7 +22,7 @@
   let artikel = {};
 
   function getArtikel() {
-    let query = "pageSize=6&page=" + currentPage;
+    let query = "pageSize=10&page=" + currentPage;
     if (stand) {
       query += "&wo=" + stand;
     }

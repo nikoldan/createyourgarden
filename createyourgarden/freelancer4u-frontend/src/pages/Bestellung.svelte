@@ -26,7 +26,7 @@
     let warenkorb = [];
 
     function getArtikel() {
-        let query = "pageSize=2&page=" + currentPage;
+        let query = "pageSize=10&page=" + currentPage;
         if (stand != "empty" && stand != null && stand != "") {
             query += "&wo=" + stand;
         }
