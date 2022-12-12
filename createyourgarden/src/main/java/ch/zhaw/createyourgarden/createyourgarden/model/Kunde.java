@@ -20,7 +20,6 @@ public class Kunde {
     private String name;
     @NonNull
     private String email;
-    
     private String plzOrt;  
     
      
