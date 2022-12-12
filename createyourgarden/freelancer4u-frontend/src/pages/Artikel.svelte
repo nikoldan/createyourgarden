@@ -37,7 +37,6 @@
         artikels = response.data.content;
         nrOfPages = response.data.totalPages;
       })
-      // .catch gelöscht!
   }
 
   getArtikel();
