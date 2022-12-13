@@ -70,11 +70,18 @@
       gesamtPreis = anzahlArtikel * 8;
     };
 
-function artikelEntfernen(korb) {
+    function artikelEntfernen(korb) {
     if (warenkorb.length == 1) {
         warenkorb = [];
     } else {
-        warenkorb = warenkorb.splice(warenkorb.indexOf(korb)-1, 1);
+  //      console.log(warenkorb);
+        console.log(warenkorb.indexOf(korb));
+        let w = warenkorb.splice(warenkorb.indexOf(korb), 1);
+
+        warenkorb = [...warenkorb];
+        console.log(warenkorb);
+        console.log(w);
+ //       warenkorb = warenkorb.splice(warenkorb.indexOf(korb)-1, 1);
     }
     anzahlArtikel -= 1;
     gesamtPreis -= 8;
