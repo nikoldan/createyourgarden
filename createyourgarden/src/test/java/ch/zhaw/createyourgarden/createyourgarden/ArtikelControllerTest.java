@@ -33,7 +33,30 @@ public class ArtikelControllerTest {
         assertFalse(result.getResponse().getContentAsString().contains("\"totalElements\":0"));
         assertTrue(result.getResponse().getContentAsString().contains("standort"));
     }
+    
+    @Test
+    public void testGetArtikelById() throws Exception {
+        var result = mvc.perform(get("/api/artikel/6396fbe239ed3e2a81b02743")
+        .contentType(MediaType.APPLICATION_JSON))
+        .andDo(print())
+        .andExpect(status().isOk())
+        .andReturn();
 
+        assertFalse(result.getResponse().getContentAsString().contains("\"name\":null"));
+        assertTrue(result.getResponse().getContentAsString().contains("standort"));
+    }
 
+    @Test
+    public void testGetArtikelByStandort() throws Exception {
+        var result = mvc.perform(get("/api/artikel?wo=Sonnig")
+        .contentType(MediaType.APPLICATION_JSON))
+        .andDo(print())
+        .andExpect(status().isOk())
+        .andReturn();
+
+        assertFalse(result.getResponse().getContentAsString().contains("\"name\":null"));
+        assertTrue(result.getResponse().getContentAsString().contains("name"));
+        assertTrue(result.getResponse().getContentAsString().contains("\"standort\":\"Sonnig"));
+    }
 
 }
