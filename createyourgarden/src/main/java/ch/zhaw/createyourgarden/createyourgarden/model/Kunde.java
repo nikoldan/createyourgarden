@@ -19,9 +19,7 @@ public class Kunde {
     @NonNull
     private String name;
     @NonNull
-    private String email;
-    private String plzOrt;  
-    
+    private String email;  
      
 
 }

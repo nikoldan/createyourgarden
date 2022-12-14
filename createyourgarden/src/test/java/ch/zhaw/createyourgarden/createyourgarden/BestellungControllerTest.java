@@ -13,50 +13,49 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-
-
 @SpringBootTest
 @AutoConfigureMockMvc(addFilters = false) // für Authentication
-public class ArtikelControllerTest {
+public class BestellungControllerTest {
     
     @Autowired
     private MockMvc mvc;
 
     @Test
-    public void testGetAllArtikel() throws Exception {
-        var result = mvc.perform(get("/api/artikel")
+    public void testCreateBestellung() throws Exception {
+        var result = mvc.perform(post("/api/bestellung").content("{\"wunschDatum\": \"29.11.9999\",\"vornameName\": \"TestName\",\"gesamtPreis\": 18,\"artikels\": [{\"id\": \"455555\",\"name\": \"artikelname\",\"dName\": \"deutscherName..\",\"beschreibung\": \"besekjk\",\"standort\": \"sanndndn\",\"bluetemonat\": 5,\"hoehe\": 33}]}")
         .contentType(MediaType.APPLICATION_JSON))
         .andDo(print())
-        .andExpect(status().isOk())
+        .andExpect(status().isCreated())
         .andReturn();
 
-        assertFalse(result.getResponse().getContentAsString().contains("\"totalElements\":0"));
-        assertTrue(result.getResponse().getContentAsString().contains("standort"));
+        assertTrue(result.getResponse().getContentAsString().contains("\"wunschDatum\":\"29.11.9999\""));
     }
-    
+
     @Test
-    public void testGetArtikelById() throws Exception {
-        var result = mvc.perform(get("/api/artikel/6396fbe239ed3e2a81b02743")
+    public void testGetBestellungById() throws Exception {
+        var result = mvc.perform(get("/api/bestellung/639892ed7a1af568fe5d651b")
         .contentType(MediaType.APPLICATION_JSON))
         .andDo(print())
         .andExpect(status().isOk())
         .andReturn();
 
         assertFalse(result.getResponse().getContentAsString().contains("\"name\":null"));
-        assertTrue(result.getResponse().getContentAsString().contains("standort"));
+        assertTrue(result.getResponse().getContentAsString().contains("bestellungState"));
     }
 
     @Test
-    public void testGetArtikelByStandort() throws Exception {
-        var result = mvc.perform(get("/api/artikel?wo=Sonnig")
+    public void testGetBestellungByState() throws Exception {
+        var result = mvc.perform(get("/api/bestellung/bystate")
         .contentType(MediaType.APPLICATION_JSON))
         .andDo(print())
         .andExpect(status().isOk())
         .andReturn();
 
-        assertFalse(result.getResponse().getContentAsString().contains("\"name\":null"));
-        assertTrue(result.getResponse().getContentAsString().contains("name"));
-        assertTrue(result.getResponse().getContentAsString().contains("\"standort\":\"Sonnig"));
+        assertFalse(result.getResponse().getContentAsString().contains("\"id\":null"));
+        assertTrue(result.getResponse().getContentAsString().contains("bestellIds"));
+        assertTrue(result.getResponse().getContentAsString().contains("\"id\":\"NEU"));
     }
+
+
 
 }
