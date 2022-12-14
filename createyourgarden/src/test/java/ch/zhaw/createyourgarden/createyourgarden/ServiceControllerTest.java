@@ -14,7 +14,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest
-@AutoConfigureMockMvc(addFilters = false) // User Token
+@AutoConfigureMockMvc(addFilters = false) // für Authentication
 public class ServiceControllerTest {
     
     @Autowired
